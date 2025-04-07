@@ -8,6 +8,8 @@
 .navLinks {
     font-family: 'Poppins', sans-serif !important;
     color: gray !important;
+    text-decoration: none;
+    padding-left: 10px;
 }
 
 /* Hide search bar on small devices */
@@ -32,7 +34,7 @@
     .navBrand {
         font-size: 220%;
     }
-    
+
     /* Search bar */
     .navSearch {
         top: 10px;

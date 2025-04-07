@@ -9,32 +9,39 @@ import {
 } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <Navbar className={styles.navBar} expand="md" fixed="top">
       <Container>
-        <Navbar.Brand className={styles.navBrand}>
-          <img src={logo} alt="logo" height="80px" className={styles.logo} /> Travel Tales
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.toggleBtnCustom} />
+        <NavLink to="/" >
+          <Navbar.Brand className={styles.navBrand}>
+            <img src={logo} alt="logo" height="80px" className={styles.logo} />{" "}
+            Travel Tales
+          </Navbar.Brand>
+        </NavLink>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className={styles.toggleBtnCustom}
+        />
         <Navbar.Collapse id="basic-navbar-nav" className={styles.navLinks}>
           <Nav className="ml-auto text-left">
-            <Nav.Link>
+            <NavLink to="/">
               <i className="fa-solid fa-house" /> Home
-            </Nav.Link>
-            <Nav.Link>
+            </NavLink>
+            <NavLink to="/profile">
               <i className="fa-solid fa-user" /> Profile
-            </Nav.Link>
-            <Nav.Link>
+            </NavLink>
+            <NavLink to="/feed">
               <i className="fa-solid fa-heart" /> Feed
-            </Nav.Link>
-            <Nav.Link>
+            </NavLink>
+            <NavLink to="/login">
               <i className="fa-solid fa-right-to-bracket" /> Login
-            </Nav.Link>
-            <Nav.Link>
+            </NavLink>
+            <NavLink to="/signup">
               <i className="fa-solid fa-user-plus" /> Sign up
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
         <Form inline className={styles.navSearch}>
