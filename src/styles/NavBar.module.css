@@ -1,0 +1,51 @@
+/* Entire Navbar */
+.navBar {
+    background-color: #fcf4e9;
+}
+
+/* Font color in navbar */
+.navBrand,
+.navLinks {
+    font-family: 'Poppins', sans-serif !important;
+    color: gray !important;
+}
+
+/* Hide search bar on small devices */
+.navSearch {
+    display: none;
+}
+
+/* Logo */
+.logo {
+    border: 2px solid gray;
+    border-radius: 8px;
+  }
+
+/* Toggle button */
+.toggleBtnCustom {
+    border: 1px solid gray !important;
+}
+
+/* For small devices */
+@media (min-width: 768px) {
+    /* Larger font for page title */
+    .navBrand {
+        font-size: 220%;
+    }
+    
+    /* Search bar */
+    .navSearch {
+        top: 10px;
+        right: -10px;
+        position: absolute;
+        scale: .8;
+        display: block;
+    }
+
+    /* Nav links */
+    .navLinks {
+        bottom: 10px;
+        right: 10px;
+        position: absolute;
+    }
+}
