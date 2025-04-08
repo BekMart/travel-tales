@@ -23,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "cd ../travel-api && ../travel-api/.venv/bin/python manage.py runserver",
+    "dev": "concurrently \"npm start\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "msw": "^0.35.0"
   },
   "engines": {

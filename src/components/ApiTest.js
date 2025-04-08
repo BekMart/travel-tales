@@ -2,14 +2,17 @@ import React from 'react';
 import api from '../api/axios';
 
 const ApiTest = () => {
+
   const handleTestRequest = async () => {
     try {
-      const response = await api.get('/');
-      console.log('✅ API Response:', response.data);
+      const response = await api.get('/posts/');
+      console.log("✅ API Response:", response.data);
     } catch (error) {
-      console.error('❌ API Error:', error);
+      console.error("❌ API Error:", error);
     }
   };
+  
+  handleTestRequest();
 
   return (
     <div style={{ marginTop: '20px' }}>
