@@ -1,3 +1,10 @@
+/* No title for small devices */
+@media (max-width: 390px) {
+    .navTitle {
+        display: none;
+    }
+}
+
 /* Entire Navbar */
 .navBar {
     background-color: #fcf4e9;
@@ -15,6 +22,12 @@
 /* Hide search bar on small devices */
 .navSearch {
     display: none;
+}
+
+/* Title */
+.navTitle {
+    color: teal;
+    font-size: 150%;
 }
 
 /* Logo */

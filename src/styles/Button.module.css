@@ -1,0 +1,42 @@
+.Button {
+    font-size: 1.2rem;
+    align-self: center;
+    border-radius: 100px;
+    border-color: transparent;
+    padding: 4px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: 75px;
+    text-transform: uppercase;
+  }
+  
+  .Button:hover {
+    font-weight: 600;
+    opacity: 0.8;
+    background-color: teal;
+    color: #fcf4e9;
+    cursor: pointer;
+  }
+  
+  .Button:hover:active {
+    background-color: teal !important;
+    cursor: pointer;
+  }
+  
+  .Button:active {
+    background-color: teal !important;
+  }
+  
+  .Button:focus {
+    background-color: teal !important;
+  }
+  
+  .Wide {
+    padding: 10px 50px;
+    width: 100%;
+  }
+  
+  .SignUp {
+    background-color: #f9b58e;
+    color: teal;
+  }

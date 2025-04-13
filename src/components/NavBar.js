@@ -18,7 +18,7 @@ const NavBar = () => {
         <NavLink to="/" >
           <Navbar.Brand className={styles.navBrand}>
             <img src={logo} alt="logo" height="80px" className={styles.logo} />{" "}
-            Travel Tales
+            <span className={styles.navTitle}>Travel Tales</span>
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle
