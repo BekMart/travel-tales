@@ -84,68 +84,58 @@ const SignUpForm = () => {
             </Row> */}
 
             {/* Username */}
-            {error.username ? (
-              error.username?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))
-            ) : (
-              <Form.Group controlId="username">
-                <Form.Control
-                  className={styles.Input}
-                  type="text"
-                  placeholder="Username"
-                  name="username"
-                  value={username}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            )}
+            <Form.Group controlId="username">
+              <Form.Control
+                className={styles.Input}
+                type="text"
+                placeholder="Username"
+                name="username"
+                value={username}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {error.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             {/* Password */}
-            {error.password1 ? (
-              error.password1?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))
-            ) : (
-              <Form.Group controlId="password1">
-                <Form.Control
-                  className={styles.Input}
-                  type="password"
-                  placeholder="Password"
-                  name="password1"
-                  value={password1}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            )}
+            <Form.Group controlId="password1">
+              <Form.Control
+                className={styles.Input}
+                type="password"
+                placeholder="Password"
+                name="password1"
+                value={password1}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {error.password1?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             {/* Confirm Password */}
-            {error.password2 ? (
-              error.password2?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))
-            ) : (
-              <Form.Group controlId="password2">
-                <Form.Control
-                  className={styles.Input}
-                  type="password"
-                  placeholder="Confirm Password"
-                  name="password2"
-                  value={password2}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            )}
+            <Form.Group controlId="password2">
+              <Form.Control
+                className={styles.Input}
+                type="password"
+                placeholder="Confirm Password"
+                name="password2"
+                value={password2}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {error.password2?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.SignUp}`}
-              variant="secondary"
               type="submit"
             >
               Sign up

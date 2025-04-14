@@ -51,46 +51,39 @@ const SignInForm = () => {
           <h1 className={styles.Header}>Log in</h1>
 
           <Form onSubmit={handleSubmit}>
-
             {/* Username */}
-            {error.username ? (
-              error.username?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))
-            ) : (
-              <Form.Group controlId="username">
-                <Form.Control
-                  className={styles.Input}
-                  type="text"
-                  placeholder="Username"
-                  name="username"
-                  value={username}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            )}
+            <Form.Group controlId="username">
+              <Form.Control
+                className={styles.Input}
+                type="text"
+                placeholder="Username"
+                name="username"
+                value={username}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {error.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             {/* Password */}
-            {error.password ? (
-              error.password?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))
-            ) : (
-              <Form.Group controlId="password">
-                <Form.Control
-                  className={styles.Input}
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  value={password}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            )}
+            <Form.Group controlId="password">
+              <Form.Control
+                className={styles.Input}
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {error.password?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.SignIn}`}
@@ -115,7 +108,7 @@ const SignInForm = () => {
 
       <Col
         md={6}
-        className={`my-auto d-none d-md-block p-4 ${styles.SignUpCol}`}
+        className={`my-auto d-none d-md-block p-4 ${styles.SignInCol}`}
       >
         <Image
           className={styles.SignInImage}
