@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Navbar,
   Nav,
@@ -10,12 +10,26 @@ import {
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import { CurrentUserContext } from "../App";
 
 const NavBar = () => {
+  const currentUser = useContext(CurrentUserContext);
+  const loggedInIcons = <>{currentUser?.username}</>;
+  const loggedOutIcons = (
+    <>
+      <NavLink to="/login">
+        <i className="fa-solid fa-right-to-bracket" /> Login
+      </NavLink>
+      <NavLink to="/signup">
+        <i className="fa-solid fa-user-plus" /> Sign up
+      </NavLink>
+    </>
+  );
+
   return (
     <Navbar className={styles.navBar} expand="md" fixed="top">
       <Container>
-        <NavLink to="/" >
+        <NavLink to="/">
           <Navbar.Brand className={styles.navBrand}>
             <img src={logo} alt="logo" height="80px" className={styles.logo} />{" "}
             <span className={styles.navTitle}>Travel Tales</span>
@@ -36,12 +50,7 @@ const NavBar = () => {
             <NavLink to="/feed">
               <i className="fa-solid fa-heart" /> Feed
             </NavLink>
-            <NavLink to="/login">
-              <i className="fa-solid fa-right-to-bracket" /> Login
-            </NavLink>
-            <NavLink to="/signup">
-              <i className="fa-solid fa-user-plus" /> Sign up
-            </NavLink>
+            {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
         <Form inline className={styles.navSearch}>
