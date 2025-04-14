@@ -36,7 +36,8 @@
     width: 100%;
   }
   
-  .SignUp {
+  .SignUp,
+  .SignIn {
     background-color: #f9b58e;
     color: teal;
   }
