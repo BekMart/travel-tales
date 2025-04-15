@@ -35,7 +35,7 @@ function SignInForm() {
       setCurrentUser(data.user);
       history.push("/");
     } catch (err) {
-      setError(err.response?.data || {});
+      setError(err.response?.data);
     }
   };
 

@@ -1,5 +1,4 @@
 import styles from "./App.module.css";
-import ApiTest from "./components/ApiTest";
 import NavBar from "./components/NavBar";
 import { Container } from "react-bootstrap";
 import { Route, Switch } from "react-router-dom";
@@ -20,10 +19,6 @@ function App() {
           <Route render={() => <h1>404 Not Found</h1>} />
         </Switch>
       </Container>
-<<<<<<< HEAD
-      <ApiTest />
-=======
->>>>>>> 3d4234f (Create currentUser hook)
     </div>
   );
 }
