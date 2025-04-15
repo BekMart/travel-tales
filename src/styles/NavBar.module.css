@@ -19,6 +19,7 @@
     padding-left: 10px;
 }
 
+
 /* Hide search bar on small devices */
 .navSearch {
     display: none;
@@ -48,6 +49,19 @@
         font-size: 220%;
     }
 
+    /* Individual nav link */
+    .NavLink {
+        align-self: flex-end !important;
+    }
+
+    /* Add post link */
+    .AddPost {
+        align-self: center;
+        border: 1px gray solid;
+        border-radius: 10px;
+        padding: 8px;
+    }
+    
     /* Search bar */
     .navSearch {
         top: 10px;

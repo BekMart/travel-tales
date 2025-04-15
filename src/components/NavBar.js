@@ -10,12 +10,57 @@ import {
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
+import api from "../api/axios";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
-  const loggedInIcons = <> " | {currentUser?.username} | "</>;
+  const handleSignOut = async () => {
+    try {
+      await api.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const addPostIcon = (
+    <NavLink 
+      className={styles.AddPost}
+      to="/posts/create">
+      <i className="fa-solid fa-plus" /> Add post
+    </NavLink>
+  );
+  const loggedInIcons = (
+    <>
+      {currentUser && addPostIcon}
+      <NavLink className={styles.NavLink} to="/">
+        <i className="fa-solid fa-house" /> Home
+      </NavLink>
+      <NavLink className={styles.NavLink} to="/liked">
+        <i className="fa-solid fa-heart" /> Liked
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        to="/"
+        onClick={handleSignOut}
+      >
+        <i className="fa-solid fa-sign-out-alt" /> Log out
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <Avatar src={currentUser?.profile_image} height={40} />
+      </NavLink>
+    </>
+  );
   const loggedOutIcons = (
     <>
       <NavLink to="/login">
@@ -42,15 +87,6 @@ const NavBar = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav" className={styles.navLinks}>
           <Nav className="ml-auto text-left">
-            <NavLink to="/">
-              <i className="fa-solid fa-house" /> Home
-            </NavLink>
-            <NavLink to="/profile">
-              <i className="fa-solid fa-user" /> Profile
-            </NavLink>
-            <NavLink to="/feed">
-              <i className="fa-solid fa-heart" /> Feed
-            </NavLink>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
