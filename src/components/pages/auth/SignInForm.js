@@ -1,23 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "../../../styles/SignInUpForm.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import appStyles from "../../../App.module.css";
-
-import {
-  Form,
-  Button,
-  Image,
-  Col,
-  Row,
-  Container,
-  Alert,
-} from "react-bootstrap";
+import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
 import api from "../../../api/axios";
-import { SetCurrentUserContext } from "../../../App";
+import { useSetCurrentUser } from "../../../contexts/CurrentUserContext";
 
-const SignInForm = () => {
-  const setCurrentUser = useContext(SetCurrentUserContext);
+function SignInForm() {
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -25,9 +16,7 @@ const SignInForm = () => {
   });
 
   const { username, password } = signInData;
-
   const [error, setError] = useState({});
-
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -39,12 +28,14 @@ const SignInForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const {data} = await api.post("/dj-rest-auth/login/", signInData);
-      setCurrentUser(data.user)
+      await api.post("/dj-rest-auth/login/", signInData);
+      const { data } = await api.get("/dj-rest-auth/user/");
+      setCurrentUser(data.user);
       history.push("/");
-    } catch (error) {
-      setError(error.response?.data);
+    } catch (err) {
+      setError(err.response?.data || {});
     }
   };
 
@@ -55,7 +46,6 @@ const SignInForm = () => {
           <h1 className={styles.Header}>Log in</h1>
 
           <Form onSubmit={handleSubmit}>
-            {/* Username */}
             <Form.Group controlId="username">
               <Form.Control
                 className={styles.Input}
@@ -67,12 +57,9 @@ const SignInForm = () => {
               />
             </Form.Group>
             {error.username?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
+              <Alert variant="warning" key={idx}>{message}</Alert>
             ))}
 
-            {/* Password */}
             <Form.Group controlId="password">
               <Form.Control
                 className={styles.Input}
@@ -84,7 +71,11 @@ const SignInForm = () => {
               />
             </Form.Group>
             {error.password?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
+              <Alert variant="warning" key={idx}>{message}</Alert>
+            ))}
+
+            {error.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="warning" className="mt-3">
                 {message}
               </Alert>
             ))}
@@ -95,11 +86,6 @@ const SignInForm = () => {
             >
               Log in
             </Button>
-            {error.non_field_errors?.map((message, idx) => (
-              <Alert key={idx} variant="warning" className="mt-3">
-                {message}
-              </Alert>
-            ))}
           </Form>
         </Container>
 
@@ -117,12 +103,12 @@ const SignInForm = () => {
         <Image
           className={styles.SignInImage}
           src="https://res.cloudinary.com/dvgobcuck/image/upload/v1744541812/pexels-andreimike-1271619_aktwma.jpg"
-          alt="Image of a man standing atop of a grassy mountain range that he is hiking and admiring the beautiful view"
+          alt="Man standing atop grassy mountain range"
           fluid
         />
       </Col>
     </Row>
   );
-};
+}
 
 export default SignInForm;
