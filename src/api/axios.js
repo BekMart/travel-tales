@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -6,5 +6,13 @@ const api = axios.create({
 });
 
 export default api;
-export const axiosReq = axios.create();
-export const axiosRes = axios.create();
+
+export const axiosReq = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  withCredentials: true,
+});
+
+export const axiosRes = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  withCredentials: true,
+});
