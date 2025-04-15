@@ -6,3 +6,5 @@ const api = axios.create({
 });
 
 export default api;
+export const axiosReq = axios.create();
+export const axiosRes = axios.create();

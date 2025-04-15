@@ -20,7 +20,10 @@ function App() {
           <Route render={() => <h1>404 Not Found</h1>} />
         </Switch>
       </Container>
+<<<<<<< HEAD
       <ApiTest />
+=======
+>>>>>>> 3d4234f (Create currentUser hook)
     </div>
   );
 }
