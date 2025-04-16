@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "../../../styles/Post.module.css";
 import { useCurrentUser } from "../../../contexts/CurrentUserContext";
 import Avatar from "../../Avatar";
-import { axiosRes } from "../../../api/axios";
+import { axiosReq, axiosRes } from "../../../api/axios";
 
 const Post = (props) => {
   const {
@@ -43,6 +43,22 @@ const Post = (props) => {
     }
   };
 
+  const handleUnlike = async () => {
+    try {
+        await axiosReq.delete(`/likes/${like_id}/`);
+        setPosts((prevPosts) => ({
+            ...prevPosts,
+            results: prevPosts.results.map((post) => {
+                return post.id === id
+                ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+                : post;
+            }),
+        }));
+    } catch(err){
+        console.log(err);
+    }
+  }
+
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -72,7 +88,7 @@ const Post = (props) => {
               <i className="far fa-heart" />
             </OverlayTrigger>
           ) : like_id ? (
-            <span onClick={handleLike}>
+            <span onClick={handleUnlike}>
               <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
           ) : currentUser ? (
@@ -84,7 +100,7 @@ const Post = (props) => {
               placement="top"
               overlay={<Tooltip>Log in to like posts!</Tooltip>}
             >
-              <i className={`far fa-heart ${styles.HeartOutline}`} />
+              <i className={"far fa-heart"} />
             </OverlayTrigger>
           )}
           {likes_count}
