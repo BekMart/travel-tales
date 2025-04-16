@@ -16,10 +16,13 @@ import {
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import api from "../api/axios";
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
+  const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
@@ -31,9 +34,7 @@ const NavBar = () => {
   };
 
   const addPostIcon = (
-    <NavLink 
-      className={styles.AddPost}
-      to="/posts/create">
+    <NavLink className={styles.AddPost} to="/posts/create">
       <i className="fa-solid fa-plus" /> Add post
     </NavLink>
   );
@@ -46,11 +47,7 @@ const NavBar = () => {
       <NavLink className={styles.NavLink} to="/liked">
         <i className="fa-solid fa-heart" /> Liked
       </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        to="/"
-        onClick={handleSignOut}
-      >
+      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fa-solid fa-sign-out-alt" /> Log out
       </NavLink>
       <NavLink
@@ -73,7 +70,12 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar className={styles.navBar} expand="md" fixed="top">
+    <Navbar
+      expanded={expanded}
+      className={styles.navBar}
+      expand="md"
+      fixed="top"
+    >
       <Container>
         <NavLink to="/">
           <Navbar.Brand className={styles.navBrand}>
@@ -82,6 +84,8 @@ const NavBar = () => {
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle
+          ref={ref}
+          onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
           className={styles.toggleBtnCustom}
         />
