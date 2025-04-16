@@ -41,3 +41,11 @@
     background-color: #f9b58e;
     color: teal;
   }
+
+  .Cancel {
+    background-color: rgb(227, 107, 9);
+  }
+
+  .Create {
+    background-color: teal;
+  }

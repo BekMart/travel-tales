@@ -1,31 +1,36 @@
 .App {
-    text-align: center;
-    background-color: #f8f8f8;
-    min-height: 100vh;
+  text-align: center;
+  background-color: #f8f8f8;
+  min-height: 100vh;
 }
 
 .Main {
-    padding-top: 120px;
+  padding-top: 120px;
 }
-  
+
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    padding-left: 10px;
+  text-decoration: none;
+  color: inherit;
+  padding-left: 10px;
 }
 
 a:hover {
-    color: teal;
+  color: teal;
 }
 
 .Content {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #dadadf;
-  }
-  
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #dadadf;
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}
