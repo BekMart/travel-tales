@@ -1,6 +1,14 @@
 import React, { useRef, useState } from "react";
 
-import { Form, Button, Row, Col, Container, Image } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Row,
+  Col,
+  Container,
+  Image,
+  Alert,
+} from "react-bootstrap";
 
 import Upload from "../../../assets/upload.png";
 
@@ -12,7 +20,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../../api/axios";
 
 function PostCreateForm() {
-  const [errors, setErrors] = useState({});
+  const [error, setError] = useState({});
 
   const [postData, setPostData] = useState({
     title: "",
@@ -23,8 +31,8 @@ function PostCreateForm() {
 
   const { title, location, content, image } = postData;
 
-  const imageInput = useRef(null)
-  const history = useHistory()
+  const imageInput = useRef(null);
+  const history = useHistory();
 
   const handleChange = (e) => {
     setPostData({
@@ -44,27 +52,28 @@ function PostCreateForm() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formData = new FormData();
 
-    formData.append('title', title)
-    formData.append('location', location)
-    formData.append('content', content)
-    formData.append('image', imageInput.current.files[0])
+    formData.append("title", title);
+    formData.append("location", location);
+    formData.append("content", content);
+    formData.append("image", imageInput.current.files[0]);
 
     try {
-        const {data} = await axiosReq.post('posts/', formData);
-        history.push(`/posts/${data.id}`)
+      const { data } = await axiosReq.post("posts/", formData);
+      history.push(`/posts/${data.id}`);
     } catch (err) {
-        console.log(err)
-        if (err.response?.status !== 401){
-            setErrors(err.response?.data)
-        }
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setError(err.response?.data);
+      }
     }
-  }
+  };
 
   const textFields = (
     <div className="text-center">
+      {/* Post Title */}
       <Form.Group controlId="title">
         <Form.Label>Title</Form.Label>
         <Form.Control
@@ -75,7 +84,12 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-
+      {error.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      {/* Post Location */}
       <Form.Group controlId="location">
         <Form.Label>Location</Form.Label>
         <Form.Control
@@ -86,7 +100,12 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-
+      {error.location?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      {/* Post Content */}
       <Form.Group controlId="content">
         <Form.Label>Content</Form.Label>
         <Form.Control
@@ -98,14 +117,19 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-
+      {error.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      {/* Cancel Button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Cancel}`}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-
+      {/* Create Button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Create}`}
         type="submit"
@@ -123,6 +147,7 @@ function PostCreateForm() {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
+              {/* Image  */}
               {image ? (
                 <>
                   <figure>
@@ -156,6 +181,7 @@ function PostCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
