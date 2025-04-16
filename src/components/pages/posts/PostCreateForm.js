@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { Form, Button, Row, Col, Container, Image } from "react-bootstrap";
 
@@ -8,17 +8,23 @@ import styles from "../../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../../App.module.css";
 import btnStyles from "../../../styles/Button.module.css";
 import Asset from "../../Asset";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { axiosReq } from "../../../api/axios";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
     title: "",
+    location: "",
     content: "",
     image: "",
   });
 
-  const { title, content, image } = postData;
+  const { title, location, content, image } = postData;
+
+  const imageInput = useRef(null)
+  const history = useHistory()
 
   const handleChange = (e) => {
     setPostData({
@@ -37,6 +43,26 @@ function PostCreateForm() {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const formData = new FormData();
+
+    formData.append('title', title)
+    formData.append('location', location)
+    formData.append('content', content)
+    formData.append('image', imageInput.current.files[0])
+
+    try {
+        const {data} = await axiosReq.post('posts/', formData);
+        history.push(`/posts/${data.id}`)
+    } catch (err) {
+        console.log(err)
+        if (err.response?.status !== 401){
+            setErrors(err.response?.data)
+        }
+    }
+  }
+
   const textFields = (
     <div className="text-center">
       <Form.Group controlId="title">
@@ -46,6 +72,17 @@ function PostCreateForm() {
           type="text"
           name="title"
           value={title}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="location">
+        <Form.Label>Location</Form.Label>
+        <Form.Control
+          className={styles.Input}
+          type="text"
+          name="location"
+          value={location}
           onChange={handleChange}
         />
       </Form.Group>
@@ -64,7 +101,7 @@ function PostCreateForm() {
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Cancel}`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
@@ -79,7 +116,7 @@ function PostCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
@@ -116,6 +153,7 @@ function PostCreateForm() {
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
+                ref={imageInput}
               />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
