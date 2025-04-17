@@ -44,6 +44,9 @@ const NavBar = () => {
       <NavLink className={styles.NavLink} to="/">
         <i className="fa-solid fa-house" /> Home
       </NavLink>
+      <NavLink className={styles.NavLink} to="/feed">
+        <i className="fa-solid fa-stream" /> Feed
+      </NavLink>
       <NavLink className={styles.NavLink} to="/liked">
         <i className="fa-solid fa-heart" /> Liked
       </NavLink>

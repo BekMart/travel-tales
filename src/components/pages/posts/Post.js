@@ -39,25 +39,25 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-        console.log(err);
+      console.log(err);
     }
   };
 
   const handleUnlike = async () => {
     try {
-        await axiosReq.delete(`/likes/${like_id}/`);
-        setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-                return post.id === id
-                ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-                : post;
-            }),
-        }));
-    } catch(err){
-        console.log(err);
+      await axiosReq.delete(`/likes/${like_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
     }
-  }
+  };
 
   return (
     <Card className={styles.Post}>
@@ -71,6 +71,9 @@ const Post = (props) => {
             <span>{updated_on}</span>
             {is_owner && postPage && "..."}
           </div>
+          <Link to={`/locations/`}>
+            <span>{location}</span>
+          </Link>
         </Media>
       </Card.Body>
       <Link to={`/posts/${id}`}>
