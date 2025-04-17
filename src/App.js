@@ -10,6 +10,7 @@ import PostsPage from "./components/pages/posts/PostsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import "./api/axios";
 import SearchResultsPage from "./components/pages/posts/SearchResultsPage";
+import PostEditForm from "./components/pages/posts/PostEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -52,6 +53,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
+          <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
           <Route exact path="/search" render={() => <SearchResultsPage />} />
           <Route render={() => <h1>404 Not Found</h1>} />
         </Switch>
