@@ -5,6 +5,7 @@ import styles from "../../../styles/Post.module.css";
 import { useCurrentUser } from "../../../contexts/CurrentUserContext";
 import Avatar from "../../Avatar";
 import { axiosReq, axiosRes } from "../../../api/axios";
+import { MoreDropdown } from "../../MoreDropdown";
 
 const Post = (props) => {
   const {
@@ -67,13 +68,13 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div className="d-flex align-items-center">
-            <span>{updated_on}</span>
-            {is_owner && postPage && "..."}
-          </div>
           <Link to={`/locations/`}>
             <span>{location}</span>
           </Link>
+          <div className="d-flex align-items-center">
+            <span className="mx-3">{updated_on}</span>
+            {is_owner && postPage && <MoreDropdown />}
+          </div>
         </Media>
       </Card.Body>
       <Link to={`/posts/${id}`}>
