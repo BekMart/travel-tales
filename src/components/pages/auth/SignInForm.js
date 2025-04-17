@@ -32,7 +32,7 @@ function SignInForm() {
     try {
       await api.post("/dj-rest-auth/login/", signInData);
       const { data } = await api.get("/dj-rest-auth/user/");
-      setCurrentUser(data.user);
+      setCurrentUser(data);
       history.push("/");
     } catch (err) {
       setError(err.response?.data);
