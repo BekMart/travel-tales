@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   Nav,
@@ -17,12 +17,21 @@ import {
 import Avatar from "./Avatar";
 import api from "../api/axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { useHistory } from "react-router-dom";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
+
+  const [query, setQuery] = useState("");
+  const history = useHistory();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    history.push(`/search?q=${encodeURIComponent(query)}`);
+  };
 
   const handleSignOut = async () => {
     try {
@@ -97,9 +106,15 @@ const NavBar = () => {
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
-        <Form inline className={styles.navSearch}>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-secondary">Search</Button>
+        <Form inline className={styles.navSearch} onSubmit={handleSearch}>
+          <FormControl
+            type="text"
+            placeholder="Search posts/profiles"
+            className="mr-sm-2"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <Button variant="outline-secondary" type="submit">Search</Button>
         </Form>
       </Container>
     </Navbar>
