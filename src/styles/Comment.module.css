@@ -1,0 +1,14 @@
+.Body {
+    text-align: left;
+}
+
+.Owner {
+  font-weight: bold;
+  color: teal;
+  margin-right: 8px;
+}
+
+.Date {
+  font-weight: lighter;
+  color: #f69834;
+}
