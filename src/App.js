@@ -11,6 +11,7 @@ import { useCurrentUser } from "./contexts/CurrentUserContext";
 import "./api/axios";
 import SearchResultsPage from "./components/pages/posts/SearchResultsPage";
 import PostEditForm from "./components/pages/posts/PostEditForm";
+import ProfilePage from "./components/pages/profiles/ProfilePage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -48,7 +49,7 @@ function App() {
               />
             )}
           />
-          <Route exact path="/profile" render={() => <h1>Profile</h1>} />
+          <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/login" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
