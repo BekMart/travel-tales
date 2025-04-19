@@ -31,3 +31,18 @@ export const followHelper = (profile, clickedProfile, following_id) => {
     : // return unchanged
       profile;
 };
+
+export const unfollowHelper = (profile, clickedProfile) => {
+  return profile.id === clickedProfile.id
+    ? // update followers count & following id of clicked on user
+      {
+        ...profile,
+        followers_count: profile.followers_count - 1,
+        following_id: null,
+      }
+    : profile.is_owner
+    ? // Update following count of logged in user
+      { ...profile, following_count: profile.following_count - 1 }
+    : // return unchanged
+      profile;
+};
