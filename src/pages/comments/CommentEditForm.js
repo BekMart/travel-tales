@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { axiosRes } from "../../../api/axios";
-import styles from "../../../styles/CommentCreateEditForm.module.css";
+import { axiosRes } from "../../api/axios";
+import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import api from "../../../api/axios";
+import api from "../../api/axios";
 import Post from "./Post";
-import Asset from "../../Asset";
-import appStyles from "../../../App.module.css";
-import NoResults from "../../../assets/no-results.png";
+import Asset from "../../components/Asset";
+import appStyles from "../../App.module.css";
+import NoResults from "../../assets/no-results.png";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import styles from "../../../styles/SignInUpForm.module.css";
-import btnStyles from "../../../styles/Button.module.css";
-import appStyles from "../../../App.module.css";
+import styles from "../../styles/SignInUpForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
-import api from "../../../api/axios";
-import { useSetCurrentUser } from "../../../contexts/CurrentUserContext";
+import api from "../../api/axios";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();

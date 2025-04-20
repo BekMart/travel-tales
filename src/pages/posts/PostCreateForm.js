@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+
 import {
   Form,
   Button,
@@ -8,16 +9,17 @@ import {
   Image,
   Alert,
 } from "react-bootstrap";
-import styles from "../../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../../App.module.css";
-import btnStyles from "../../../styles/Button.module.css";
-import {
-  useHistory,
-  useParams,
-} from "react-router-dom/cjs/react-router-dom.min";
-import { axiosReq } from "../../../api/axios";
 
-function PostEditForm() {
+import Upload from "../../assets/upload.png";
+
+import styles from "../../styles/PostCreateEditForm.module.css";
+import appStyles from "../../App.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import Asset from "../../components/Asset";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { axiosReq } from "../../api/axios";
+
+function PostCreateForm() {
   const [error, setError] = useState({});
 
   const [postData, setPostData] = useState({
@@ -31,23 +33,6 @@ function PostEditForm() {
 
   const imageInput = useRef(null);
   const history = useHistory();
-  const { id } = useParams();
-
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, location, content, image, is_owner } = data;
-
-        is_owner
-          ? setPostData({ title, location, content, image })
-          : history.push("/");
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    handleMount();
-  }, [history, id]);
 
   const handleChange = (e) => {
     setPostData({
@@ -73,14 +58,11 @@ function PostEditForm() {
     formData.append("title", title);
     formData.append("location", location);
     formData.append("content", content);
-
-    if (imageInput?.current?.files[0]) {
-      formData.append("image", imageInput.current.files[0]);
-    }
+    formData.append("image", imageInput.current.files[0]);
 
     try {
-      await axiosReq.put(`/posts/${id}/`, formData);
-      history.push(`/posts/${id}`);
+      const { data } = await axiosReq.post("posts/", formData);
+      history.push(`/posts/${data.id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -147,12 +129,12 @@ function PostEditForm() {
       >
         cancel
       </Button>
-      {/* Save Button */}
+      {/* Create Button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Create}`}
         type="submit"
       >
-        save
+        create
       </Button>
     </div>
   );
@@ -166,17 +148,31 @@ function PostEditForm() {
           >
             <Form.Group className="text-center">
               {/* Image  */}
-              <figure>
-                <Image className={appStyles.Image} src={image} rounded />
-              </figure>
-              <div>
+              {image ? (
+                <>
+                  <figure>
+                    <Image className={appStyles.Image} src={image} rounded />
+                  </figure>
+                  <div>
+                    <Form.Label
+                      className={`${btnStyles.Button} ${btnStyles.Create} btn`}
+                      htmlFor="image-upload"
+                    >
+                      Change the image
+                    </Form.Label>
+                  </div>
+                </>
+              ) : (
                 <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Create} btn`}
+                  className="d-flex justify-content-center"
                   htmlFor="image-upload"
                 >
-                  Change the image
+                  <Asset
+                    src={Upload}
+                    message="Click or tap to upload an image"
+                  />
                 </Form.Label>
-              </div>
+              )}
 
               <Form.File
                 id="image-upload"
@@ -198,4 +194,4 @@ function PostEditForm() {
   );
 }
 
-export default PostEditForm;
+export default PostCreateForm;

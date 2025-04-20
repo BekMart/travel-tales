@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import styles from "../../../styles/SignInUpForm.module.css";
-import btnStyles from "../../../styles/Button.module.css";
-import appStyles from "../../../App.module.css";
+import styles from "../../styles/SignInUpForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 
 import {
   Form,
@@ -13,7 +13,7 @@ import {
   Container,
   Alert,
 } from "react-bootstrap";
-import api from "../../../api/axios";
+import api from "../../api/axios";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({

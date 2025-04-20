@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 import { useLocation } from "react-router-dom";
-import { axiosReq } from "../../../api/axios";
+import { axiosReq } from "../../api/axios";
 import Post from "./Post";
-import NoResults from "../../../assets/no-results.png";
-import appStyles from "../../../App.module.css";
-import Asset from "../../Asset";
+import NoResults from "../../assets/no-results.png";
+import appStyles from "../../App.module.css";
+import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../../utils/utils";
+import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostsPage({ message, filter = "" }) {

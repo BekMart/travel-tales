@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import styles from "../../../styles/Post.module.css";
-import { useCurrentUser } from "../../../contexts/CurrentUserContext";
-import Avatar from "../../Avatar";
-import { axiosReq, axiosRes } from "../../../api/axios";
-import { MoreDropdown } from "../../MoreDropdown";
+import styles from "../../styles/Post.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Avatar from "../../components/Avatar";
+import { axiosReq, axiosRes } from "../../api/axios";
+import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Post = (props) => {
