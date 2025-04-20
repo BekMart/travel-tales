@@ -14,8 +14,10 @@ import {
   Alert,
 } from "react-bootstrap";
 import api from "../../api/axios";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
+  useRedirect("loggedIn");
   const [signUpData, setSignUpData] = useState({
     // firstName: "",
     // lastName: "",

@@ -3,12 +3,22 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Image,
+  Col,
+  Row,
+  Container,
+  Alert,
+} from "react-bootstrap";
 import api from "../../api/axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -33,7 +43,7 @@ function SignInForm() {
       await api.post("/dj-rest-auth/login/", signInData);
       const { data } = await api.get("/dj-rest-auth/user/");
       setCurrentUser(data);
-      history.push("/");
+      history.goBack();
     } catch (err) {
       setError(err.response?.data);
     }
@@ -57,7 +67,9 @@ function SignInForm() {
               />
             </Form.Group>
             {error.username?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>{message}</Alert>
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
             ))}
 
             <Form.Group controlId="password">
@@ -71,7 +83,9 @@ function SignInForm() {
               />
             </Form.Group>
             {error.password?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>{message}</Alert>
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
             ))}
 
             {error.non_field_errors?.map((message, idx) => (
