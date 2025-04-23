@@ -18,6 +18,7 @@ import Avatar from "./Avatar";
 import api from "../api/axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -36,8 +37,10 @@ const NavBar = () => {
   const handleSignOut = async () => {
     try {
       await api.post("dj-rest-auth/logout/");
+      toast.success("Logged out successfully!");
       setCurrentUser(null);
     } catch (err) {
+      toast.error("Failed to log out.");
       console.log(err);
     }
   };
