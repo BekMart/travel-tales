@@ -13,6 +13,7 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
+import { toast } from "react-toastify";
 
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -46,8 +47,10 @@ const UsernameForm = () => {
         ...prevUser,
         username,
       }));
+      toast.success("Username updated successfully!");
       history.goBack();
     } catch (err) {
+      toast.error("Failed to update username.");
       console.log(err);
       setErrors(err.response?.data);
     }

@@ -7,6 +7,7 @@ import Avatar from "../../components/Avatar";
 import { axiosReq, axiosRes } from "../../api/axios";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { toast } from "react-toastify";
 
 const Post = (props) => {
   const {
@@ -38,7 +39,9 @@ const Post = (props) => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack()
+      toast.success("Post deleted successfully!");
     } catch(err) {
+      toast.error("Something went wrong. Please try again.");
       console.log(err)
     }
   }
@@ -46,6 +49,7 @@ const Post = (props) => {
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
+      toast.success("Post liked successfully!");
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -55,6 +59,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
+      toast.error("Something went wrong. Please try again.");
       console.log(err);
     }
   };
@@ -62,6 +67,7 @@ const Post = (props) => {
   const handleUnlike = async () => {
     try {
       await axiosReq.delete(`/likes/${like_id}/`);
+      toast.success("Post unliked successfully!");
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -71,6 +77,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
+      toast.error("Something went wrong. Please try again.");
       console.log(err);
     }
   };

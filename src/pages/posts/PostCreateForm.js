@@ -19,6 +19,7 @@ import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axios";
 import { useRedirect } from "../../hooks/useRedirect";
+import { toast } from "react-toastify";
 
 function PostCreateForm() {
   useRedirect("loggedOut");
@@ -65,8 +66,10 @@ function PostCreateForm() {
     try {
       const { data } = await axiosReq.post("posts/", formData);
       history.push(`/posts/${data.id}`);
+      toast.success("Post created successfully!");
     } catch (err) {
       console.log(err);
+      toast.error("Something went wrong. Please try again.");
       if (err.response?.status !== 401) {
         setError(err.response?.data);
       }

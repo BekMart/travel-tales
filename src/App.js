@@ -15,6 +15,8 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -65,6 +67,7 @@ function App() {
           <Route render={() => <h1>404 Not Found</h1>} />
         </Switch>
       </Container>
+      <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );
 }

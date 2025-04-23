@@ -16,6 +16,7 @@ import {
   useParams,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axios";
+import { toast } from "react-toastify";
 
 function PostEditForm() {
   const [error, setError] = useState({});
@@ -81,8 +82,10 @@ function PostEditForm() {
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
       history.push(`/posts/${id}`);
+      toast.success("Post updated successfully!");
     } catch (err) {
       console.log(err);
+      toast.error("Something went wrong. Please try again.");
       if (err.response?.status !== 401) {
         setError(err.response?.data);
       }

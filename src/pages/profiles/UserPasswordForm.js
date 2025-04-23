@@ -10,6 +10,7 @@ import Form from "react-bootstrap/Form";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axios";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { toast } from "react-toastify";
 
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -46,8 +47,10 @@ const UserPasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
+      toast.success("Password updated successfully!");
       history.goBack();
     } catch (err) {
+      toast.error("Failed to update password.");
       console.log(err);
       setErrors(err.response?.data);
     }

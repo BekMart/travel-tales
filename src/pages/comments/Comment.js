@@ -7,6 +7,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axios";
 import CommentEditForm from "./CommentEditForm";
+import { toast } from "react-toastify";
 
 const Comment = (props) => {
   const {
@@ -27,6 +28,7 @@ const Comment = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
+      toast.success("Comment deleted successfully!");
       setPost((prevPost) => ({
         results: [
           {
@@ -41,6 +43,7 @@ const Comment = (props) => {
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
     } catch (err) {
+      toast.error("Something went wrong. Please try again.");
       console.log(err);
     }
   };

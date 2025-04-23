@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import { toast } from "react-toastify";
 
 import {
   Form,
@@ -44,6 +45,7 @@ const SignUpForm = () => {
     e.preventDefault();
     try {
       await api.post("/dj-rest-auth/registration/", signUpData);
+      toast.success("Account created successfully! Please log in.");
       history.push("/login");
     } catch (error) {
       setError(error.response?.data);
