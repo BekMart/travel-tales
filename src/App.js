@@ -15,7 +15,9 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-import { toast, ToastContainer } from "react-toastify";
+import Locations from "./pages/locations/Locations";
+import LocationsPosts from "./pages/locations/LocationsPosts";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -64,6 +66,8 @@ function App() {
           <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
           <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
           <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
+          <Route exact path="/locations" render={() => <Locations />} />
+          <Route exact path="/locations/:slug" render={() => <LocationsPosts />} />
           <Route render={() => <h1>404 Not Found</h1>} />
         </Switch>
       </Container>

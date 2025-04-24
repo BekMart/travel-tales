@@ -18,7 +18,7 @@ const Post = (props) => {
     title,
     updated_on,
     image,
-    location,
+    location_details,
     content,
     likes_count,
     like_id,
@@ -32,19 +32,19 @@ const Post = (props) => {
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/posts/${id}/edit`)
-  }
+    history.push(`/posts/${id}/edit`);
+  };
 
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-      history.goBack()
+      history.goBack();
       toast.success("Post deleted successfully!");
-    } catch(err) {
+    } catch (err) {
       toast.error("Something went wrong. Please try again.");
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
 
   const handleLike = async () => {
     try {
@@ -90,16 +90,21 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <Link to={`/locations/`}>
-            <span>{location}</span>
-          </Link>
+          {location_details?.slug ? (
+            <Link to={`/locations/${location_details.slug}`}>
+              <span>{location_details.name}</span>
+            </Link>
+          ) : (
+            <span>Location unknown</span>
+          )}
           <div className="d-flex align-items-center">
             <span className="mx-3">{updated_on}</span>
-            {is_owner && postPage && 
-            <MoreDropdown
-              handleEdit={handleEdit}
-              handleDelete={handleDelete}
-            />}
+            {is_owner && postPage && (
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>
