@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axios";
 import Post from "../posts/Post";
+import NoResults from "../../assets/no-results.png";
+import { Container } from "react-bootstrap";
+import appStyles from "../../App.module.css";
+import Asset from "../../components/Asset";
 
 function LocationsPosts() {
   const { slug } = useParams();
@@ -27,7 +31,9 @@ function LocationsPosts() {
           <Post key={post.id} {...post} setPosts={setPosts} />
         ))
       ) : (
-        <p>No posts found for this location.</p>
+        <Container className={appStyles.Content}>
+          <Asset src={NoResults} message={'No posts found for this location'} />
+        </Container>
       )}
     </div>
   );
