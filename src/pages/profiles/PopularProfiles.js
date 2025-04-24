@@ -16,15 +16,20 @@ const PopularProfiles = ({ mobile }) => {
     >
       {popularProfiles.results.length ? (
         <>
-          <p>Top profiles:</p>
+          <p>Top 5 profiles:</p>
           {mobile ? (
             <div className="d-flex justify-content-around">
-              {popularProfiles.results.slice(0, 4).map((profile) => (
+              {[...popularProfiles.results]
+              .sort((a, b) => b.followers_count - a.followers_count)
+              .slice(0, 4).map((profile) => (
                 <Profile key={profile.id} profile={profile} mobile />
               ))}
             </div>
           ) : (
-            popularProfiles.results.map((profile) => (
+            [...popularProfiles.results]
+            .sort((a, b) => b.followers_count - a.followers_count)
+            .slice(0, 5)
+            .map((profile) => (
               <Profile key={profile.id} profile={profile} />
             ))
           )}
