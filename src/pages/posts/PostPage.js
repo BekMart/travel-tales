@@ -11,6 +11,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import PopularLocations from "../locations/PopularLocations";
 
 function PostPage() {
   const { id } = useParams();
@@ -76,6 +77,7 @@ function PostPage() {
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
+        <PopularLocations />
       </Col>
     </Row>
   );

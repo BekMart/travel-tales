@@ -17,6 +17,7 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import Post from "../posts/Post";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import PopularLocations from "../locations/PopularLocations";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -152,6 +153,7 @@ function ProfilePage() {
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
+        <PopularLocations />
       </Col>
     </Row>
   );
