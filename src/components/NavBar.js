@@ -19,12 +19,14 @@ import api from "../api/axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
+  const width = useWindowWidth();
 
   const [query, setQuery] = useState("");
   const history = useHistory();
@@ -72,58 +74,85 @@ const NavBar = () => {
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <Avatar src={currentUser?.profile_image} height={40} />
+        <Avatar src={currentUser?.profile_image} height={50} className={styles.Avatar} />
       </NavLink>
     </>
   );
   const loggedOutIcons = (
     <>
-      <NavLink to="/login">
+      <NavLink className={styles.NavLink} to="/login">
         <i className="fa-solid fa-right-to-bracket" /> Login
       </NavLink>
-      <NavLink to="/signup">
+      <NavLink className={styles.NavLink} to="/signup">
         <i className="fa-solid fa-user-plus" /> Sign up
       </NavLink>
     </>
   );
 
   return (
-    <Navbar
-      expanded={expanded}
-      className={styles.navBar}
-      expand="md"
-      fixed="top"
-    >
-      <Container>
-        <NavLink to="/">
-          <Navbar.Brand className={styles.navBrand}>
-            <img src={logo} alt="logo" height="80px" className={styles.logo} />{" "}
-            <span className={styles.navTitle}>Travel Tales</span>
-          </Navbar.Brand>
-        </NavLink>
-        <Navbar.Toggle
-          ref={ref}
-          onClick={() => setExpanded(!expanded)}
-          aria-controls="basic-navbar-nav"
-          className={styles.toggleBtnCustom}
-        />
-        <Navbar.Collapse id="basic-navbar-nav" className={styles.navLinks}>
-          <Nav className="ml-auto text-left">
-            {currentUser ? loggedInIcons : loggedOutIcons}
-          </Nav>
-        </Navbar.Collapse>
-        <Form inline className={styles.navSearch} onSubmit={handleSearch}>
-          <FormControl
-            type="text"
-            placeholder="Search posts/profiles"
-            className="mr-sm-2"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+    <>
+      <Navbar
+        expanded={expanded}
+        className={styles.navBar}
+        expand="md"
+        fixed="top"
+      >
+        <Container>
+          {/* Logo and title */}
+          <NavLink to="/">
+            <Navbar.Brand className={styles.navBrand}>
+              <img
+                src={logo}
+                alt="logo"
+                height="80px"
+                className={styles.logo}
+              />
+              <span className={styles.navTitle}>Travel Tales</span>
+            </Navbar.Brand>
+          </NavLink>
+
+          {/* Search bar */}
+          <Form inline className={styles.navSearch} onSubmit={handleSearch}>
+            <FormControl
+              type="text"
+              placeholder="Search posts/profiles"
+              className="mr-sm-2"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </Form>
+
+          {/* Toggle */}
+          <Navbar.Toggle
+            ref={ref}
+            onClick={() => setExpanded(!expanded)}
+            aria-controls="basic-navbar-nav"
+            className={styles.toggleBtnCustom}
           />
-          <Button variant="outline-secondary" type="submit">Search</Button>
-        </Form>
-      </Container>
-    </Navbar>
+
+          {/* Collapse menu (small screens) */}
+          {width < 768 && (
+            <Navbar.Collapse
+              id="basic-navbar-nav"
+              className={`${
+                expanded ? styles.menuOpen : styles.menuClose
+              } d-md-none`}
+            >
+              <Nav className="flex-column text-left">
+                {currentUser ? loggedInIcons : loggedOutIcons}
+              </Nav>
+            </Navbar.Collapse>
+          )}
+        </Container>
+      </Navbar>
+
+      {/* Navigation links for larger screens */}
+      <div className={styles.navLinksSection}>
+        <Nav className="d-flex justify-content-center">
+          {currentUser ? loggedInIcons : loggedOutIcons}
+        </Nav>
+      </div>
+    </>
   );
 };
 
