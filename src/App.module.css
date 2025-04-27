@@ -11,8 +11,9 @@
   padding-top: 20px;
 }
 
-body {
+body, html {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 a {
