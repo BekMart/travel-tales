@@ -20,24 +20,33 @@ const Profile = (props) => {
     <div
       className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}
     >
-      <div>
-        <Link className="align-self-center" to={`/profiles/${id}`}>
-          <Avatar src={image} height={imageSize} />
-        </Link>
-      </div>
-      <div className={`mx-2 ${styles.WordBreak}`}>
-        <strong>{owner}</strong>
-      </div>
+      <Link
+        to={`/profiles/${id}`}
+        className={`d-flex align-items-center text-decoration-none ${
+          mobile && "flex-column text-center"
+        }`}
+      >
+        <Avatar src={image} height={imageSize} />
+        <div className={`mx-2 ${styles.WordBreak}`}>
+          <strong>{owner}</strong>
+        </div>
+      </Link>
       <div className={`text-right ${!mobile && "ml-auto"}`}>
         {!mobile &&
           currentUser &&
           !is_owner &&
           (following_id ? (
-            <Button className={btnStyles.Button} onClick={() => handleUnfollow(profile)}>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Follow}`}
+              onClick={() => handleUnfollow(profile)}
+            >
               Unfollow
             </Button>
           ) : (
-            <Button className={btnStyles.Button} onClick={() => handleFollow(profile)}>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Follow}`}
+              onClick={() => handleFollow(profile)}
+            >
               Follow
             </Button>
           ))}

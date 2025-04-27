@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container, Image, Button } from "react-bootstrap";
+import { Col, Row, Container, Image, Button, Card } from "react-bootstrap";
 import Asset from "../../components/Asset";
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import PostStyles from "../../styles/Post.module.css";
 import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
@@ -18,6 +19,7 @@ import NoResults from "../../assets/no-results.png";
 import Post from "../posts/Post";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import PopularLocations from "../locations/PopularLocations";
+import PopularPosts from "../posts/PopularPosts";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -67,7 +69,9 @@ function ProfilePage() {
         </Col>
         {/* Username */}
         <Col lg={6}>
-          <h3 className="m-2">{profile?.owner}</h3>
+          <h3 className="m-2">
+            <strong>{profile?.owner}</strong>
+          </h3>
           {/* Profile stats */}
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
@@ -90,31 +94,29 @@ function ProfilePage() {
             !is_owner &&
             (profile?.following_id ? (
               <Button
-                className={btnStyles.Button}
+                className={`${btnStyles.Button} ${btnStyles.Follow}`}
                 onClick={() => handleUnfollow(profile)}
               >
                 Unfollow
               </Button>
             ) : (
               <Button
-                className={btnStyles.Button}
+                className={`${btnStyles.Button} ${btnStyles.Follow}`}
                 onClick={() => handleFollow(profile)}
               >
                 Follow
               </Button>
             ))}
         </Col>
-        {/* Profile Content */}
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
+      {/* Profile Content */}
+      <hr />
+      {profile?.content && <Col className="p-3">{profile.content}</Col>}
     </>
   );
 
   const mainProfilePosts = (
     <>
-      <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
-      <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
@@ -154,6 +156,7 @@ function ProfilePage() {
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
         <PopularLocations />
+        <PopularPosts />
       </Col>
     </Row>
   );
