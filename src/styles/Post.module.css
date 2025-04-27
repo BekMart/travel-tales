@@ -6,19 +6,34 @@
   text-align: center;
 }
 
+.Header {
+  color: antiquewhite;
+  font-size: 250%;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
 .Post figure,
 h5 {
   margin: 0 0;
 }
 
 .Heart {
-  color:#f85032;
+  color: teal;
 }
 
 .Heart:hover {
-  color: teal;
+  color: #f85032;
 }
 
 .HeartOutline:hover {
   color: #f85032;
+}
+
+.WordBreak {
+  word-break: break-all;
+}
+
+.Location {
+  font-size: x-large;
 }

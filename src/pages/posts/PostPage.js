@@ -12,6 +12,7 @@ import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import PopularLocations from "../locations/PopularLocations";
+import PopularPosts from "./PopularPosts";
 
 function PostPage() {
   const { id } = useParams();
@@ -41,7 +42,7 @@ function PostPage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Post {...post.results[0]} setPosts={setPost} postPage />
-        <Container className={appStyles.Content}>
+        <Container fluid className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
@@ -78,6 +79,7 @@ function PostPage() {
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
         <PopularLocations />
+        <PopularPosts />
       </Col>
     </Row>
   );

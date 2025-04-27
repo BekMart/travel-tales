@@ -12,11 +12,15 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import PopularLocations from "../locations/PopularLocations";
+import PopularPosts from "./PopularPosts";
+import styles from "../../styles/Post.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -36,7 +40,9 @@ function PostsPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+      <h2 className={styles.Header}>
+        {currentUser ? `Hey there, ${currentUser.username}!` : "Welcome to Travel Tales!"}
+        </h2>
         {hasLoaded ? (
           <>
             {posts.results.length ? (
@@ -64,6 +70,7 @@ function PostsPage({ message, filter = "" }) {
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
         <PopularLocations />
+        <PopularPosts />
       </Col>
     </Row>
   );
