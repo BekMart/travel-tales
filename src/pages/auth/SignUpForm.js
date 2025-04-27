@@ -53,14 +53,16 @@ const SignUpForm = () => {
   };
 
   return (
-    <Row className={styles.Row}>
-      <Col className="my-auto py-2 p-md-2" md={6}>
-        <Container className={`${appStyles.Content} p-4`}>
-          <h1 className={styles.Header}>Sign up</h1>
+    <>
+      <h1 className={styles.Heading}>Come and join us!</h1>
+      <Row className={styles.Row}>
+        <Col className="mt-3 py-2 p-md-2" md={6}>
+          <Container className={`${appStyles.Content} p-4`}>
+            <h1 className={styles.Header}>Sign up</h1>
 
-          <Form onSubmit={handleSubmit}>
-            {/* First and Last Name */}
-            {/* <Row>
+            <Form onSubmit={handleSubmit}>
+              {/* First and Last Name */}
+              {/* <Row>
               <Col>
                 <Form.Group controlId="firstName">
                   <Form.Control
@@ -87,90 +89,91 @@ const SignUpForm = () => {
               </Col>
             </Row> */}
 
-            {/* Username */}
-            <Form.Group controlId="username">
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Username"
-                name="username"
-                value={username}
-                onChange={handleChange}
-              />
-            </Form.Group>
-            {error.username?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
+              {/* Username */}
+              <Form.Group controlId="username">
+                <Form.Control
+                  className={styles.Input}
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  value={username}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              {error.username?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-            {/* Password */}
-            <Form.Group controlId="password1">
-              <Form.Control
-                className={styles.Input}
-                type="password"
-                placeholder="Password"
-                name="password1"
-                value={password1}
-                onChange={handleChange}
-              />
-            </Form.Group>
-            {error.password1?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
+              {/* Password */}
+              <Form.Group controlId="password1">
+                <Form.Control
+                  className={styles.Input}
+                  type="password"
+                  placeholder="Password"
+                  name="password1"
+                  value={password1}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              {error.password1?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-            {/* Confirm Password */}
-            <Form.Group controlId="password2">
-              <Form.Control
-                className={styles.Input}
-                type="password"
-                placeholder="Confirm Password"
-                name="password2"
-                value={password2}
-                onChange={handleChange}
-              />
-            </Form.Group>
-            {error.password2?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
+              {/* Confirm Password */}
+              <Form.Group controlId="password2">
+                <Form.Control
+                  className={styles.Input}
+                  type="password"
+                  placeholder="Confirm Password"
+                  name="password2"
+                  value={password2}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              {error.password2?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-            <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.SignUp}`}
-              type="submit"
-            >
-              Sign up
-            </Button>
-            {error.non_field_errors?.map((message, idx) => (
-              <Alert key={idx} variant="warning" className="mt-3">
-                {message}
-              </Alert>
-            ))}
-          </Form>
-        </Container>
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.SignUp}`}
+                type="submit"
+              >
+                Sign up
+              </Button>
+              {error.non_field_errors?.map((message, idx) => (
+                <Alert key={idx} variant="warning" className="mt-3">
+                  {message}
+                </Alert>
+              ))}
+            </Form>
+          </Container>
 
-        <Container className={`mt-3 ${appStyles.Content}`}>
-          <Link className={styles.Link} to="/login">
-            Already have an account? <span>Log in</span>
-          </Link>
-        </Container>
-      </Col>
+          <Container className={`mt-3 mb-5 ${appStyles.Content}`}>
+            <Link className={styles.Link} to="/login">
+              Already have an account? <span>Log in</span>
+            </Link>
+          </Container>
+        </Col>
 
-      <Col
-        md={6}
-        className={`my-auto d-none d-md-block p-4 ${styles.SignUpCol}`}
-      >
-        <Image
-          className={styles.SignUpImage}
-          src="https://res.cloudinary.com/dvgobcuck/image/upload/v1744541805/pexels-ajay-donga-1113836-2174656_rn9utz.jpg"
-          alt="Sign Up image of a couple on a yellow motorbike riding on a road with tropical palm trees on either side of the road"
-          fluid
-        />
-      </Col>
-    </Row>
+        <Col
+          md={6}
+          className={`mt-5 d-none d-md-block p-4 ${styles.SignUpCol}`}
+        >
+          <Image
+            className={styles.SignUpImage}
+            src="https://res.cloudinary.com/dvgobcuck/image/upload/v1744541805/pexels-ajay-donga-1113836-2174656_rn9utz.jpg"
+            alt="Sign Up image of a couple on a yellow motorbike riding on a road with tropical palm trees on either side of the road"
+            fluid
+          />
+        </Col>
+      </Row>
+    </>
   );
 };
 

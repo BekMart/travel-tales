@@ -52,11 +52,12 @@ function SignInForm() {
   };
 
   return (
-    <Row className={styles.Row}>
-      <Col className="my-auto py-2 p-md-2" md={6}>
-        <Container className={`${appStyles.Content} p-4`}>
-          <h1 className={styles.Header}>Log in</h1>
-
+    <>
+    <h1 className={styles.Heading}>Welcome Back!</h1>
+    <Row className={`${styles.Row} no-gutters`}>
+      <Col xs={12} md={6} className="mt-3 py-2 p-md-2">
+        <Container className={`${appStyles.Content} p-2 p-md-4`}>
+          <h2 className={styles.Header}>Log in</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Control
@@ -105,7 +106,7 @@ function SignInForm() {
           </Form>
         </Container>
 
-        <Container className={`mt-3 ${appStyles.Content}`}>
+        <Container className={`mt-3 mb-5 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
             Don't have an account? <span>Sign up now!</span>
           </Link>
@@ -114,7 +115,7 @@ function SignInForm() {
 
       <Col
         md={6}
-        className={`my-auto d-none d-md-block p-4 ${styles.SignInCol}`}
+        className={`mt-5 d-none d-md-block p-4 ${styles.SignInCol}`}
       >
         <Image
           className={styles.SignInImage}
@@ -124,6 +125,7 @@ function SignInForm() {
         />
       </Col>
     </Row>
+    </>
   );
 }
 
