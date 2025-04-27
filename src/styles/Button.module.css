@@ -14,7 +14,7 @@
     font-weight: 600;
     opacity: 0.8;
     background-color: teal;
-    color: #fcf4e9;
+    color: antiquewhite;
     cursor: pointer;
   }
   
@@ -24,7 +24,7 @@
   }
   
   .Button:active {
-    background-color: teal !important;
+    background-color: rgb(1, 69, 69) !important;
   }
   
   .Button:focus {
@@ -38,14 +38,18 @@
   
   .SignUp,
   .SignIn {
-    background-color: #f9b58e;
-    color: teal;
+    background-color: teal;
+    color: antiquewhite;
   }
 
   .Cancel {
-    background-color: rgb(227, 107, 9);
+    background-color: rgb(239, 94, 3);
   }
 
   .Create {
+    background-color: teal;
+  }
+
+  .Follow {
     background-color: teal;
   }

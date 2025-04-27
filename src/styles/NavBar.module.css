@@ -52,6 +52,12 @@
   border-radius: 10px;
 }
 
+.NavLink:hover,
+.AddPost:hover {
+  color: antiquewhite;
+  font-weight: 800;
+}
+
 @media (max-width: 585px) {
   /* Logo in top corner */
   .navBrand {
@@ -66,7 +72,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* Toggle button */
   .toggleBtnCustom {
     position: absolute;
@@ -105,19 +111,15 @@
   .NavLink,
   .AddPost {
     margin-top: 20px;
-    color: rgb(249, 199, 168);
-    font-weight: 600;
+    color: antiquewhite;
+    font-weight: 500;
   }
 
   .AddPost {
-    border: rgb(249, 199, 168) solid 2px;
+    border: antiquewhite solid 2px;
     align-self: center;
     border-radius: 10px;
     padding: 8px;
-  }
-
-  .Avatar {
-    border: rgb(249, 199, 168) solid 2px;
   }
 
   .navLinksSection {
@@ -153,7 +155,7 @@
   /* Add post link */
   .AddPost {
     align-self: center;
-    border: 2px gray solid;
+    border: 2px antiquewhite solid;
     border-radius: 10px;
     padding: 8px;
   }
