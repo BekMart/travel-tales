@@ -4,7 +4,6 @@ import {
   Nav,
   Form,
   FormControl,
-  Button,
   Container,
 } from "react-bootstrap";
 import logo from "../assets/logo.png";
@@ -34,6 +33,7 @@ const NavBar = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`/search?q=${encodeURIComponent(query)}`);
+    setQuery("");
   };
 
   const handleSignOut = async () => {
