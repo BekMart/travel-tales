@@ -10,5 +10,6 @@
 
 .Date {
   font-weight: lighter;
-  color: #f69834;
+  color: rgb(255, 11, 206);
+  font-size: smaller;
 }
