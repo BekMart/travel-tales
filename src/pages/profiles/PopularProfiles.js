@@ -9,35 +9,25 @@ const PopularProfiles = ({ mobile }) => {
   const { popularProfiles } = useProfileData();
 
   return (
-    <Container
-      className={`${appStyles.Content} ${
-        mobile && "d-lg-none text-center mb-3"
-      }`}
-    >
+    <>
       {popularProfiles.results.length ? (
         <>
-          <p>Top 5 profiles:</p>
-          {mobile ? (
-            <div className="d-flex justify-content-around">
+          {!mobile && (
+            <Container className={appStyles.Content}>
+              <p className={appStyles.Heading}>Top 5 profiles:</p>
               {[...popularProfiles.results]
-              .sort((a, b) => b.followers_count - a.followers_count)
-              .slice(0, 4).map((profile) => (
-                <Profile key={profile.id} profile={profile} mobile />
-              ))}
-            </div>
-          ) : (
-            [...popularProfiles.results]
-            .sort((a, b) => b.followers_count - a.followers_count)
-            .slice(0, 5)
-            .map((profile) => (
-              <Profile key={profile.id} profile={profile} />
-            ))
+                .sort((a, b) => b.followers_count - a.followers_count)
+                .slice(0, 5)
+                .map((profile) => (
+                  <Profile key={profile.id} profile={profile} />
+                ))}
+            </Container>
           )}
         </>
       ) : (
         <Asset spinner />
       )}
-    </Container>
+    </>
   );
 };
 
