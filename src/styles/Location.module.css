@@ -1,0 +1,10 @@
+.WordBreak {
+    word-break: break-all;
+  }
+
+.Header {
+    color: antiquewhite;
+    font-size: 300%;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
