@@ -40,8 +40,8 @@ function App() {
             exact
             path="/feed"
             render={() => (
-              <PostsPage 
-                message="No results found. Adjust the search keyword or follow a user." 
+              <PostsPage
+                message="No results found. Adjust the search keyword or follow a user."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
             )}
@@ -50,8 +50,8 @@ function App() {
             exact
             path="/liked"
             render={() => (
-              <PostsPage 
-                message="No results found. Adjust the search keyword or like a post." 
+              <PostsPage
+                message="No results found. Adjust the search keyword or like a post."
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
             )}
@@ -63,14 +63,31 @@ function App() {
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
           <Route exact path="/search" render={() => <SearchResultsPage />} />
-          <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
-          <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
-          <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <UserPasswordForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit"
+            render={() => <ProfileEditForm />}
+          />
           <Route exact path="/locations" render={() => <Locations />} />
-          <Route exact path="/locations/:slug" render={() => <LocationsPosts />} />
-          <Route render={() => <h1>404 Not Found</h1>} />
+          <Route
+            exact
+            path="/locations/:slug"
+            render={() => <LocationsPosts />}
+          />
+          <Route render={() => <h1 className={styles.NotFound}>404 Error <br/> Page Not Found</h1>} />
         </Switch>
       </Container>
+      <footer className={styles.Footer}>© 2025 Travel Tales</footer>
       <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );
