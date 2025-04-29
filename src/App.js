@@ -33,7 +33,14 @@ function App() {
             exact
             path="/"
             render={() => (
-              <PostsPage message="No results found. Adjust the search keyword." />
+              <PostsPage
+                message={
+                  <>
+                    No results found. <br /> Adjust the search keyword and try
+                    again.
+                  </>
+                }
+              />
             )}
           />
           <Route
@@ -41,7 +48,12 @@ function App() {
             path="/feed"
             render={() => (
               <PostsPage
-                message="No results found. Adjust the search keyword or follow a user."
+                message={
+                  <>
+                    No results found. <br /> Follow a user to view their posts
+                    here.
+                  </>
+                }
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
             )}
@@ -51,7 +63,12 @@ function App() {
             path="/liked"
             render={() => (
               <PostsPage
-                message="No results found. Adjust the search keyword or like a post."
+                message={
+                  <>
+                    No results found. <br /> Like a post to see it featured
+                    here.
+                  </>
+                }
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
             )}
@@ -84,7 +101,13 @@ function App() {
             path="/locations/:slug"
             render={() => <LocationsPosts />}
           />
-          <Route render={() => <h1 className={styles.NotFound}>404 Error <br/> Page Not Found</h1>} />
+          <Route
+            render={() => (
+              <h1 className={styles.NotFound}>
+                404 Error <br /> Page Not Found
+              </h1>
+            )}
+          />
         </Switch>
       </Container>
       <footer className={styles.Footer}>© 2025 Travel Tales</footer>

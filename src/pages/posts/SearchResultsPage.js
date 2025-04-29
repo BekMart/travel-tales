@@ -61,7 +61,8 @@ const SearchResultsPage = () => {
               <Container className={appStyles.Content}>
                 <Asset
                   src={NoResults}
-                  message={`No results found for "${query}". Please try again.`}
+                  message={<>No results found for "{query}". <br /> Please adjust the search keyword and try
+                    again.</>}
                 />
               </Container>
             )}
