@@ -5,6 +5,7 @@
   #109e71 800px,
   #f3f4f4 900px);
   min-height: 100vh;
+  color: rgb(94, 91, 94);
 }
 
 .Main {
@@ -45,7 +46,7 @@ a:hover {
 .Heading {
   font-size: 200%;
   font-weight: 600;
-  color: #444240;
+  color: rgb(94, 91, 94);
 }
 
 .NotFound {
