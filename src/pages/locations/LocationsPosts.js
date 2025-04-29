@@ -14,13 +14,13 @@ import styles from "../../styles/Location.module.css";
 
 function LocationsPosts() {
   const { slug } = useParams();
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState({ results: [] });
 
   useEffect(() => {
     const fetchLocationPosts = async () => {
       try {
         const { data } = await axiosReq.get(`/locations/${slug}/posts/`);
-        setPosts(data.results);
+        setPosts({ results: data.results });
       } catch (err) {
         console.log(err);
       }
@@ -33,8 +33,8 @@ function LocationsPosts() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <div>
           <h2 className={styles.Header}>{formatSlug(slug)}</h2>
-          {posts.length ? (
-            posts.map((post) => (
+          {posts.results.length ? (
+            posts.results.map((post) => (
               <Post key={post.id} {...post} setPosts={setPosts} />
             ))
           ) : (
