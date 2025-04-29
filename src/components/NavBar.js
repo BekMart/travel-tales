@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Container,
-} from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Container } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -25,6 +19,7 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
+  const handleNavClick = () => setExpanded(false);
   const width = useWindowWidth();
 
   const [query, setQuery] = useState("");
@@ -48,23 +43,31 @@ const NavBar = () => {
   };
 
   const addPostIcon = (
-    <NavLink className={styles.AddPost} to="/posts/create">
+    <NavLink
+      className={styles.AddPost}
+      to="/posts/create"
+      onClick={handleNavClick}
+    >
       <i className="fa-solid fa-plus" /> Add post
     </NavLink>
   );
   const loggedInIcons = (
     <>
       {currentUser && addPostIcon}
-      <NavLink className={styles.NavLink} to="/">
+      <NavLink className={styles.NavLink} to="/" onClick={handleNavClick}>
         <i className="fa-solid fa-house" /> Home
       </NavLink>
-      <NavLink className={styles.NavLink} to="/feed">
+      <NavLink className={styles.NavLink} to="/feed" onClick={handleNavClick}>
         <i className="fa-solid fa-stream" /> Feed
       </NavLink>
-      <NavLink className={styles.NavLink} to="/liked">
+      <NavLink className={styles.NavLink} to="/liked" onClick={handleNavClick}>
         <i className="fa-solid fa-heart" /> Liked
       </NavLink>
-      <NavLink className={styles.NavLink} to="/locations">
+      <NavLink
+        className={styles.NavLink}
+        to="/locations"
+        onClick={handleNavClick}
+      >
         <i className="fa-solid fa-earth-asia" /> Locations
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
@@ -73,17 +76,22 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
+        onClick={handleNavClick}
       >
-        <Avatar src={currentUser?.profile_image} height={50} className={styles.Avatar} />
+        <Avatar
+          src={currentUser?.profile_image}
+          height={50}
+          className={styles.Avatar}
+        />
       </NavLink>
     </>
   );
   const loggedOutIcons = (
     <>
-      <NavLink className={styles.NavLink} to="/login">
+      <NavLink className={styles.NavLink} to="/login" onClick={handleNavClick}>
         <i className="fa-solid fa-right-to-bracket" /> Login
       </NavLink>
-      <NavLink className={styles.NavLink} to="/signup">
+      <NavLink className={styles.NavLink} to="/signup" onClick={handleNavClick}>
         <i className="fa-solid fa-user-plus" /> Sign up
       </NavLink>
     </>
@@ -132,16 +140,18 @@ const NavBar = () => {
 
           {/* Collapse menu (small screens) */}
           {width < 768 && (
-            <Navbar.Collapse
-              id="basic-navbar-nav"
+            <div
+              ref={ref}
               className={`${
                 expanded ? styles.menuOpen : styles.menuClose
               } d-md-none`}
             >
-              <Nav className="flex-column text-left">
-                {currentUser ? loggedInIcons : loggedOutIcons}
-              </Nav>
-            </Navbar.Collapse>
+              {expanded && (
+                <Nav className="flex-column text-left">
+                  {currentUser ? loggedInIcons : loggedOutIcons}
+                </Nav>
+              )}
+            </div>
           )}
         </Container>
       </Navbar>
