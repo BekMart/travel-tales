@@ -23,11 +23,11 @@ h5 {
 }
 
 .Heart:hover {
-  color: #f85032;
+  color: rgb(255, 11, 206);
 }
 
 .HeartOutline:hover {
-  color: #f85032;
+  color: rgb(255, 11, 206);
 }
 
 .WordBreak {
