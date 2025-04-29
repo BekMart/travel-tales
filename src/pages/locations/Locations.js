@@ -4,7 +4,7 @@ import { axiosReq } from "../../api/axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import PopularProfiles from "../profiles/PopularProfiles";
 import PopularLocations from "./PopularLocations";
 import PopularPosts from "../posts/PopularPosts";
@@ -38,24 +38,27 @@ function Locations() {
             loader={<Asset spinner />}
           >
             {locations.results.map((location) => (
-              <Container className={appStyles.Content}>
-                <div className="position-relative mb-4">
+              <Card key={location.slug} className={appStyles.Content}>
+                <Link
+                  to={`/locations/${location.slug}`}
+                  className={styles.ImageLink}
+                >
+                  <Card.Img
+                    variant="top"
+                    src={location.image || "/placeholder.jpg"}
+                    alt={location.name}
+                    className="PostImg"
+                  />
+                </Link>
+                <Card.Body className="text-center">
                   <Link
                     to={`/locations/${location.slug}`}
-                    className="text-decoration-none"
+                    className={styles.Title}
                   >
-                    <img
-                      src={location.image || "/placeholder.jpg"}
-                      alt={location.name}
-                      className="w-100 rounded"
-                      style={{ height: "300px", objectFit: "cover" }}
-                    />
-                    <div className="position-absolute text-center">
-                      <h4 className="mb-2">{location.name}</h4>
-                    </div>
+                    {location.name}
                   </Link>
-                </div>
-              </Container>
+                </Card.Body>
+              </Card>
             ))}
           </InfiniteScroll>
         ) : (

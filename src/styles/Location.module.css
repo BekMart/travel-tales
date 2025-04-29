@@ -8,3 +8,25 @@
     font-weight: 600;
     margin-bottom: 30px;
 }
+
+.ImageLink {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ImageLink:hover {
+    scale: 1;
+  }
+
+  .Title {
+    font-size: xx-large;
+    font-weight: 600;
+    color: rgb(94, 91, 91);
+  }
+
+  .Title:hover {
+    color: teal;
+    scale: 1.05;
+    text-decoration: none;
+  }
