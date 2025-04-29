@@ -24,7 +24,7 @@ const SearchResultsPage = () => {
     const fetchResults = async () => {
       try {
         const { data } = await api.get(`/posts/?search=${query}`);
-        setPosts({ results: data.results || [] });
+        setPosts(data);
         setHasLoaded(true);
       } catch (err) {
         console.error("Search error:", err);
