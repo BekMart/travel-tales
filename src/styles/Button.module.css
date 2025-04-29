@@ -1,55 +1,65 @@
 .Button {
-    font-size: 1.2rem;
-    align-self: center;
-    border-radius: 100px;
-    border-color: transparent;
-    padding: 4px 10px;
-    margin-left: 2px;
-    margin-right: 2px;
-    min-width: 75px;
-    text-transform: uppercase;
-  }
-  
-  .Button:hover {
-    font-weight: 600;
-    opacity: 0.8;
-    background-color: teal;
-    color: antiquewhite;
-    cursor: pointer;
-  }
-  
-  .Button:hover:active {
-    background-color: teal !important;
-    cursor: pointer;
-  }
-  
-  .Button:active {
-    background-color: rgb(1, 69, 69) !important;
-  }
-  
-  .Button:focus {
-    background-color: teal !important;
-  }
-  
-  .Wide {
-    padding: 10px 50px;
-    width: 100%;
-  }
-  
-  .SignUp,
-  .SignIn {
-    background-color: teal;
-    color: antiquewhite;
-  }
+  font-size: 1.2rem;
+  align-self: center;
+  border-radius: 100px;
+  border-color: transparent;
+  padding: 4px 10px;
+  margin: 0 2px;
+  min-width: 75px;
+  text-transform: uppercase;
+}
 
-  .Cancel {
-    background-color: rgb(239, 94, 3);
-  }
+.Button:hover {
+  font-weight: 600;
+  opacity: 0.8;
+  background-color: teal;
+  cursor: pointer;
+  color: antiquewhite;
+}
 
-  .Create {
-    background-color: teal;
-  }
+.Button:focus {
+  background-color: teal !important;
+}
 
-  .Follow {
-    background-color: teal;
-  }
+.Wide {
+  padding: 10px 50px;
+  width: 100%;
+}
+
+.Larger {
+  scale: 1.2;
+  margin: 1rem;
+}
+
+.SignUp,
+.SignIn,
+.Post,
+.Create,
+.Update,
+.Follow,
+.Save {
+  background-color: teal;
+  color: antiquewhite;
+}
+
+.Post,
+.Create,
+.Update,
+.Follow,
+.Save {
+  scale: 0.8;
+  min-width: 100px;
+}
+
+.Cancel {
+  scale: 0.8;
+  background-color: rgb(255, 11, 206);
+  color: antiquewhite;
+}
+
+.Cancel:hover {
+  background-color: rgb(255, 11, 206);
+  color: antiquewhite;
+  font-weight: 600;
+  cursor: pointer;
+}
