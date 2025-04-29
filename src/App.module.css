@@ -24,6 +24,8 @@ a {
 
 a:hover {
   color: teal;
+  text-decoration: none;
+  scale: 1.05;
 }
 
 .Content {
