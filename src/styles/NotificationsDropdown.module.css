@@ -1,0 +1,66 @@
+.NotificationToggle {
+  background-color: transparent !important;
+  border: 2px solid antiquewhite;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: antiquewhite;
+  font-size: 1rem;
+  box-shadow: none !important;
+  margin: 10px 10px 0;
+}
+
+.NotificationToggle:hover,
+.NotificationToggle:focus,
+.NotificationToggle:active,
+.NotificationToggle:focus:active,
+.NotificationToggle:focus-visible {
+  background-color: transparent !important;
+  border: 3px solid antiquewhite !important;
+  color: antiquewhite;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.IconWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.NotificationCount {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: rgb(255, 11, 206);
+  color: antiquewhite;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+  line-height: 1;
+}
+
+.Menu {
+  max-height: 275px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(94, 91, 94) #f1f1f1;
+  scroll-behavior: smooth;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgb(94, 91, 94); 
+  z-index: 1050;
+}
+
+.NotificationItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(94, 91, 94);
+}
+
+.NotificationIcon {
+  color: rgb(255, 11, 206);
+}

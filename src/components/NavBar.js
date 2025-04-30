@@ -13,6 +13,7 @@ import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import useWindowWidth from "../hooks/useWindowWidth";
+import NotificationsDropdown from "./NotificationDropdown";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -54,6 +55,9 @@ const NavBar = () => {
   const loggedInIcons = (
     <>
       {currentUser && addPostIcon}
+      <div className="{styles.NavLink}">
+        <NotificationsDropdown />
+      </div>
       <NavLink className={styles.NavLink} to="/" onClick={handleNavClick}>
         <i className="fa-solid fa-house" /> Home
       </NavLink>
