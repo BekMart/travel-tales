@@ -50,5 +50,14 @@ export const unfollowHelper = (profile, clickedProfile) => {
 export const formatSlug = (slug) =>
   slug
     .split("-")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
+
+export function capitalizeWords(str) {
+  return str
+    .split(" ")
+    .map((word) =>
+      word.length > 0 ? word[0].toUpperCase() + word.slice(1).toLowerCase() : ""
+    )
+    .join(" ");
+}

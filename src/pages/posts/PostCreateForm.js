@@ -20,6 +20,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axios";
 import { useRedirect } from "../../hooks/useRedirect";
 import { toast } from "react-toastify";
+import { capitalizeWords } from "../../utils/utils";
 
 function PostCreateForm() {
   useRedirect("loggedOut");
@@ -58,8 +59,8 @@ function PostCreateForm() {
     e.preventDefault();
     const formData = new FormData();
 
-    formData.append("title", title);
-    formData.append("location_input", location_input);
+    formData.append("title", capitalizeWords(title));
+    formData.append("location_input", capitalizeWords(location_input));
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
 

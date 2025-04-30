@@ -17,6 +17,7 @@ import {
 } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axios";
 import { toast } from "react-toastify";
+import { capitalizeWords } from "../../utils/utils";
 
 function PostEditForm() {
   const [error, setError] = useState({});
@@ -41,7 +42,12 @@ function PostEditForm() {
         const { title, location, content, image, is_owner } = data;
 
         is_owner
-          ? setPostData({ title, location_input: location, content, image })
+          ? setPostData({
+              title: capitalizeWords(title),
+              location_input: capitalizeWords(location),
+              content,
+              image,
+            })
           : history.push("/");
       } catch (err) {
         console.log(err);
@@ -163,9 +169,8 @@ function PostEditForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-      
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-        <h1 className={styles.Heading}>Ooop, let's fix that..</h1>
+          <h1 className={styles.Heading}>Ooop, let's fix that..</h1>
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
