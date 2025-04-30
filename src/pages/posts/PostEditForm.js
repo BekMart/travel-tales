@@ -23,12 +23,12 @@ function PostEditForm() {
 
   const [postData, setPostData] = useState({
     title: "",
-    location: "",
+    location_input: "",
     content: "",
     image: "",
   });
 
-  const { title, location, content, image } = postData;
+  const { title, location_input, content, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -41,7 +41,7 @@ function PostEditForm() {
         const { title, location, content, image, is_owner } = data;
 
         is_owner
-          ? setPostData({ title, location, content, image })
+          ? setPostData({ title, location_input: location, content, image })
           : history.push("/");
       } catch (err) {
         console.log(err);
@@ -72,7 +72,7 @@ function PostEditForm() {
     const formData = new FormData();
 
     formData.append("title", title);
-    formData.append("location", location);
+    formData.append("location_input", location_input);
     formData.append("content", content);
 
     if (imageInput?.current?.files[0]) {
@@ -116,8 +116,8 @@ function PostEditForm() {
         <Form.Control
           className={styles.Input}
           type="text"
-          name="location"
-          value={location}
+          name="location_input"
+          value={location_input}
           onChange={handleChange}
         />
       </Form.Group>

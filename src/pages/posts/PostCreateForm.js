@@ -27,12 +27,12 @@ function PostCreateForm() {
 
   const [postData, setPostData] = useState({
     title: "",
-    location: "",
+    location_input: "",
     content: "",
     image: "",
   });
 
-  const { title, location, content, image } = postData;
+  const { title, location_input, content, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -59,7 +59,7 @@ function PostCreateForm() {
     const formData = new FormData();
 
     formData.append("title", title);
-    formData.append("location", location);
+    formData.append("location_input", location_input);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
 
@@ -95,13 +95,13 @@ function PostCreateForm() {
         </Alert>
       ))}
       {/* Post Location */}
-      <Form.Group controlId="location">
+      <Form.Group controlId="location_input">
         <Form.Label>Location</Form.Label>
         <Form.Control
           className={styles.Input}
           type="text"
-          name="location"
-          value={location}
+          name="location_input"
+          value={location_input}
           onChange={handleChange}
         />
       </Form.Group>
