@@ -41,7 +41,7 @@ const PopularLocations = ({ mobile }) => {
               >
                 <img
                   src={location.image || "/placeholder.jpg"}
-                  alt={location.name}
+                  alt=""
                   width="60"
                   height="60"
                   className="rounded me-2"

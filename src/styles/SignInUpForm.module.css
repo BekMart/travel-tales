@@ -35,11 +35,12 @@
   text-align: center;
   display: block;
   margin: auto;
-  color: gray;
+  color: rgb(94, 91, 94);
 }
 
 .Link span {
-  color: rgb(255, 11, 206);
+  color: #de0392;
+  font-size: larger;
 }
 
 .Container {

@@ -54,6 +54,7 @@ function NotificationsDropdown() {
       <Dropdown.Toggle
         className={styles.NotificationToggle}
         id="notification-dropdown"
+        aria-label="Open notifications dropdown"
       >
         <div className={styles.IconWrapper}>
           <i className="fa fa-bell" />

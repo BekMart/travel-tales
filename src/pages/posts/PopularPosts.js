@@ -40,7 +40,7 @@ const PopularPosts = ({ mobile }) => {
             >
               <img
                 src={post.image}
-                alt={post.title}
+                alt=""
                 width="60"
                 height="60"
                 className="rounded me-2"
