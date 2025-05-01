@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container, Image, Button, Card } from "react-bootstrap";
+import { Col, Row, Container, Image, Button } from "react-bootstrap";
 import Asset from "../../components/Asset";
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import PostStyles from "../../styles/Post.module.css";
 import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
