@@ -14,7 +14,7 @@
   opacity: 0.8;
   background-color: teal;
   cursor: pointer;
-  color: antiquewhite;
+  color: white;
 }
 
 .Button:focus {
@@ -27,7 +27,7 @@
 }
 
 .Larger {
-  scale: 1.2;
+  scale: 1.2 !important;
   margin: 1rem;
 }
 
@@ -38,8 +38,8 @@
 .Update,
 .Follow,
 .Save {
-  background-color: teal;
-  color: antiquewhite;
+  background-color: #00796b;
+  color: white;
 }
 
 .Post,
@@ -53,13 +53,13 @@
 
 .Cancel {
   scale: 0.8;
-  background-color: rgb(255, 11, 206);
-  color: antiquewhite;
+  background-color: #de0392;
+  color: white;
 }
 
 .Cancel:hover {
   background-color: rgb(255, 11, 206);
-  color: antiquewhite;
+  color: white;
   font-weight: 600;
   cursor: pointer;
 }
