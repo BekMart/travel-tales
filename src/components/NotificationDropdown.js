@@ -58,7 +58,9 @@ function NotificationsDropdown() {
         <div className={styles.IconWrapper}>
           <i className="fa fa-bell" />
           {notifications.length > 0 && (
-            <span className={styles.NotificationCount}>{notifications.length}</span>
+            <span className={styles.NotificationCount}>
+              {notifications.length}
+            </span>
           )}
         </div>
       </Dropdown.Toggle>
@@ -107,9 +109,7 @@ function NotificationsDropdown() {
             })}
             <hr className="my-1" />
             <Dropdown.Item
-              className={styles.NotificationItem}
-              fw-bold
-              text-center
+              className={`${styles.NotificationItem} fw-bold text-center`}
               onClick={handleMarkAllRead}
             >
               <strong>Mark all read</strong>
