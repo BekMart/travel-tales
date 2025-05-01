@@ -111,17 +111,10 @@ const NavBar = () => {
       >
         <Container>
           {/* Logo and title */}
-          <NavLink to="/">
-            <Navbar.Brand className={styles.navBrand}>
-              <img
-                src={logo}
-                alt="logo"
-                height="80px"
-                className={styles.logo}
-              />
-              <span className={styles.navTitle}>Travel Tales</span>
-            </Navbar.Brand>
-          </NavLink>
+          <Navbar.Brand as={NavLink} to="/" className={styles.navBrand}>
+            <img src={logo} alt="logo" height="80px" className={styles.logo} />
+            <span className={styles.navTitle}>Travel Tales</span>
+          </Navbar.Brand>
 
           {/* Search bar */}
           <Form inline className={styles.navSearch} onSubmit={handleSearch}>
