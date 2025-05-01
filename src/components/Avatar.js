@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Avatar.module.css";
 
-const Avatar = ({ src, height = 45 }) => {
+const Avatar = ({ src, alt, height = 45 }) => {
   return (
     <span>
       <img
@@ -9,7 +9,7 @@ const Avatar = ({ src, height = 45 }) => {
         src={src}
         height={height}
         width={height}
-        alt="avatar"
+        alt={alt}
       />
     </span>
   );

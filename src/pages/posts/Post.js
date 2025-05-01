@@ -87,7 +87,11 @@ const Post = (props) => {
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profile_image} height={55} />
+            <Avatar
+              src={profile_image}
+              alt={`${owner}'s profile picture`}
+              height={55}
+            />
             <strong>{owner}</strong>
           </Link>
           {location_details?.slug ? (
@@ -142,7 +146,8 @@ const Post = (props) => {
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" aria-hidden="true" />
             <span className={styles.srOnly}>
-            View {comments_count} comment{comments_count !== 1 && "s"} for post
+              View {comments_count} comment{comments_count !== 1 && "s"} for
+              post
             </span>
           </Link>
           {comments_count}

@@ -26,7 +26,7 @@ const Profile = (props) => {
           mobile && "flex-column text-center"
         }`}
       >
-        <Avatar src={image} height={imageSize} />
+        <Avatar src={image} alt={`${owner}'s profile picture`} height={imageSize} />
         <div className={`mx-2 ${styles.WordBreak}`}>
           <strong>{owner}</strong>
         </div>

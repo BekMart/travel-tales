@@ -84,6 +84,7 @@ const NavBar = () => {
       >
         <Avatar
           src={currentUser?.profile_image}
+          alt={`${currentUser?.username}'s profile picture`}
           height={50}
           className={styles.Avatar}
         />

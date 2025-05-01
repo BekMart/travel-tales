@@ -53,7 +53,7 @@ const Comment = (props) => {
       <hr />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
-          <Avatar src={profile_image} />
+          <Avatar src={profile_image} alt={`${owner}'s profile picture`} />
         </Link>
         <Media.Body className={`ms-2 ${styles.Body}`}>
           <span className={styles.Owner}>{owner}</span>
