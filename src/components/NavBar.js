@@ -131,7 +131,6 @@ const NavBar = () => {
           <Navbar.Toggle
             ref={ref}
             onClick={() => setExpanded(!expanded)}
-            aria-controls="basic-navbar-nav"
             className={styles.toggleBtnCustom}
           />
 
