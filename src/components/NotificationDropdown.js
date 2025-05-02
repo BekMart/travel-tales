@@ -11,6 +11,8 @@ function NotificationsDropdown() {
   const currentUser = useCurrentUser();
 
   useEffect(() => {
+    if (!currentUser) return;
+
     const fetchAllNotifications = async () => {
       let allNotifications = [];
       let nextUrl = "/notifications/unread/";
@@ -29,10 +31,7 @@ function NotificationsDropdown() {
         console.error("Error fetching notifications", err);
       }
     };
-
-    if (currentUser) {
-      fetchAllNotifications();
-    }
+    fetchAllNotifications();
   }, [currentUser]);
 
   const handleNotificationClick = async (notification, redirectUrl) => {
