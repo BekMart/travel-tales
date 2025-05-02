@@ -16,6 +16,7 @@ import api from "../../api/axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { toast } from "react-toastify";
+import { setTokenTimestamp } from "../../utils/utils";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
@@ -41,9 +42,9 @@ function SignInForm() {
     e.preventDefault();
 
     try {
-      await api.post("/dj-rest-auth/login/", signInData);
-      const { data } = await api.get("/dj-rest-auth/user/");
-      setCurrentUser(data);
+      const { data } = await api.post("/dj-rest-auth/login/", signInData);
+      setCurrentUser(data.user);
+      setTokenTimestamp(data);
       toast.success("Welcome back!");
       history.goBack();
     } catch (err) {
