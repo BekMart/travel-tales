@@ -3,10 +3,12 @@ import { Dropdown } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import api from "../api/axios";
 import styles from "../styles/NotificationsDropdown.module.css";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 function NotificationsDropdown() {
   const [notifications, setNotifications] = useState([]);
   const history = useHistory();
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchAllNotifications = async () => {
@@ -27,8 +29,11 @@ function NotificationsDropdown() {
         console.error("Error fetching notifications", err);
       }
     };
-    fetchAllNotifications();
-  }, []);
+
+    if (currentUser) {
+      fetchAllNotifications();
+    }
+  }, [currentUser]);
 
   const handleNotificationClick = async (notification, redirectUrl) => {
     try {
