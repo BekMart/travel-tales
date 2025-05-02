@@ -121,7 +121,7 @@ const NavBar = () => {
 
           {/* Search bar */}
           <Form inline className={styles.navSearch} onSubmit={handleSearch}>
-          <Form.Label className={"sr-only"}>Search</Form.Label>
+          <Form.Label className="sr-only">Search</Form.Label>
             <FormControl
               type="text"
               placeholder="Search posts/profiles"
