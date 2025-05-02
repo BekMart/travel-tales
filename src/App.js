@@ -19,6 +19,7 @@ import Locations from "./pages/locations/Locations";
 import LocationsPosts from "./pages/locations/LocationsPosts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NotFound from "./components/NotFound";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -101,13 +102,7 @@ function App() {
             path="/locations/:slug"
             render={() => <LocationsPosts />}
           />
-          <Route
-            render={() => (
-              <h1 className={styles.NotFound}>
-                404 Error <br /> Page Not Found
-              </h1>
-            )}
-          />
+          <Route render={() => <NotFound />} />
         </Switch>
       </Container>
       <footer className={styles.Footer}>© 2025 Travel Tales</footer>

@@ -95,6 +95,9 @@ const NavBar = () => {
   );
   const loggedOutIcons = (
     <>
+      <NavLink className={styles.NavLink} to="/" onClick={handleNavClick}>
+        <i className="fa-solid fa-house" /> Home
+      </NavLink>
       <NavLink className={styles.NavLink} to="/login" onClick={handleNavClick}>
         <i className="fa-solid fa-right-to-bracket" /> Login
       </NavLink>
