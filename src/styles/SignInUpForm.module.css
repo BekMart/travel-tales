@@ -1,18 +1,4 @@
-.Row {
-  min-height: (100vh - 100px);
-  --bs-gutter-x: 0;
-}
-
-.Input {
-  background: #ffffff;
-  border: 1px solid teal;
-  box-sizing: border-box;
-  border-radius: 5px;
-  color: teal;
-  text-align: center;
-  padding: 20px;
-}
-
+/* Main Heading */
 .Heading {
   color: antiquewhite;
   font-size: 300%;
@@ -20,6 +6,13 @@
   margin-bottom: 10px;
 }
 
+/* Page content layout */
+.Row {
+  min-height: calc(100vh - 100px);
+  --bs-gutter-x: 0;
+}
+
+/* Form heading */
 .Header {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
@@ -30,6 +23,18 @@
   color: teal;
 }
 
+/* Form input fields */
+.Input {
+  background: #ffffff;
+  border: 1px solid teal;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: teal;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Link to login/sign up page*/
 .Link {
   text-decoration: none;
   text-align: center;
@@ -38,22 +43,19 @@
   color: rgb(94, 91, 94);
 }
 
+/* Highlight keywords in link */
 .Link span {
   color: #de0392;
   font-size: larger;
 }
 
-.Container {
-  padding: 10px 5px;
-}
-
-.SignUpCol,
-.SignInCol {
+/* Image column */
+.ImageCol {
   height: 350px;
 }
 
-.SignUpImage,
-.SignInImage {
+/* Image */
+.Image {
   width: 100%;
   height: 100%;
   object-fit: cover;

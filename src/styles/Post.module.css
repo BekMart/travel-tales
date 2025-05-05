@@ -1,53 +1,73 @@
+/* Post container */
 .Post {
   background-color: #ffffff;
   border: 1px solid #dadadf;
-  border-radius: 2px;
+  border-radius: 3px;
   margin-bottom: 16px;
   text-align: center;
 }
 
+/* Wrapper so username can sit underneath avatar in post */
+.ProfileWrapper {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Avatar and profile owner name */
+.ProfileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Profile Username */
+.Name {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Location heading */
+.Location {
+  font-size: x-large;
+  word-break: break-word;
+}
+
+/* Spacing between date and edit post menu */
+.Date {
+  margin-right: 10px;
+}
+
+/* Post image */
 .ImageLink {
   display: block;
   margin: 0;
   padding: 0;
 }
 
+/* Don't get bigger */
 .ImageLink:hover {
   scale: 1;
 }
 
-.Header {
-  color: antiquewhite;
-  font-size: 250%;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-
-.Post figure,
-h5 {
-  margin: 0 0;
-}
-
+/* If user has liked post */
 .Heart {
-  color: teal;
-}
-
-.Heart:hover {
   color: rgb(255, 11, 206);
 }
 
+/* Hover over to unlike */
+.Heart:hover {
+  color: teal;
+}
+
+/* Hover over to like */
 .HeartOutline:hover {
   color: rgb(255, 11, 206);
 }
 
-.WordBreak {
-  word-break: break-all;
-}
-
-.Location {
-  font-size: x-large;
-}
-
+/* Hidden screen reader text */
 .srOnly {
   position: absolute;
   width: 1px;
@@ -57,4 +77,23 @@ h5 {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* On small screens */
+@media (max-width: 500px) {
+  /* Hide name */
+  .Name {
+    display: none;
+  }
+
+  /* Smaller location font */
+  .Location {
+    font-size: large;
+  }
+
+  /* Smaller date */
+  .Date {
+    margin-right: 0;
+    scale: 0.8;
+  }
 }

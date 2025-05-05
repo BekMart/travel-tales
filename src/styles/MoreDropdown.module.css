@@ -1,11 +1,23 @@
+/* Edit post menu items in toggle menu */
 .DropdownItem {
   display: inline-block;
   max-width: 50%;
   padding: 0px;
 }
 
+/* Dropdown menu */
 .Absolute {
   position: absolute;
   right: 0;
   z-index: 99;
+}
+
+/* Edit profile menu items */
+.EditProfileMenu {
+  color: rgb(94, 91, 94);
+}
+
+/* Create gap between icon and menu item */
+.EditProfileMenu i {
+  margin-right: 6px;
 }

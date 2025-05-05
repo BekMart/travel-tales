@@ -1,7 +1,4 @@
-.Margin {
-  margin: 50px;
-}
-
+/* Page heading */
 .Heading {
   color: antiquewhite;
   font-weight: 600;
@@ -9,3 +6,7 @@
   margin-bottom: 50px;
 }
 
+/* Margin in content box */
+.TopMargin {
+  margin: 20px;
+}

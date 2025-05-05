@@ -1,3 +1,4 @@
+/* Notification toggle */
 .NotificationToggle {
   background-color: transparent !important;
   border: 2px solid antiquewhite;
@@ -10,26 +11,28 @@
   color: antiquewhite;
   font-size: 1rem;
   box-shadow: none !important;
-  margin: 10px 10px 0;
+  margin: 10px auto -10px;
 }
 
+/* Notification toggle - action */
 .NotificationToggle:hover,
 .NotificationToggle:focus,
 .NotificationToggle:active,
 .NotificationToggle:focus:active,
 .NotificationToggle:focus-visible {
-  background-color: transparent !important;
   border: 3px solid antiquewhite !important;
   color: antiquewhite;
   outline: none !important;
   box-shadow: none !important;
 }
 
+/* To enable count to sit atop toggle */
 .IconWrapper {
   position: relative;
   display: inline-block;
 }
 
+/* Notification count inside toggle */
 .NotificationCount {
   position: absolute;
   top: -6px;
@@ -42,18 +45,22 @@
   line-height: 1;
 }
 
+/* Dropdown menu */
 .Menu {
-  max-height: 275px;
+  max-height: 280px;
   overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: rgb(94, 91, 94) #f1f1f1;
   scroll-behavior: smooth;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid rgb(94, 91, 94); 
+  border: 1px solid rgb(94, 91, 94);
   z-index: 1050;
+  box-sizing: border-box;
 }
 
+/* Notification items */
 .NotificationItem {
   display: flex;
   align-items: center;
@@ -61,6 +68,14 @@
   color: rgb(94, 91, 94);
 }
 
+/* Notification type icons in menu */
 .NotificationIcon {
   color: rgb(255, 11, 206);
+}
+
+/* Change position of toggle in horizontal menu format */
+@media (min-width: 768px) {
+  .NotificationToggle {
+    margin: 28px 0 0 20px;
+  }
 }

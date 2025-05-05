@@ -28,16 +28,13 @@
 .Input {
   background: #ffffff;
   border: 1px solid teal;
-  box-sizing: border-box;
   border-radius: 5px;
-  color: teal;
-  text-align: center;
   padding: 20px;
 }
 
-/* Image container when heading takes up more space */
-@media (min-width: 768px) and (max-width: 991px) {
-  .Container {
-    min-height: 370px;
-  }
+/* Input field - action */
+.Input:hover,
+.Input:active,
+.Input:focus {
+  border: 2px teal solid;
 }

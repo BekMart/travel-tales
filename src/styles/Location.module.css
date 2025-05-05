@@ -1,32 +1,13 @@
-.WordBreak {
-    word-break: break-all;
-  }
-
-.Header {
-    color: antiquewhite;
-    font-size: 300%;
-    font-weight: 600;
-    margin-bottom: 30px;
+/* Location menu image */
+.ImageLink {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
 }
 
-.ImageLink {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .ImageLink:hover {
-    scale: 1;
-  }
-
-  .Title {
-    font-size: xx-large;
-    font-weight: 600;
-    color: rgb(94, 91, 94);
-  }
-
-  .Title:hover {
-    color: teal;
-    scale: 1.05;
-    text-decoration: none;
-  }
+/* Location menu title */
+.Title {
+  font-size: xx-large;
+  font-weight: 600;
+}

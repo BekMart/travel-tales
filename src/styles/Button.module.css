@@ -1,36 +1,28 @@
+/* Generic button styling */
 .Button {
   font-size: 1.2rem;
   align-self: center;
   border-radius: 100px;
-  border-color: transparent;
+  border-color: transparent !important;
   padding: 4px 10px;
   margin: 0 2px;
   min-width: 75px;
   text-transform: uppercase;
 }
 
-.Button:hover {
+/* general button - action */
+.Button:hover,
+.Button:focus,
+.Button:active {
   font-weight: 600;
   opacity: 0.8;
   background-color: teal;
   cursor: pointer;
   color: white;
+  border: transparent !important;
 }
 
-.Button:focus {
-  background-color: teal !important;
-}
-
-.Wide {
-  padding: 10px 50px;
-  width: 100%;
-}
-
-.Larger {
-  scale: 1.2 !important;
-  margin: 1rem;
-}
-
+/* Button colour */
 .SignUp,
 .SignIn,
 .Post,
@@ -42,6 +34,21 @@
   color: white;
 }
 
+/* Cancel button colours */
+.Cancel {
+  scale: 0.8;
+  background-color: #de0392;
+  color: white;
+}
+
+/* Cancel button - action */
+.Cancel:hover,
+.Cancel:focus,
+.Cancel:active {
+  background-color: rgb(255, 11, 206);
+}
+
+/* Button sizing - smaller */
 .Post,
 .Create,
 .Update,
@@ -51,15 +58,14 @@
   min-width: 100px;
 }
 
-.Cancel {
-  scale: 0.8;
-  background-color: #de0392;
-  color: white;
+/* Wide auth buttons */
+.Wide {
+  padding: 10px 50px;
+  width: 100%;
 }
 
-.Cancel:hover {
-  background-color: rgb(255, 11, 206);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
+/* Larger profile follow/unfollow buttons */
+.Larger {
+  scale: 1.2 !important;
+  margin: 1rem;
 }

@@ -1,34 +1,51 @@
+/* Global styles */
+/* Set base font and prevent horizontal overflow */
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* App container styles */
 .App {
   text-align: center;
-  background: linear-gradient(to bottom,
-  #4e4e4e 700px,
-  #109e71 800px,
-  #f3f4f4 900px);
+  background: linear-gradient(
+    to bottom,
+    #4e4e4e 700px,
+    #109e71 800px,
+    #f3f4f4 900px
+  );
+  color: rgb(94, 91, 94);
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+/* Main body */
+.Main {
+  flex: 1;
+  padding-top: 20px;
+  min-height: 100%;
+}
+
+/* Page headings */
+.PageHeading {
+  color: antiquewhite;
+  font-size: 300%;
+  font-weight: 600;
+  margin: 0 20px 30px ;
+}
+
+/* Top 5 popular headings */
+.PopularHeading {
+  font-size: 200%;
+  font-weight: 600;
   color: rgb(94, 91, 94);
 }
 
-.Main {
-  padding-top: 20px;
-}
-
-body, html {
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  padding-left: 10px;
-}
-
-a:hover {
-  color: teal;
-  text-decoration: none;
-  scale: 1.05;
-}
-
+/* Content container */
 .Content {
   background-color: #ffffff;
   padding: 10px;
@@ -37,24 +54,26 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.Image {
-  max-height: 40vh;
-  max-width: 100%;
-  object-fit: contain;
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  padding-left: 10px;
 }
 
-.Heading {
-  font-size: 200%;
-  font-weight: 600;
-  color: rgb(94, 91, 94);
+/* Links - hover */
+a:hover {
+  color: teal;
+  text-decoration: none;
+  scale: 1.05;
 }
 
-.NotFound {
-  color: antiquewhite;
-  font-weight: 600;
-  margin-bottom: 400px;
+/* Word break */
+.WordBreak {
+  word-break: break-word;
 }
 
+/* Footer */
 .Footer {
   height: 80px;
   background: #222;
@@ -64,6 +83,7 @@ a:hover {
   justify-content: center;
 }
 
+/* Adjust padding in smaller screens */
 @media (min-width: 768px) {
   .Main {
     padding-top: 50px;

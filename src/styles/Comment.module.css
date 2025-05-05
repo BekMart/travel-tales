@@ -1,13 +1,16 @@
+/* Comment content to the left */
 .Body {
-    text-align: left;
+  text-align: left;
 }
 
+/* Comment owner details */
 .Owner {
   font-weight: bold;
   color: teal;
   margin-right: 8px;
 }
 
+/* Date details */
 .Date {
   font-weight: 600;
   color: #de0392;
