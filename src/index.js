@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { createRoot } from 'react-dom/client';
 import "./index.css";
 import App from "./App";
@@ -10,17 +9,14 @@ import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-root.render(<App />);
-
-ReactDOM.render(
+root.render(
     <Router>
       <CurrentUserProvider>
         <ProfileDataProvider>
           <App />
         </ProfileDataProvider>
       </CurrentUserProvider>
-    </Router>,
-  document.getElementById("root")
+    </Router>
 );
 
 reportWebVitals();
