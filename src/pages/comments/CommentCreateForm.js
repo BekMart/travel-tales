@@ -1,32 +1,40 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import btnStyles from "../../styles/Button.module.css";
-import styles from "../../styles/CommentCreateEditForm.module.css";
-import Avatar from "../../components/Avatar";
-import { axiosRes } from "../../api/axios";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { axiosRes } from "../../api/axios";
+import Avatar from "../../components/Avatar";
+import styles from "../../styles/CommentCreateEditForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
+// Component to allow authenticated users to create comments on posts
 function CommentCreateForm(props) {
+  // Destructure props passed from the parent component
   const { post, setPost, setComments, profileImage, profile_id } = props;
+  // Local state for the content of the new comment
   const [content, setContent] = useState("");
 
+  // Handle input change in the comment textarea
   const handleChange = (event) => {
     setContent(event.target.value);
   };
 
+  // Handle form submission to create a new comment
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Send POST request to create comment
       const { data } = await axiosRes.post("/comments/", {
         content,
         post,
       });
+      // Prepend new comment to the existing list
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
       }));
+      // Increment the comment count on the associated post
       setPost((prevPost) => ({
         results: [
           {
@@ -35,10 +43,10 @@ function CommentCreateForm(props) {
           },
         ],
       }));
+      // Clear the textarea and show success message
       setContent("");
       toast.success("Thanks for the comment!");
     } catch (err) {
-      console.log(err);
       toast.error("Something went wrong. Please try again.");
     }
   };
@@ -47,9 +55,15 @@ function CommentCreateForm(props) {
     <Form className="mt-2" onSubmit={handleSubmit}>
       <Form.Group>
         <InputGroup>
+          {/* Link avatar to the user's profile */}
           <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profileImage} alt={`${profileImage.owner}'s profile picture`} />
+            <Avatar
+              src={profileImage}
+              alt={`${profileImage.owner}'s profile picture`}
+            />
           </Link>
+
+          {/* Comment input field */}
           <Form.Control
             className={styles.Form}
             placeholder="Write a comment..."
@@ -60,6 +74,8 @@ function CommentCreateForm(props) {
           />
         </InputGroup>
       </Form.Group>
+
+      {/* Submit button; disabled if the input is empty */}
       <button
         className={`${btnStyles.Button} ${btnStyles.Post} btn d-block ml-auto`}
         disabled={!content.trim()}
