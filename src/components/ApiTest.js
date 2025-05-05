@@ -3,6 +3,7 @@ import api from '../api/axios';
 
 const ApiTest = () => {
 
+  // Function to test the API connection
   const handleTestRequest = async () => {
     try {
       const response = await api.get('/posts/');
