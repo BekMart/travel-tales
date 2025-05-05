@@ -49,6 +49,8 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.37.5",
     "msw": "^0.35.0"
   },
   "engines": {
