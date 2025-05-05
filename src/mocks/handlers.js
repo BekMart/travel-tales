@@ -1,10 +1,12 @@
 import { rest } from "msw";
 
+// Define the base URL from environment or fallback to deployed API
 const baseURL = process.env.REACT_APP_API_URL || "https://travel-api-ca880bcd8809.herokuapp.com/";
 
+// Define a list of mock request handlers for intercepting API calls
 export const handlers = [
 
-  // Mock the current user
+  // Mock the current user's endpoint
   rest.get(`${baseURL}dj-rest-auth/user/`, (req, res, ctx) => {
     return res(
       ctx.json({
@@ -20,12 +22,12 @@ export const handlers = [
     );
   }),
 
-  // Mock logout
+  // Mock the logout endpoint
   rest.post(`${baseURL}dj-rest-auth/logout/`, (req, res, ctx) => {
     return res(ctx.status(200));
   }),
 
-  // Mock login
+  // Mock the login endpoint
   rest.post(`${baseURL}dj-rest-auth/login/`, (req, res, ctx) => {
     return res(
       ctx.status(200),
@@ -41,11 +43,12 @@ export const handlers = [
     );
   }),
 
+  // Mock the token refresh endpoint
   rest.post(`${baseURL}dj-rest-auth/token/refresh/`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json({ access: "mocked_access_token" }));
   }),
 
-  // Mock unread notifications
+  // Mock the unread notifications endpoint
   rest.get(`${baseURL}notifications/unread/`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json({ results: [] }));
   }),
