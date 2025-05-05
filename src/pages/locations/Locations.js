@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { axiosReq } from "../../api/axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
-import { Row, Col, Card } from "react-bootstrap";
+import Asset from "../../components/Asset";
 import PopularProfiles from "../profiles/PopularProfiles";
 import PopularLocations from "./PopularLocations";
 import PopularPosts from "../posts/PopularPosts";
-import appStyles from "../../App.module.css";
+import { axiosReq } from "../../api/axios";
 import styles from "../../styles/Location.module.css";
+import appStyles from "../../App.module.css";
 
+// Locations page that lists all available locations that have associated posts
 function Locations() {
+  // Local state to hold location data and pagination info
   const [locations, setLocations] = useState({ results: [], next: null });
 
+  // Fetch locations on component mount
   useEffect(() => {
     const fetchLocations = async () => {
       try {
         const { data } = await axiosReq.get("/locations/");
+        // Populate results and next URL (for pagination)
         setLocations(data);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     fetchLocations();
@@ -29,7 +35,8 @@ function Locations() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <h2 className={styles.Header}>Locations</h2>
+        <h2 className={appStyles.PageHeading}>Locations</h2>
+        {/* If locations exist, display them with infinite scroll */}
         {locations.results.length ? (
           <InfiniteScroll
             dataLength={locations.results.length}
@@ -39,6 +46,7 @@ function Locations() {
           >
             {locations.results.map((location) => (
               <Card key={location.slug} className={appStyles.Content}>
+                {/* Image and link to location detail page */}
                 <Link
                   to={`/locations/${location.slug}`}
                   className={styles.ImageLink}
@@ -50,6 +58,8 @@ function Locations() {
                     className="PostImg"
                   />
                 </Link>
+
+                {/* Location name below image */}
                 <Card.Body className="text-center">
                   <Link
                     to={`/locations/${location.slug}`}
@@ -62,10 +72,12 @@ function Locations() {
             ))}
           </InfiniteScroll>
         ) : (
+          // Spinner shown initially while loading locations
           <Asset spinner />
         )}
       </Col>
 
+      {/* Sidebar section for larger screens: shows popular items */}
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
         <PopularLocations />

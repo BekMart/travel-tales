@@ -1,44 +1,43 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
-import appStyles from "../../App.module.css";
-import Asset from "../../components/Asset";
+import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { axiosReq } from "../../api/axios";
-import styles from "../../styles/Location.module.css";
+import Asset from "../../components/Asset";
+import appStyles from "../../App.module.css";
 
-const PopularLocations = ({ mobile }) => {
+// Component to display the top 5 most popular locations on larger screens
+const PopularLocations = () => {
+  // Local state to store top locations
   const [locations, setLocations] = useState([]);
 
+  // Fetch locations on mount and store the top 5
   useEffect(() => {
     const fetchTopLocations = async () => {
       try {
         const { data } = await axiosReq.get("/locations/");
         setLocations(data.results.slice(0, 5));
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     fetchTopLocations();
   }, []);
 
   return (
-    <Container
-      className={`${appStyles.Content} ${
-        mobile && "d-lg-none  text-center mb-3"
-      }`}
-    >
+    <Container className={appStyles.Content}>
+      {/* Display locations if data is available */}
       {locations.length ? (
         <>
-          <p className={appStyles.Heading}>Top 5 locations:</p>
+          <p className={appStyles.PopularHeading}>Top 5 locations:</p>
           <div>
+            {/* List the locations as a link with its assciated image and name */}
             {locations.map((location) => (
               <Link
                 key={location.slug}
                 to={`/locations/${location.slug}`}
-                className={`my-3 d-flex align-items-center text-decoration-none ${
-                  mobile && "flex-column text-center"
-                }`}
+                className="my-3 d-flex align-items-center text-decoration-none"
               >
+                {/* Display location image or placeholder */}
                 <img
                   src={location.image || "/placeholder.jpg"}
                   alt=""
@@ -46,7 +45,9 @@ const PopularLocations = ({ mobile }) => {
                   height="60"
                   className="rounded me-2"
                 />
-                <div className={`mx-2 ${styles.WordBreak}`}>
+
+                {/* Location name */}
+                <div className={`mx-2 ${appStyles.WordBreak}`}>
                   <strong>{location.name}</strong>
                 </div>
               </Link>
@@ -54,6 +55,7 @@ const PopularLocations = ({ mobile }) => {
           </div>
         </>
       ) : (
+        // Show loading spinner while fetching data
         <Asset spinner />
       )}
     </Container>
