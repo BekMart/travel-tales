@@ -1,10 +1,11 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import Asset from "./Asset";
 import NoResults from "../assets/no-results.png";
 import styles from "../styles/NotFound.module.css";
-import Asset from "./Asset";
-import { Container } from "react-bootstrap";
 import appStyles from "../App.module.css";
 
+// 404 Error page rendering
 const NotFound = () => {
   return (
     <>
@@ -20,7 +21,6 @@ const NotFound = () => {
                 Please try again.
                 </>
                 }
-            className={styles.Image}
           />
         </div>
       </Container>

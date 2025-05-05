@@ -1,38 +1,48 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Form, FormControl, Container } from "react-bootstrap";
-import logo from "../assets/logo.png";
-import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Container from "react-bootstrap/Container";
+import { NavLink, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
-import Avatar from "./Avatar";
-import api from "../api/axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
-import { useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
 import useWindowWidth from "../hooks/useWindowWidth";
-import NotificationsDropdown from "./NotificationDropdown";
 import { removeTokenTimestamp } from "../utils/utils";
+import Avatar from "./Avatar";
+import NotificationsDropdown from "./NotificationDropdown";
+import api from "../api/axios";
+import logo from "../assets/logo.png";
+import styles from "../styles/NavBar.module.css";
 
+// Create navbar component
 const NavBar = () => {
+  // Gets current authenticated user/update user in context
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-
+  // Controls dropdown menu toggle and closes on outside click
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
+  // Collapse menu on nav link click
   const handleNavClick = () => setExpanded(false);
+  // Track and update window width on resize
   const width = useWindowWidth();
-
+  // State to store search query
   const [query, setQuery] = useState("");
+  // React Router history object for navigation
   const history = useHistory();
 
+  // Handle Search query 
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`/search?q=${encodeURIComponent(query)}`);
     setQuery("");
   };
 
+  // Handle sign out
   const handleSignOut = async () => {
     try {
       await api.post("dj-rest-auth/logout/");
@@ -41,10 +51,10 @@ const NavBar = () => {
       removeTokenTimestamp();
     } catch (err) {
       toast.error("Failed to log out.");
-      console.log(err);
     }
   };
 
+  // Handle add post
   const addPostIcon = (
     <NavLink
       className={styles.AddPost}
@@ -54,6 +64,8 @@ const NavBar = () => {
       <i className="fa-solid fa-plus" /> Add post
     </NavLink>
   );
+
+  // Define icons to render for authenticated users
   const loggedInIcons = (
     <>
       {currentUser && addPostIcon}
@@ -93,6 +105,8 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+
+  // Define icons to render when no user is authenticated
   const loggedOutIcons = (
     <>
       <NavLink className={styles.NavLink} to="/" onClick={handleNavClick}>
