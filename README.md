@@ -15,6 +15,7 @@ The application allows users to sign up, create and share travel-related posts, 
     - [Website Owner Business Goals](#website-owner-goals)
     - [User Goals](#user-goals) 
     - [User Stories](#user-stories) 
+-[Design Process](#design-process)
     - [Structure](#structure) 
     - [Surface](#surface)
 
@@ -28,11 +29,7 @@ The application allows users to sign up, create and share travel-related posts, 
 - To optimize task management, I incorporated the following features:
     - Epics – I grouped related tasks under broader sections to organize work into meaningful categories.
     - Labels using the MoSCoW method – I categorized tasks into "Must Have," "Should Have," "Could Have," and "Won’t Have" to prioritize essential work.
-    ![An example of an epic catagory which has several isues within in which are all labelled using the MoSCoW method in relation to their currently perceived priority]()
     - Milestones – I used this feature to track progress and assess whether I was on schedule, allowing me to adjust my time management strategies as needed.
-    ![An image of the issues all set out in a calender which has been made easier to complete using Milestones]()
-
-![Screenshot of my kanban board]()
 
 [Back to Contents](#contents)
 
@@ -96,7 +93,9 @@ The application allows users to sign up, create and share travel-related posts, 
 - I want to see notifications or visual feedback on new likes or comments so I know when someone interacts with my content.
 - I want to discover new profiles and destinations so I can continue to grow my network and find inspiration.
 
-<h1 id="structure">Structure</h1>
+<h1 id="design-process">Design Process</h1>
+
+<h2 id="structure">Structure</h1>
 
 - This project was developed as a full-stack web application, structured around two separate but interconnected components: a Django REST Framework API on the back-end, and a React front-end application.
 - The back-end was built using Django REST Framework, where I created a custom travel-focused API (“travel-api”) that handles all data operations — including user authentication, travel post creation, commenting, likes, following, and profile management. The API also implements security best practices such as token-based authentication and permission classes to ensure users can only edit or delete their own content.
@@ -106,7 +105,7 @@ The application allows users to sign up, create and share travel-related posts, 
 ### Process Flow Chart
 The Process Flow Chart visually represents the structure of the website and the possible user navigation paths, helping to illustrate the user journey and overall functionality.
 
-![This is a flow chart demonstrating the structure of this website and the process to navigate around it.]()
+![This is a flow chart demonstrating the structure of this website and the process to navigate around it.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746533382/process-flow-chart_i1vr9h.png)
 
 - Upon entering the site, users are directed to the Home page, which features a sidebar showcasing the top 5 travel destinations and posts, alongside a central feed displaying the most recent user submissions.
 - A persistent header ensures seamless navigation across the site. Before logging in, users can access the Home page, along with options to Sign Up or Log In.
@@ -121,15 +120,16 @@ The Process Flow Chart visually represents the structure of the website and the 
 ### ERD
 The ERD below illustrates the different models used within the database and the relationships between them.
 
-![This is the ERD which was created to show the database structure and the relationships held between the different models]()
+![This is the ERD which was created to show the database structure and the relationships held between the different models](https://res.cloudinary.com/dvgobcuck/image/upload/v1746433801/ERD_dlavr8.png)
 
-A simple yet effective Entity Relationship Diagram (ERD) was created to support the core functionality of the website. It outlines the relationships between key models including User, Profile, Post, Comment, Like, Follower, and Location. The diagram was used to guide the back-end structure, ensuring that data relationships were clearly defined and aligned with the user experience — such as associating posts with locations, linking comments and likes to posts, and managing user-specific data through profile and follower connections.
+A simple yet effective Entity Relationship Diagram (ERD) was created to support the core functionality of the website. It outlines the relationships between key models including User, Profile, Post, Comment, Like, Follower, Notification and Location. The diagram was used to guide the back-end structure, ensuring that data relationships were clearly defined and aligned with the user experience — such as associating posts with locations, linking comments and likes to posts, and managing user-specific data through profile and follower connections.
 
 ### Wireframes
 Below are the original wireframe images created during the design thinking phase of this project. Wireframes served as a valuable foundation, helping to visualise the initial structure of the website and guide development decisions as the project progressed.
 
-![These are basic images outlining the initial website structure designed during the planning phase for destop devices.]()
-![These are basic images outlining the initial website structure designed during the planning phase for mobile devices.]()
+![These are basic images outlining the initial website structure designed during the planning phase for destop devices.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746527528/Desktop_Wireframe_qekp1z.png)
+
+![These are basic images outlining the initial website structure designed during the planning phase for mobile devices.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746527523/Mobile_Wireframe_zqvdlj.png)
 
 The wireframes represent three core pages: the Home Page, Profile Page, and Post Detail Page. A clean, minimalist approach was used throughout to ensure a consistent and user-friendly experience. The final styling will be implemented using Bootstrap and custom CSS, with content dynamically rendered via React components.
 
@@ -162,3 +162,300 @@ The wireframes represent three core pages: the Home Page, Profile Page, and Post
     - The full post content
     - Comments already submitted
     - A comment form (for authenticated users) to join the conversation
+
+USER STORY TESTING
+
+1. As a new user, I want to sign up for an account so I can post and interact with content.
+
+| Feature | Action | Expected Result | Actual Result |
+| ---- | --- | --- | --- |
+| Sign up | Click Sign up option from menu and complete the form to create an account | User is directed to the sign up page and on completion of the form, an account is created and feedback is provided. User is directed to the login page | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image showing the sign up form and where to click to navigate to it](https://res.cloudinary.com/dvgobcuck/image/upload/v1746530380/signup_rrd5zd.png)
+![Feedback after creating an account and getting redirected to the login page](https://res.cloudinary.com/dvgobcuck/image/upload/v1746527298/signup-feedback_yahuqe.png)
+</details>
+<br/>
+
+2. As a returning user, I want to log in so I can access my profile and features.
+
+| Feature | Action | Expected Result | Actual Result |
+| ---- | --- | --- | --- |
+| Login | Select Login from menu and complete form to log into account and access restricted features | On completion of the login form, feedback is given and the user is able to access other features | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image showing the log in form and where to click to navigate to it](https://res.cloudinary.com/dvgobcuck/image/upload/v1746530395/login-form_djcfxk.png)
+![Feedback after successful login and getting redirected to the home page with extra navigation items](https://res.cloudinary.com/dvgobcuck/image/upload/v1746527912/login-feedback_p8ndho.png)
+</details>
+<br/>
+
+3. As a logged-in user, I want to log out securely when I’m done.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Log out | Select Log out from the menu to exit account | When a user clicks log out, feedback is given, they return to the home page and all restricted access is gone | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image showing the log out button in navigation menu](https://res.cloudinary.com/dvgobcuck/image/upload/v1746530397/logout_ekxz1v.png)
+![Feedback after successful logout and getting redirected to the home page with reduced navigation items](https://res.cloudinary.com/dvgobcuck/image/upload/v1746529369/logout-success_dk2aax.png)
+</details>
+<br/>
+
+4. As a logged-in user, I want to create a travel post so I can share my experience with others.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Create Post | Once authenticated, a user can select `Add Post` from the menu to complete a form to create a travel post including an image, title, locatin and content | When a form is completed, feedback is provided and the post is created and listed on the home page and their profile page as well as any feeds of user's who follow them | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of what button to click to create post](https://res.cloudinary.com/dvgobcuck/image/upload/v1746530400/add-post_bqeibs.png)
+![Image of create post form and where to click to find image and submit post](https://res.cloudinary.com/dvgobcuck/image/upload/v1746530403/add-post-form_twdp8t.png)
+![Feedback after successful post creation. User is redirected to the post detail page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746530411/add-post-feedback_l9nwjf.png)
+</details>
+<br/>
+
+5. As a logged-in user, I want to edit my own posts so I can update the content later.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Edit Posts | Users can click on the drop down menu on the top right of a their own posts, to select the edit button and complete a form to edit the post | Once the form is completed and submitted, feedback is given and the post will update | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of what buttons to click to navigate to the edit post form](https://res.cloudinary.com/dvgobcuck/image/upload/v1746531247/edit-post_pdy60c.png)
+![Image of edit post form and where to click to change image and update post](https://res.cloudinary.com/dvgobcuck/image/upload/v1746531246/edit-post-fom_pncoph.png)
+![Feedback after post is successfully updated. User is redirected to the updated posts detail page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746531250/edit-post-feedback_osrkfc.png)
+</details>
+<br/>
+
+6. As a logged-in user, I want to delete my own posts if I no longer want them visible.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Delete Posts | Users can click on the drop down menu on the top right of a their own posts, to select the delete button and complete a form to delete the post | Once the form is completed and submitted, feedback is given and the post will be removed | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of what buttons to click to delete a post](https://res.cloudinary.com/dvgobcuck/image/upload/v1746533882/post-delete_vxzi1y.png)
+![Feedback after post is successfully deleted. User is redirected to the previous page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746533883/delete-sucess_xkeetu.png)
+</details>
+<br/>
+
+7. As any user, I want to browse all travel posts so I can read others' stories.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Browse Posts  | Users can browse all posts on the home page, which are displayed in date order | When a post is created it is displayed on the home page for users consumption | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of where user can click to navigate to home page](https://res.cloudinary.com/dvgobcuck/image/upload/v1746534589/home_vmiv74.png)
+</details>
+<br/>
+
+8. As any user, I want to filter or search posts by keyword or category so I can find what interests me.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Search | Users can enter keywords in the search bar and click enter to search for specific content | Users can search posts by owner, title, location and content. The results are displayed in a list format, consistent with the layout of the rest of the site | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of where user can click to enter search keywords](https://res.cloudinary.com/dvgobcuck/image/upload/v1746534935/search_f1ogus.png)
+![Image of search results page, where the heading states what the search was for and then associated posts are listed below](https://res.cloudinary.com/dvgobcuck/image/upload/v1746534939/search-results_jjdn4d.png)
+![Image of display when there are no matches for the searched keywords](https://res.cloudinary.com/dvgobcuck/image/upload/v1746535163/no-results_tzr3fk.png)
+
+</details>
+<br/>
+
+9. As a logged-in user, I want to leave a comment on a post so I can join the discussion.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Comment | Authenticated users can click on a post to access the comment form, underneath the post itself | Once a user submits a comment, feedback is given and it is displayed beneath the form in date order | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of post detail showing where user can write a comment and submit it](https://res.cloudinary.com/dvgobcuck/image/upload/v1746535679/comment_gxnmxs.png)
+![Image of updated post detail with feedback saying "Thanks for the comment!" and the new comment at the top of the comments feed](https://res.cloudinary.com/dvgobcuck/image/upload/v1746535678/comment-feedback_vfja4o.png)
+
+</details>
+<br/>
+
+10. As a logged in user, I want to update or delete my comments incase I make a mistake or change my mind about writing something. 
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Comment Edit | Authenticated users can click on a post to access the edit comment option, in the top right corner of their comment | Once a user updates a comment and clicks save, feedback is given and the updated comment is displayed in place of the original one | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of post detail showing where user can click to access the edit comment form](https://res.cloudinary.com/dvgobcuck/image/upload/v1746536530/edit-comment_iztxnj.png)
+![Image of the edit comment form and where to click to submit the edited comment](https://res.cloudinary.com/dvgobcuck/image/upload/v1746536530/edit-comment1_cbzymg.png)
+![Image of updated post detail with feedback saying "Comment updated successfully!" and the updated comment where the previous one was](https://res.cloudinary.com/dvgobcuck/image/upload/v1746537094/edit-comment-success_if9ztj.png)
+
+</details>
+<br/>
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Comment Delete | Authenticated users can click on a post to access the delete comment option, in the top right corner of their comment | Once a user deletes a comment, feedback is given and the comment is removed from the post | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of post detail showing where user can click to delete a comment](https://res.cloudinary.com/dvgobcuck/image/upload/v1746537031/delete-comment_udzhsg.png)
+![Image of updated post detail with feedback saying "Comment deleted successfully!" and the comment has been removed from the feed](https://res.cloudinary.com/dvgobcuck/image/upload/v1746537031/delete-comment-feedback_kl83md.png)
+
+</details>
+<br/>
+
+11. As a logged-in user, I want to like a post to show appreciation.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Like | Authenticated users can click the heart button underneath a post to like it | When a user likes a post, feedback is given and the like count increases by one and the post is added to their liked feed | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of a post displaying where to click to like it and showing that the heart becomes coloured and the count increases by one. Feedback is also given at the top of the page](https://res.cloudinary.com/dvgobcuck/image/upload/v1746538196/liked_ilh6ns.png)
+![Image of a post displaying where to click to unlike it and showing that the heart becomes transparent again and the count decreases by one. Feedback is also given at the top of the page](https://res.cloudinary.com/dvgobcuck/image/upload/v1746538228/unliked_t6kjub.png)
+
+</details>
+<br/>
+
+12. As a user, I want to see how many likes and comments a post has to understand its popularity.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Post stats | Users can browse posts in the home page | Likes and comments are updated in real-time and are displayed undeath each post | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of a post displaying the number of likes it has represented by a heart and the number of comments the post has, represented by a speach bubble](https://res.cloudinary.com/dvgobcuck/image/upload/v1746538546/post-stats_nserqu.png)
+
+</details>
+<br/>
+
+13. As a user, I want to view another user's profile to see their posts.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| View Profiles | Users can click on user's avatars or usernames to view their profile | All user's post are displayed on their profile page in date order | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of a users profile with the profile owners details at the top including their avatar, username, page stats and an optional bio section. I have highlighted where user's can click to navigate to this page](https://res.cloudinary.com/dvgobcuck/image/upload/v1746539167/profile_nxvi36.png)
+
+</details>
+<br/>
+
+14. As a logged-in user, I want to follow another user so I can keep up with their new posts.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Follow | Authenticated users can click a follow button on user's profiles to follow them | Feedback is given, the button changes to unfollow and the followed user's posts are then listed on the user's feed page | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of a users profile and where to click to follow them. The follow button will then change to unfollow and their followers count will increase by one. Users will also recieve feedback confirming they are following profile owner](https://res.cloudinary.com/dvgobcuck/image/upload/v1746540852/follow_j6hyqy.png) 
+![Image of a users profile and where to click to unfollow them. The unfollow button will then change back to follow and their followers count will decrease by one. Users will also recieve feedback confirming they have unfollowed the profile owner](https://res.cloudinary.com/dvgobcuck/image/upload/v1746540851/unfollow_thfmqp.png) 
+
+</details>
+<br/>
+
+15. As a user, I want to see how many people follow users and how many profiles they follow, so I can gage their popularity.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Follow Stats | Users can access follower/following stats on a users profile page | The number of followers a user has and the number of profiles they follow is displayed at the top of each profile and is updated in real-time | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of a users profile where at the top it states a number next to followers and following to represent the number of users who follow them and the profiles they follow, respectively](https://res.cloudinary.com/dvgobcuck/image/upload/v1746541303/follow-stats_lipylb.png) 
+
+</details>
+<br/>
+
+16. As a user, I want to see a navigation menu so I can easily access all sections.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Navigation | Users can access a navigation menu on a smaller device by clicking the toggle menu button or is on display horizontally on larger devices | Users have access to all areas of the website at all times | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of the horizontal navigation bar which is always visible for a logged in user at the top of the screen](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542356/desktop-nav_lk9d2y.png)
+![Image of a mobile screen with a toggle menu button](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542358/mobile-nav-toggle_w1scua.png)
+![Image of the mobile menu once toggle button has been selected and shows that all the nav links are listed](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542357/mobile-nav-menu_bcyikj.png)
+
+</details>
+<br/>
+
+16. As a user, I want to know whether I am logged in or not.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Authentication verification | Users can see if they are logged in or not at all times whilst on the site | A personalised message is displayed at the top of post list pages and the menu has more features, including the users avatar | Wors as expected |
+<details><summary>See evidence</summary>
+
+![Image of the home pasage when a user is not logged in. It shows a generic message saying Welcome to Travel Tales and has less navigation options available](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542830/unauthenticated_ekx892.png)
+![Image of the home page when a user is logged in. It has a personalised welcome message including their username and additional navigation options including a picture of their avatar which links to their personal profile](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542829/authenticated_puimqn.png)
+
+</details>
+<br/>
+
+17. As a user, I want the site to work well on mobile so I can use it on the go.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Responsive Design | Users can use the app on any device including mobile | The design of the website has been adapted to accomodate being displayed on a mobile device as well as desktop | Works as expected |
+
+17. As a user, I want to see a list of locations that posts are associated with so that I can see what it's like.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Locations Menu | Users can click the locations option in the menu to access the locations list | Locations are listed in popularity order considering number of posts and like/comment counts. When a user clicks on the location image or title, they are directed to a list of posts tagged to the location | Works as expected |
+
+18. As a logged-in user, I want to update my profile with a display name, photo, and bio so my profile feels more personal.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Profile Personalisation | Authenticated users can edit their profile by clicking the menu in the top right corner of their profile page and selecting the 'Edit Profile' option from the dropdown menu | A form is displayed where users can update their profile image and add some content to display on their profile page | Works as expected |
+
+19. As a user, I want a "My Feed" page that shows posts from users I follow so I can keep up with content I care about.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Feed | Authenticated users can click a link to 'Feed' in their navigation menu | Feed page displays all posts that have been submitted by any profile owners that the user is currently following | Works as expected |
+
+20. As a user, I can see a profile image of other users to easily identify them
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Avatar | When browsing profiles and posts, users can see who owns the profile or posts and comments | Users can see avatars and often usernames next to all profiles, posts and comments | Works as expected |
+
+21. As a user, I can keep scrolling down and the page will load more posts so that I don't have to click next and back to navigate through posts.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Infinite Scroll | User can scroll down the page to load any further posts | On all pages, if there are posts to load, the user can access these by scrolling down until all have been displayed, when the footer will appear at the bottom of the screen | Works as expected |
+
+22. As a user, I can see a list of the most popular profiles so i can follow them myself.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Popular profiles | Users can view a list of top 5 profiles and click a follow button alongside them to easily follow their profile and posts | In desktop view on the right hand side of post pages, is a display of the top 5 profiles which is determined by number of followers. A user can click follow, feedback is given and the follow button changes to unfollow, all follow stats are updated | Works as expected |
+
+23. As a user, I can update my username and password to keep my profile secure.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Update Username/Password | Authenticated users can access forms to update their username or password by clicking the menu icon in the top right corner of their profile and selecting the relevant option from the menu | Users can complete the forms, feedback is given and their username or password will be updated throughout the site | Works as expected |
+
+24. As a user, I want to receive a notification every time that someone likes my post, leaves a comment or follows my profile, so that I can see how popular my posts are and network with fellow minded travellers.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Notifications | Authenticated users can access notifications in their navigation bar by clicking the toggle menu with the bell icon | Users will see the number of notifications displayed in the toggle menu, when clicked, a dropdown will display an icon to signify which type of notification they have and the name of the user who sent it. 
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Notifications/read | Users can click on an individual notification to mark as read or clear list by clicking 'Mark all read' at the bottom of the menu | Clicking on the individual notification will redirect the user to the associated profile or post and the notification will be cleared from the list. Clicking 'Mark all read' will clear all notifications immediately | Works as expected |
+
+25. As a user, I can see a list of the most popular locations and posts to get inspiration of places to travel to.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Popular Locations | Users can view a list of the top 5 locations | In desktop view on the right hand side of post pages, is a display of the top 5 locations which is determined by number of posts and the likes and comments count. If a user clicks on a location image or name, then it will direct them to a list of posts associated with the location | Works as expected |
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Popular Posts | Users can view a list of the top 5 posts | In desktop view on the right hand side of post pages, is a display of the top 5 posts which is determined by the likes and comments count. If a user clicks on a post image or title, then it will direct them to the post detail page, where they can see all the associated comments | Works as expected |
+
