@@ -6,6 +6,8 @@ TravelTales is a full-stack content-sharing web application built as part of the
 
 The application allows users to sign up, create and share travel-related posts, interact with others through likes and comments, and follow fellow travelers. Posts can be filtered by title and location, creating a curated and accessible experience for users interested in specific destinations or types of travel.
 
+![Image of website on several different devices, using am i responsive app](https://res.cloudinary.com/dvgobcuck/image/upload/v1746546774/responsive_yunazb.png)
+
 <h1 id="contents">Table of Contents</h1> 
 
 - [Agile Development](#agile-development)
@@ -173,7 +175,7 @@ USER STORY TESTING
 <details><summary>See evidence</summary>
 
 ![Image showing the sign up form and where to click to navigate to it](https://res.cloudinary.com/dvgobcuck/image/upload/v1746530380/signup_rrd5zd.png)
-![Feedback after creating an account and getting redirected to the login page](https://res.cloudinary.com/dvgobcuck/image/upload/v1746527298/signup-feedback_yahuqe.png)
+![Feedback after creating an account and getting redirected to the login page](https://res.cloudinary.com/dvgobcuck/image/upload/v1746544138/signup-feedback_obcbzg.png)
 </details>
 <br/>
 
@@ -297,7 +299,7 @@ USER STORY TESTING
 <details><summary>See evidence</summary>
 
 ![Image of post detail showing where user can click to delete a comment](https://res.cloudinary.com/dvgobcuck/image/upload/v1746537031/delete-comment_udzhsg.png)
-![Image of updated post detail with feedback saying "Comment deleted successfully!" and the comment has been removed from the feed](https://res.cloudinary.com/dvgobcuck/image/upload/v1746537031/delete-comment-feedback_kl83md.png)
+![Image of updated post detail with feedback saying "Comment deleted successfully!" and the comment has been removed from the feed](https://res.cloudinary.com/dvgobcuck/image/upload/v1746533883/delete-sucess_xkeetu.png)
 
 </details>
 <br/>
@@ -385,7 +387,7 @@ USER STORY TESTING
 | Authentication verification | Users can see if they are logged in or not at all times whilst on the site | A personalised message is displayed at the top of post list pages and the menu has more features, including the users avatar | Wors as expected |
 <details><summary>See evidence</summary>
 
-![Image of the home pasage when a user is not logged in. It shows a generic message saying Welcome to Travel Tales and has less navigation options available](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542830/unauthenticated_ekx892.png)
+![Image of the home page when a user is not logged in. It shows a generic message saying Welcome to Travel Tales and has less navigation options available](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542830/unauthenticated_ekx892.png)
 ![Image of the home page when a user is logged in. It has a personalised welcome message including their username and additional navigation options including a picture of their avatar which links to their personal profile](https://res.cloudinary.com/dvgobcuck/image/upload/v1746542829/authenticated_puimqn.png)
 
 </details>
@@ -396,66 +398,162 @@ USER STORY TESTING
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Responsive Design | Users can use the app on any device including mobile | The design of the website has been adapted to accomodate being displayed on a mobile device as well as desktop | Works as expected |
+<details><summary>See evidence</summary>
 
-17. As a user, I want to see a list of locations that posts are associated with so that I can see what it's like.
+![Image of the authentication pages on mobile, highlighted where a user needs to click to navigate to the page and the 404 error page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746567918/mobile-auth_cy4rxt.png)
+
+![Image of the home, feed, like and locations pages on mobile, highlighted where a user needs to click to navigate to the page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746567918/mobile-pages_pkdqjz.png)
+
+![Image of the post related pages, including post search, create post, edit post and post detail on mobile screens.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746568313/mobile-post-pages_qeh4tj.png)
+
+![Image of the profile related pages, including user profile, edit profile, edit username and edit password pages on mobile screens.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746567913/mobile-profile-pages_inlaum.png)
+
+</details>
+<br/>
+
+18. As a user, I want to see posts for each location so that I can see what it's like.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Locations Menu | Users can click the locations option in the menu to access the locations list | Locations are listed in popularity order considering number of posts and like/comment counts. When a user clicks on the location image or title, they are directed to a list of posts tagged to the location | Works as expected |
+| Locations Menu | Users can click the locations option in the menu to access the locations list and then click a specific location to view all its associated posts | Locations are listed in popularity order considering number of posts and like/comment counts. When a user clicks on the location image or title, they are directed to a list of posts tagged to the location, if they click on those posts, they will be directed to the post detail where they can view and add comments. | Works as expected |
+<details><summary>See evidence</summary>
 
-18. As a logged-in user, I want to update my profile with a display name, photo, and bio so my profile feels more personal.
+![Image of the locations menu page with the heading 'Locations' followed by a list of locations, illustrated by an image and the location name, ordered by popularity. The route to this page is highlighted in the navigation bar.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746555090/locations-menu_m2j5uy.png)
+![Image of the Cornwall page. This page is located by clicking on the image or name Cornwall. It displays the title 'Cornwall' followed by a list of posts which are ordered by popularity considering the number of likes and comments it has.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746555110/locations-slug_d4xbqo.png)
+
+</details>
+<br/>
+
+19. As a logged-in user, I want to update my profile with a display name, photo, and bio so my profile feels more personal.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Profile Personalisation | Authenticated users can edit their profile by clicking the menu in the top right corner of their profile page and selecting the 'Edit Profile' option from the dropdown menu | A form is displayed where users can update their profile image and add some content to display on their profile page | Works as expected |
+<details><summary>See evidence</summary>
 
-19. As a user, I want a "My Feed" page that shows posts from users I follow so I can keep up with content I care about.
+![Image to illustrate how to navigate to the edit profile form. User must first access their profile via the avatar link in the nav bar, then click the menu in the top right corner of their profile and select 'Edit profile'](https://res.cloudinary.com/dvgobcuck/image/upload/v1746556535/profile-edit_q61nl2.png)
+![Image of edit profile form. User can update their profile picture by clicking either button underneath the image and update their Bio with text. User must click save in order to update any changes](https://res.cloudinary.com/dvgobcuck/image/upload/v1746556536/profile-edit-form_uhglyd.png)
+![Image of updated profile with the changes highlighted and user feedback at the top of the screen.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746556912/profile-edit-success_taqlqi.png)
+
+</details>
+<br/>
+
+20. As a user, I want a "My Feed" page that shows posts from users I follow so I can keep up with content I care about.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Feed | Authenticated users can click a link to 'Feed' in their navigation menu | Feed page displays all posts that have been submitted by any profile owners that the user is currently following | Works as expected |
+<details><summary>See evidence</summary>
 
-20. As a user, I can see a profile image of other users to easily identify them
+![Image to illustrate how to navigate to feed page. Page is empty and displaying a default image and a message telling user that no results were found and to follow a user to view their posts in this page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746557491/no-results-feed_mpfcka.png)
+![Image displaying results of posts that have been created by followed users only.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746557492/feed_ofpnv5.png)
+
+</details>
+<br/>
+
+21. As a user, I can see a profile image of other users to easily identify them
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Avatar | When browsing profiles and posts, users can see who owns the profile or posts and comments | Users can see avatars and often usernames next to all profiles, posts and comments | Works as expected |
+<details><summary>See evidence</summary>
 
-21. As a user, I can keep scrolling down and the page will load more posts so that I don't have to click next and back to navigate through posts.
+![Image of a post detail page, highlighting all areas where avatars are displayed, including post header, each of the comments and the popular profiles list on the right of the page. These avatars make it easy to identify the associated owner and links to their profile.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746558058/avatars_w5kabc.png)
+
+</details>
+<br/>
+
+22. As a user, I can keep scrolling down and the page will load more posts so that I don't have to click next and back to navigate through posts.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Infinite Scroll | User can scroll down the page to load any further posts | On all pages, if there are posts to load, the user can access these by scrolling down until all have been displayed, when the footer will appear at the bottom of the screen | Works as expected |
+<details><summary>See evidence</summary>
 
-22. As a user, I can see a list of the most popular profiles so i can follow them myself.
+![Image of the bottom of the home page, displaying a loading spinner which will run until the next posts are loaded so that the user doesn't need to click any buttons.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746558312/Infinite-scroll_gyvyon.png)
+
+</details>
+<br/>
+
+23. As a user, I can see a list of the most popular profiles so i can follow them myself.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Popular profiles | Users can view a list of top 5 profiles and click a follow button alongside them to easily follow their profile and posts | In desktop view on the right hand side of post pages, is a display of the top 5 profiles which is determined by number of followers. A user can click follow, feedback is given and the follow button changes to unfollow, all follow stats are updated | Works as expected |
+<details><summary>See evidence</summary>
 
-23. As a user, I can update my username and password to keep my profile secure.
+![Image of a display showing the top 5 profiles, which is deterined by the number of followers each profile has. The profiles are labelled with the owners avatar and username, which users can click to visit their profile. There is also a follow/unfollow button alongside each profile for users to click, depending on whether or not they already follow the profile.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746558557/profiles-popular_t7unnv.png)
+
+</details>
+<br/>
+
+24. As a user, I can update my username and password to keep my profile secure.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Update Username/Password | Authenticated users can access forms to update their username or password by clicking the menu icon in the top right corner of their profile and selecting the relevant option from the menu | Users can complete the forms, feedback is given and their username or password will be updated throughout the site | Works as expected |
+<details><summary>See evidence</summary>
 
-24. As a user, I want to receive a notification every time that someone likes my post, leaves a comment or follows my profile, so that I can see how popular my posts are and network with fellow minded travellers.
+![Image of how to navigate to the edit username and password forms via a users profile page. User must click on the menu icon in the top corner of their profile and then select either Change username or Change password accordignly.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746559278/edit-menu_is2nry.png)
+
+![Image of the edit username form. User simply needs to change their username by inputting a new one in the input field and click save.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746559278/username-edit-form_rfvfqo.png)
+![Image of the upsdated user profile with the new username and feedback confirming the change at the top of the page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746559282/username-edit-success_p4ph6r.png)
+
+![Image of the change password form. User needs to complete two fields- New password and Confirm password. These need to be the same otherwise they will recieve feedback and then click save to update it.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746559278/password-edit-form_tq1use.png)
+![Image showing feedback that the user has updated their password and bneen redirected to their profile page.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746559279/password-edit-success_citozx.png)
+
+</details>
+<br/>
+
+25. As a user, I want to receive a notification every time that someone likes my post, leaves a comment or follows my profile, so that I can see how popular my posts are and network with fellow minded travellers.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Notifications | Authenticated users can access notifications in their navigation bar by clicking the toggle menu with the bell icon | Users will see the number of notifications displayed in the toggle menu, when clicked, a dropdown will display an icon to signify which type of notification they have and the name of the user who sent it. 
+<details><summary>See evidence</summary>
+
+![Image displaying notifications list in navigation bar with number of notifications in toggle menu. In the open menu it shows wha the notification type is and who it is from. Highlighted evidence that the post has a comment and a like.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746560552/notifications_vyjlgu.png)
+
+![Image showing where to click to read follow notification](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561397/follow-notification_l2zijw.png)
+![Image showing that user is directed to the profile of the user who follows them once clicked.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561399/follow-notification-profile_oddl4f.png)
+
+![Image showing where to click to read comment notification and that the notification count has been updated](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561395/notification-comment_r39jre.png)
+![Image showing where to click to read like notification and that the notification count has been updated](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561394/notification-like_kx4fib.png)
+![Image showing that user is directed to the post that has been commented on or liked once clicked.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561583/notification-post_iwl8ut.png)
+
+</details>
+<br/>
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Notifications/read | Users can click on an individual notification to mark as read or clear list by clicking 'Mark all read' at the bottom of the menu | Clicking on the individual notification will redirect the user to the associated profile or post and the notification will be cleared from the list. Clicking 'Mark all read' will clear all notifications immediately | Works as expected |
+<details><summary>See evidence</summary>
 
-25. As a user, I can see a list of the most popular locations and posts to get inspiration of places to travel to.
+![Image displaying where to click to mark all notifications as read.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561398/mark-all-read_ppnfv0.png)
+![Image showing that all noticfications have been deleted.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561396/no-notifications_ib5qgw.png)
+
+</details>
+<br/>
+
+26. As a user, I can see a list of the most popular locations and posts to get inspiration of places to travel to.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Popular Locations | Users can view a list of the top 5 locations | In desktop view on the right hand side of post pages, is a display of the top 5 locations which is determined by number of posts and the likes and comments count. If a user clicks on a location image or name, then it will direct them to a list of posts associated with the location | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of a display showing the top 5 locations, which is determined by the number of posts the location has. The locations are labelled with the image of the most popular post within the the catagory and the location name. When users click the image or name, they are directed to a list of posts relating to this location, which is ordered by popularity.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561966/popular-locations_bwadcr.png)
+
+</details>
+<br/>
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | Popular Posts | Users can view a list of the top 5 posts | In desktop view on the right hand side of post pages, is a display of the top 5 posts which is determined by the likes and comments count. If a user clicks on a post image or title, then it will direct them to the post detail page, where they can see all the associated comments | Works as expected |
+<details><summary>See evidence</summary>
+
+![Image of a display showing the top 5 posts, which is determined by the number of comments and likes the post has. The posts are labelled with its image and the post title. When users click the image or title, they are directed to the posts detail page where they can view or add comments.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746561967/popular-posts_ynuacn.png)
+
+</details>
+<br/>
 
