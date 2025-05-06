@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import { useCurrentUser } from "../../src/contexts/CurrentUserContext";
 import { followHelper, unfollowHelper } from "../utils/utils";
 import { axiosReq, axiosRes } from "../api/axios";
@@ -32,6 +33,9 @@ export const ProfileDataProvider = ({ children }) => {
         followed: clickedProfile.id,
       });
 
+      // Feedback to user
+      toast.success(`You followed ${clickedProfile.owner}`);
+
       // Update both pageProfile and popularProfiles to reflect the new follow state
       setProfileData((prevState) => ({
         ...prevState,
@@ -48,7 +52,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      // console.log(err);
+      toast.error("Unable to follow user. Please try again.");
     }
   };
 
@@ -57,6 +61,9 @@ export const ProfileDataProvider = ({ children }) => {
     try {
       // Send DELETE request to remove follow relationship
       await axiosRes.delete(`/followers/${clickedProfile.following_id}/`);
+
+      // Feedback to user
+      toast.info(`You unfollowed ${clickedProfile.owner}`);
 
       // Update both pageProfile and popularProfiles to reflect the unfollow state
       setProfileData((prevState) => ({
@@ -74,7 +81,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      // console.log(err);
+      toast.error("Unable to unfollow user. Please try again.");
     }
   };
 
@@ -91,7 +98,7 @@ export const ProfileDataProvider = ({ children }) => {
           popularProfiles: data,
         }));
       } catch (err) {
-        // console.log(err);
+        toast.error("Unable to unfollow user. Please try again.");
       }
     };
     handleMount();
@@ -100,7 +107,9 @@ export const ProfileDataProvider = ({ children }) => {
   // Provide both profile data and updater functions to children components
   return (
     <ProfileDataContext.Provider value={profileData}>
-      <SetProfileDataContext.Provider value={{ setProfileData, handleFollow, handleUnfollow }}>
+      <SetProfileDataContext.Provider
+        value={{ setProfileData, handleFollow, handleUnfollow }}
+      >
         {children}
       </SetProfileDataContext.Provider>
     </ProfileDataContext.Provider>
