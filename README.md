@@ -215,18 +215,18 @@ A simple yet effective Entity Relationship Diagram (ERD) was created to support 
 - `src/components/MoreDropdown.js` (Edit/Delete menu)
 - `src/components/NotFound.js` (404 Error page)
 
-#### Context
+### Context
 
 - `src/contexts/CurrentUserContext.js` (Determines the current user)
 - `src/contexts/ProfileDataContext.js` (Handles follow/unfollow events)
 
-#### Hooks
+### Hooks
 
 - `src/hooks/UseClickOutsideToggle.js` (Click outside to exit toggle menu)
 - `src/hooks/UseRedirect.js` (Redirect users when they try to access unauthorised pages)
 - `src/hooks/UseWindowWidth.js` (Call too ammend styling on different sized devices)
 
-#### Utils
+### Utils
 
 - `src/utils/utils.js` (API helpers and token utilities)
   - `fetchMoreData` (fetched next page of data for infinite scroll)
@@ -245,7 +245,10 @@ A simple yet effective Entity Relationship Diagram (ERD) was created to support 
 
 Below are the original wireframe images created during the design thinking phase of this project. Wireframes served as a valuable foundation, helping to visualise the initial structure of the website and guide development decisions as the project progressed.
 
+### Desktop Wireframes
 ![These are basic images outlining the initial website structure designed during the planning phase for destop devices.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746527528/Desktop_Wireframe_qekp1z.png)
+
+### Mobile Wireframes
 
 ![These are basic images outlining the initial website structure designed during the planning phase for mobile devices.](https://res.cloudinary.com/dvgobcuck/image/upload/v1746527523/Mobile_Wireframe_zqvdlj.png)
 
@@ -308,28 +311,34 @@ To give the site a unique, nature-inspired feel, I used the CSS clip-path proper
 
 The CSS background uses a linear gradient transitioning from deep grey to earthy green and then to a soft neutral tone. This layered gradient subtly reinforces the travel and nature theme. It also improves readability and guides the user's eye down the page, making for a visually cohesive and immersive browsing experience.
 
-<div style="display: flex; gap: 10px; margin-top: 10px;">
-  <div style="width: 100px; height: 100px; background-color: #4e4e4e; border: 1px solid #ccc;"></div>
-  <div style="width: 100px; height: 100px; background-color: #109e71; border: 1px solid #ccc;"></div>
-  <div style="width: 100px; height: 100px; background-color: #f3f4f4; border: 1px solid #ccc;"></div>
-</div>
+<img src="https://res.cloudinary.com/dvgobcuck/image/upload/v1746622020/grey-gradient_spka1a.png" alt="Dark gray square" width="100" height="100">
 
 - **The dark grey (#4e4e4e)** at the top anchors the header and hero image, giving visual weight and helping content like navigation or text stand out.
+
+<img src="https://res.cloudinary.com/dvgobcuck/image/upload/v1746622019/green-gradient_bb0uqy.png" alt="Rich green square" width="100" height="100">
+
 - **The rich green (#109e71)** in the middle suggests forests or valleys, tying into the earthy, outdoorsy aesthetic of the site.
+
+<img src="https://res.cloudinary.com/dvgobcuck/image/upload/v1746622019/light-gradient_gyljom.png" alt="Light neutral square" width="100" height="100">
+
 - **The light neutral (#f3f4f4)** at the bottom provides openness and contrast, making page content feel clean and spacious.
 
 ### Colours
 
-<div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-  <div style="width: 100px; height: 100px; background-color: rgb(94, 91, 94); border: 1px solid #ccc;"></div>
-  <div style="width: 100px; height: 100px; background-color: antiquewhite; border: 1px solid #ccc;"></div>
-  <div style="width: 100px; height: 100px; background-color: teal; border: 1px solid #ccc;"></div>
-  <div style="width: 100px; height: 100px; background-color: rgb(255, 11, 206); border: 1px solid #ccc;"></div>
-</div>
+<img src="https://res.cloudinary.com/dvgobcuck/image/upload/v1746622318/grey-font_hmioas.png" alt="Modern charcoal square" width="100" height="100">
 
 - **Modern Charcoal (rgb(94, 91, 94))**, is used for the main text throughout the site, to avoid pure black for better visual comfort and pairs beautifully with muted or vibrant backgrounds.
+
+<img src="https://res.cloudinary.com/dvgobcuck/image/upload/v1746622314/antiquewhite_upnhxu.png" alt="Beige neutral square" width="100" height="100">
+
 - **Antiquewhite** adds a soft warmth that stands out on dark backgrounds like the desktp navigation and page heading without being harsh or sterile.
+
+<img src="https://res.cloudinary.com/dvgobcuck/image/upload/v1746622312/teal_otypxf.png" alt="Teal square" width="100" height="100">
+
 - **Teal** complements both the dark grey and lighter gradient tones. It works great for interactive elements like links or toggle menus, providing clarity without overpowering.
+
+<img src="https://res.cloudinary.com/dvgobcuck/image/upload/v1746622311/pink_wywkfe.png" alt="Bright pink square" width="100" height="100">
+
 - **The bright pink (rgb(255, 11, 206)** serves as a playful, high-energy accent. It’s used sparingly for important elements like titles, icons, and notifications, giving your site personality without overwhelming the design.
 
 ### Fonts
@@ -341,7 +350,7 @@ The CSS background uses a linear gradient transitioning from deep grey to earthy
 
 ### Kanban Board
 
-- I used GitHubs Projects Kanban board as a visual workflow management tool that helped to track tasks, organize work, and improve productivity. It is widely used in project development to streamline processes, identify bottlenecks, and ensure efficient task prioritization. I also used the Roadmap feature to visualise my progress throughout the build.
+- I used GitHubs Projects [Kanban board](https://github.com/users/BekMart/projects/10) as a visual workflow management tool that helped to track tasks, organize work, and improve productivity. It is widely used in project development to streamline processes, identify bottlenecks, and ensure efficient task prioritization. I also used the [Roadmap feature](https://github.com/users/BekMart/projects/10/views/4) to visualise my progress throughout the build.
 - For this project, I set up a Kanban board divided into three main columns: "To Do," "In Progress," and "Done." This structure allowed me to manage my workload effectively, ensuring I focused on one task at a time while maintaining visibility over the project's overall progress.
 - To optimize task management, I incorporated the following features:
   - Milestones – I used this feature to group together tasks and to track progress and assess whether I was on schedule, allowing me to adjust my time management strategies as needed.
@@ -368,6 +377,93 @@ Below are links to my Milestones which host my Issues within GitHub Projects. Ea
 #### [README and finishing touches](https://github.com/BekMart/travel-api/milestone/6?closed=1) Due 07/05/25
 
 [Back to Contents](#contents)
+
+<h1 id="features">Features</h1>
+
+<h2 id="existing">Existing Features</h2>
+
+### Users can search and filter posts by profile owner, title, location, and content
+Users can access the home page, search bar, and login/signup forms without authentication.
+- The home page displays all published posts in reverse chronological order (most recent first).
+- The search bar allows users to filter posts by keywords in the title, owner name, location, or content.
+- Login and signup forms are easily accessible to allow users to unlock personalized features.
+
+### Popular content displays
+On larger devices, the top 5 profiles, locations, and posts are shown on the right-hand side to highlight popular content.
+- Top 5 profiles are determined by the number of followers. Users can click through to view a profile and follow them if authenticated.
+- Top 5 locations are determined by the number of related posts and their engagement (likes and comments). Clicking a location shows a list of related posts, and users can view individual post details.
+- Top 5 posts are ranked by likes and comments. Clicking a post opens its detail view, where authenticated users can interact.
+
+### User authentication pages
+Users can sign up and log in to gain access to additional features:
+- Their own profile page
+- A personalized feed populated with posts from users they follow
+- A list of posts they have liked for easy access
+- A location list sorted by popularity to see trending travel destinations
+
+### Authenticated users can create and customize their profiles
+After signing up, a profile is automatically generated for each user. A profile icon in the navbar links to their profile page.
+- Users can edit their profile via the menu in the top right corner.
+- The edit profile form allows updating profile image and bio.
+- A separate form is provided to update username, which is reflected across their posts and comments.
+- Password updates require matching inputs and provide feedback on success.
+
+### Authenticated users can create, edit, or delete posts
+Authenticated users can create posts and manage them fully.
+- A navigation link for creating a post is available to authenticated users.
+- The form requires an image, title, and linked location (optional content is allowed).
+- Users receive feedback upon successful submission.
+- Post owners can edit or delete their posts from the post detail view.
+- The edit form is prepopulated and provides feedback on update.
+- Deleted posts are confirmed with a success message.
+
+### Posts can be tagged with travel destinations for easy discovery and searchability
+When creating a post, users must enter a location:
+- If the location doesn’t exist, it is created automatically and added to the Locations menu.
+- If it exists, the post is associated with that location.
+- Location names are normalized (case-insensitive), so 'Paris', 'paris', and 'PARIS' are treated as the same entry.
+- Posts appear in search results and in the menu route for that location.
+
+### Authenticated users can like and unlike posts
+Users can like or unlike any post that isn't their own.
+- A heart icon is present at the bottom of each post.
+- Clicking the icon turns it solid pink and increases the like count.
+- Clicking it again removes the like and decreases the count.
+- Attempting to like one's own post triggers an alert: "You can't like your own post!"
+
+### Authenticated users can comment on posts and manage their own comments
+Authenticated users can add, edit, or delete their own comments.
+- A comment form is provided at the bottom of each post.
+- Comments appear immediately upon submission with feedback.
+- Users can access the edit option via a menu toggle. The edit form is prepopulated.
+- Updated comments appear in the feed with confirmation.
+- Delete functionality is accessible from the same menu and removes the comment with confirmation.
+
+### Authenticated users can follow one another
+Users can follow or unfollow others from profile pages or the popular profiles list.
+- Clicking follow updates both user and profile stats and adds the followed user’s posts to the feed.
+- Clicking unfollow removes them from the feed and updates stats accordingly.
+- Feedback is given for both actions.
+
+### Authenticated users receive notifications for key interactions
+Users are notified when someone likes their post, comments on it, or follows them.
+- Notifications appear in a dropdown menu in the navbar with a bell icon and count.
+- Clicking a notification navigates the user to the relevant profile or post and removes the notification.
+- Notification types include:
+    - User icon for new followers
+    - Comment icon for new comments
+    - Heart icon for likes
+- A "Mark all as read" option clears remaining notifications.
+- If no unread notifications exist, the bell displays no count and the menu shows "No Notifications."
+
+<h2 id="future">Future Features</h2>
+
+- Users to like specific comments, not only posts
+- Implement direct messaging between users for private conversations.
+- Add a map view to show posts based on geographic data.
+- Introduce tags or hashtags for better content discovery.
+
+
 
 USER STORY TESTING
 
