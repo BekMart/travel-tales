@@ -69,6 +69,9 @@ const SignUpForm = () => {
             <Form onSubmit={handleSubmit}>
               {/* Username field */}
               <Form.Group controlId="username">
+                <Form.Label htmlFor="username" className="visually-hidden">
+                  Username
+                </Form.Label>
                 <Form.Control
                   className={styles.Input}
                   type="text"
@@ -87,6 +90,9 @@ const SignUpForm = () => {
 
               {/* Password field */}
               <Form.Group controlId="password1">
+                <Form.Label htmlFor="password1" className="visually-hidden">
+                  Password
+                </Form.Label>
                 <Form.Control
                   className={styles.Input}
                   type="password"
@@ -105,6 +111,9 @@ const SignUpForm = () => {
 
               {/* Confirm password field */}
               <Form.Group controlId="password2">
+                <Form.Label htmlFor="password2" className="visually-hidden">
+                  Confirm Password
+                </Form.Label>
                 <Form.Control
                   className={styles.Input}
                   type="password"
