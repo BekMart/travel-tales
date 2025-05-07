@@ -113,9 +113,12 @@ function PostEditForm() {
   const textFields = (
     <div className="text-center">
       {/* Post Title */}
-      <Form.Group controlId="title">
-        <Form.Label className={styles.Label}>Title</Form.Label>
+      <Form.Group>
+        <Form.Label htmlFor="title" className={styles.Label}>
+          Title
+        </Form.Label>
         <Form.Control
+          id="title"
           className={styles.Input}
           type="text"
           name="title"
@@ -131,9 +134,12 @@ function PostEditForm() {
       ))}
 
       {/* Post Location */}
-      <Form.Group controlId="location">
-        <Form.Label className={styles.Label}>Location</Form.Label>
+      <Form.Group>
+        <Form.Label htmlFor="location" className={styles.Label}>
+          Location
+        </Form.Label>
         <Form.Control
+          id="location"
           className={styles.Input}
           type="text"
           name="location_input"
@@ -149,9 +155,12 @@ function PostEditForm() {
       ))}
 
       {/* Post Content */}
-      <Form.Group controlId="content">
-        <Form.Label className={styles.Label}>Content</Form.Label>
+      <Form.Group>
+        <Form.Label htmlFor="content" className={styles.Label}>
+          Content
+        </Form.Label>
         <Form.Control
+          id="content"
           className={styles.Input}
           as="textarea"
           rows={6}

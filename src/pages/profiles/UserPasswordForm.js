@@ -73,8 +73,11 @@ const UserPasswordForm = () => {
           <Form onSubmit={handleSubmit}>
             {/* New password field */}
             <Form.Group>
-              <Form.Label className={styles.Label}>New password</Form.Label>
+              <Form.Label htmlFor="new_password1" className={styles.Label}>
+                New password
+              </Form.Label>
               <Form.Control
+                id="new_password1"
                 className={styles.Input}
                 placeholder="new password"
                 type="password"
@@ -92,8 +95,11 @@ const UserPasswordForm = () => {
 
             {/* Confirm new password field */}
             <Form.Group>
-              <Form.Label className={styles.Label}>Confirm password</Form.Label>
+              <Form.Label htmlFor="new_password2" className={styles.Label}>
+                Confirm password
+              </Form.Label>
               <Form.Control
+                id="new_password2"
                 className={styles.Input}
                 placeholder="confirm new password"
                 type="password"

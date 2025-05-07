@@ -92,9 +92,12 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       {/* Post Title */}
-      <Form.Group controlId="title">
-        <Form.Label className={styles.Label}>Title</Form.Label>
+      <Form.Group>
+        <Form.Label htmlFor="title" className={styles.Label}>
+          Title
+        </Form.Label>
         <Form.Control
+          id="title"
           className={styles.Input}
           type="text"
           name="title"
@@ -110,9 +113,12 @@ function PostCreateForm() {
       ))}
 
       {/* Post Location */}
-      <Form.Group controlId="location_input">
-        <Form.Label className={styles.Label}>Location</Form.Label>
+      <Form.Group>
+        <Form.Label htmlFor="location_input" className={styles.Label}>
+          Location
+        </Form.Label>
         <Form.Control
+          id="location_input"
           className={styles.Input}
           type="text"
           name="location_input"
@@ -128,9 +134,12 @@ function PostCreateForm() {
       ))}
 
       {/* Post Content */}
-      <Form.Group controlId="content">
-        <Form.Label className={styles.Label}>Content</Form.Label>
+      <Form.Group>
+        <Form.Label htmlFor="content" className={styles.Label}>
+          Content
+        </Form.Label>
         <Form.Control
+          id="content"
           className={styles.Input}
           as="textarea"
           rows={6}
@@ -182,7 +191,12 @@ function PostCreateForm() {
                 {image ? (
                   <>
                     <figure>
-                      <Image className={styles.Image} src={image} rounded />
+                      <Image
+                        className={styles.Image}
+                        alt="Preview of uploaded post"
+                        src={image}
+                        rounded
+                      />
                     </figure>
                     <div>
                       {/* Change image button */}

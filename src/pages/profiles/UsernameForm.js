@@ -75,8 +75,11 @@ const UsernameForm = () => {
           <Form onSubmit={handleSubmit} className="my-2">
             {/* Username input */}
             <Form.Group>
-              <Form.Label className={styles.Label}>Change username</Form.Label>
+              <Form.Label htmlFor="username" className={styles.Label}>
+                Change username
+              </Form.Label>
               <Form.Control
+                id="username"
                 className={styles.Input}
                 placeholder="username"
                 type="text"
