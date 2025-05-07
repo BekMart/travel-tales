@@ -40,11 +40,10 @@ The application allows users to sign up, create and share travel-related posts, 
   - [Future Features](#future)
 - [Technologies Used](#technologies)
 - [Testing](#testing)
-  - [Functionality Testing](#functionality)
-  - [Compatability Testing](#compatability)
   - [User Story Testing](#user-story-testing)
+  - [Compatability Testing](#compatability)
   - [Issues Found](#issues)
-  - [Performance](#performance)
+  - [Performance Testing](#performance)
   - [Validation](#validation)
 - [Deployment](#deployment)
 - [Credits](#credits)
@@ -507,12 +506,16 @@ Users are notified when someone likes their post, comments on it, or follows the
 
 [Back to Contents](#contents)
 
-USER STORY TESTING
+<h1 id=testing>Testing</h1>
+
+All functionality testing for this site was conducted manually against the defined user stories. The screenshots provided below each of the user stories  demonstrate that all core functionality works as expected, showcasing key user actions and the corresponding system responses throughout the application.
+
+<h2 id=user-story-testing>User Story Testing</h2>
 
 1. As a new user, I want to sign up for an account so I can post and interact with content.
 
-| Feature | Action                                                                    | Expected Result                                                                                                                                        | Actual Result     |
-| ------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Sign up | Click Sign up option from menu and complete the form to create an account | User is directed to the sign up page and on completion of the form, an account is created and feedback is provided. User is directed to the login page | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -525,8 +528,8 @@ USER STORY TESTING
 
 2. As a returning user, I want to log in so I can access my profile and features.
 
-| Feature | Action                                                                                      | Expected Result                                                                                  | Actual Result     |
-| ------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Login   | Select Login from menu and complete form to log into account and access restricted features | On completion of the login form, feedback is given and the user is able to access other features | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -539,8 +542,8 @@ USER STORY TESTING
 
 3. As a logged-in user, I want to log out securely when I’m done, so that others can't access my data and content.
 
-| Feature | Action                                       | Expected Result                                                                                               | Actual Result     |
-| ------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Log out | Select Log out from the menu to exit account | When a user clicks log out, feedback is given, they return to the home page and all restricted access is gone | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -553,8 +556,8 @@ USER STORY TESTING
 
 4. As a logged-in user, I want to create a travel post so I can share my experience with others.
 
-| Feature     | Action                                                                                                                                                   | Expected Result                                                                                                                                                          | Actual Result     |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Create Post | Once authenticated, a user can select `Add Post` from the menu to complete a form to create a travel post including an image, title, locatin and content | When a form is completed, feedback is provided and the post is created and listed on the home page and their profile page as well as any feeds of user's who follow them | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -568,8 +571,8 @@ USER STORY TESTING
 
 5. As a logged-in user, I want to edit my own posts so I can update the content later.
 
-| Feature    | Action                                                                                                                                      | Expected Result                                                                      | Actual Result     |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Edit Posts | Users can click on the drop down menu on the top right of a their own posts, to select the edit button and complete a form to edit the post | Once the form is completed and submitted, feedback is given and the post will update | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -583,8 +586,8 @@ USER STORY TESTING
 
 6. As a logged-in user, I want to delete my own posts if I no longer want them visible.
 
-| Feature      | Action                                                                                                                                          | Expected Result                                                                          | Actual Result     |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Delete Posts | Users can click on the drop down menu on the top right of a their own posts, to select the delete button and complete a form to delete the post | Once the form is completed and submitted, feedback is given and the post will be removed | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -597,8 +600,8 @@ USER STORY TESTING
 
 7. As any user, I want to browse all travel posts so I can read others' stories.
 
-| Feature      | Action                                                                         | Expected Result                                                               | Actual Result     |
-| ------------ | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Browse Posts | Users can browse all posts on the home page, which are displayed in date order | When a post is created it is displayed on the home page for users consumption | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -610,8 +613,8 @@ USER STORY TESTING
 
 8. As any user, I want to filter or search posts by keyword or category so I can find what interests me.
 
-| Feature | Action                                                                                    | Expected Result                                                                                                                                              | Actual Result     |
-| ------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Search  | Users can enter keywords in the search bar and click enter to search for specific content | Users can search posts by owner, title, location and content. The results are displayed in a list format, consistent with the layout of the rest of the site | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -625,8 +628,8 @@ USER STORY TESTING
 
 9. As a logged-in user, I want to leave a comment on a post so I can join the discussion.
 
-| Feature | Action                                                                                         | Expected Result                                                                                     | Actual Result     |
-| ------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Comment | Authenticated users can click on a post to access the comment form, underneath the post itself | Once a user submits a comment, feedback is given and it is displayed beneath the form in date order | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -639,8 +642,8 @@ USER STORY TESTING
 
 10. As a logged in user, I want to update or delete my comments incase I make a mistake or change my mind about writing something.
 
-| Feature      | Action                                                                                                              | Expected Result                                                                                                                    | Actual Result     |
-| ------------ | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Comment Edit | Authenticated users can click on a post to access the edit comment option, in the top right corner of their comment | Once a user updates a comment and clicks save, feedback is given and the updated comment is displayed in place of the original one | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -652,8 +655,8 @@ USER STORY TESTING
 </details>
 <br/>
 
-| Feature        | Action                                                                                                                | Expected Result                                                                           | Actual Result     |
-| -------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Comment Delete | Authenticated users can click on a post to access the delete comment option, in the top right corner of their comment | Once a user deletes a comment, feedback is given and the comment is removed from the post | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -666,8 +669,8 @@ USER STORY TESTING
 
 11. As a logged-in user, I want to like a post to show appreciation.
 
-| Feature | Action                                                                      | Expected Result                                                                                                           | Actual Result     |
-| ------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Like    | Authenticated users can click the heart button underneath a post to like it | When a user likes a post, feedback is given and the like count increases by one and the post is added to their liked feed | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -680,8 +683,8 @@ USER STORY TESTING
 
 12. As a user, I want to see how many likes and comments a post has to understand its popularity.
 
-| Feature    | Action                                  | Expected Result                                                                 | Actual Result     |
-| ---------- | --------------------------------------- | ------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Post stats | Users can browse posts in the home page | Likes and comments are updated in real-time and are displayed undeath each post | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -693,8 +696,8 @@ USER STORY TESTING
 
 13. As a user, I want to view another user's profile to see their posts.
 
-| Feature       | Action                                                               | Expected Result                                                   | Actual Result     |
-| ------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | View Profiles | Users can click on user's avatars or usernames to view their profile | All user's post are displayed on their profile page in date order | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -706,8 +709,8 @@ USER STORY TESTING
 
 14. As a logged-in user, I want to follow another user so I can keep up with their new posts.
 
-| Feature | Action                                                                          | Expected Result                                                                                                         | Actual Result     |
-| ------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Follow  | Authenticated users can click a follow button on user's profiles to follow them | Feedback is given, the button changes to unfollow and the followed user's posts are then listed on the user's feed page | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -720,8 +723,8 @@ USER STORY TESTING
 
 15. As a user, I want to see how many people follow users and how many profiles they follow, so I can gage their popularity.
 
-| Feature      | Action                                                            | Expected Result                                                                                                                               | Actual Result     |
-| ------------ | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Follow Stats | Users can access follower/following stats on a users profile page | The number of followers a user has and the number of profiles they follow is displayed at the top of each profile and is updated in real-time | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -733,8 +736,8 @@ USER STORY TESTING
 
 16. As a user, I want to see a navigation menu so I can easily access all sections.
 
-| Feature    | Action                                                                                                                                    | Expected Result                                            | Actual Result     |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Navigation | Users can access a navigation menu on a smaller device by clicking the toggle menu button or is on display horizontally on larger devices | Users have access to all areas of the website at all times | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -747,8 +750,8 @@ USER STORY TESTING
 
 17. As a user, I want to know whether I am logged in or not, so that I don't waste time checking.
 
-| Feature                     | Action                                                                     | Expected Result                                                                                                              | Actual Result    |
-| --------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Authentication verification | Users can see if they are logged in or not at all times whilst on the site | A personalised message is displayed at the top of post list pages and the menu has more features, including the users avatar | Wors as expected |
 
 <details><summary>See evidence</summary>
@@ -761,8 +764,8 @@ USER STORY TESTING
 
 18. As a user, I want the site to work well on mobile so I can use it on the go.
 
-| Feature           | Action                                               | Expected Result                                                                                                | Actual Result     |
-| ----------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Responsive Design | Users can use the app on any device including mobile | The design of the website has been adapted to accomodate being displayed on a mobile device as well as desktop | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -780,8 +783,8 @@ USER STORY TESTING
 
 19. As a user, I want to see posts for each location so that I can see what it's like.
 
-| Feature        | Action                                                                                                                                            | Expected Result                                                                                                                                                                                                                                                                                                            | Actual Result     |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Locations Menu | Users can click the locations option in the menu to access the locations list and then click a specific location to view all its associated posts | Locations are listed in popularity order considering number of posts and like/comment counts. When a user clicks on the location image or title, they are directed to a list of posts tagged to the location, if they click on those posts, they will be directed to the post detail where they can view and add comments. | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -794,8 +797,8 @@ USER STORY TESTING
 
 20. As a logged-in user, I want to update my profile with a display name, photo, and bio so my profile feels more personal.
 
-| Feature                 | Action                                                                                                                                                                       | Expected Result                                                                                                      | Actual Result     |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Profile Personalisation | Authenticated users can edit their profile by clicking the menu in the top right corner of their profile page and selecting the 'Edit Profile' option from the dropdown menu | A form is displayed where users can update their profile image and add some content to display on their profile page | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -809,8 +812,8 @@ USER STORY TESTING
 
 21. As a user, I want a "My Feed" page that shows posts from users I follow so I can keep up with content I care about.
 
-| Feature | Action                                                                  | Expected Result                                                                                                  | Actual Result     |
-| ------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Feed    | Authenticated users can click a link to 'Feed' in their navigation menu | Feed page displays all posts that have been submitted by any profile owners that the user is currently following | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -823,8 +826,8 @@ USER STORY TESTING
 
 22. As a user, I can see a profile image of other users to easily identify them.
 
-| Feature | Action                                                                                     | Expected Result                                                                    | Actual Result     |
-| ------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Avatar  | When browsing profiles and posts, users can see who owns the profile or posts and comments | Users can see avatars and often usernames next to all profiles, posts and comments | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -836,8 +839,8 @@ USER STORY TESTING
 
 23. As a user, I can keep scrolling down and the page will load more posts so that I don't have to click next and back to navigate through posts, as this will save time and is easier.
 
-| Feature         | Action                                                  | Expected Result                                                                                                                                                              | Actual Result     |
-| --------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Infinite Scroll | User can scroll down the page to load any further posts | On all pages, if there are posts to load, the user can access these by scrolling down until all have been displayed, when the footer will appear at the bottom of the screen | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -849,8 +852,8 @@ USER STORY TESTING
 
 24. As a user, I can see a list of the most popular profiles so i can follow them myself.
 
-| Feature          | Action                                                                                                                    | Expected Result                                                                                                                                                                                                                                         | Actual Result     |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Popular profiles | Users can view a list of top 5 profiles and click a follow button alongside them to easily follow their profile and posts | In desktop view on the right hand side of post pages, is a display of the top 5 profiles which is determined by number of followers. A user can click follow, feedback is given and the follow button changes to unfollow, all follow stats are updated | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -862,8 +865,8 @@ USER STORY TESTING
 
 25. As a user, I can update my username and password to keep my profile secure.
 
-| Feature                  | Action                                                                                                                                                                                       | Expected Result                                                                                                    | Actual Result     |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Update Username/Password | Authenticated users can access forms to update their username or password by clicking the menu icon in the top right corner of their profile and selecting the relevant option from the menu | Users can complete the forms, feedback is given and their username or password will be updated throughout the site | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -881,8 +884,8 @@ USER STORY TESTING
 
 26. As a user, I want to receive a notification every time that someone likes my post, leaves a comment or follows my profile, so that I can see how popular my posts are and network with fellow minded travellers.
 
-| Feature       | Action                                                                                                              | Expected Result                                                                                                                                                                                              | Actual Result |
-| ------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Notifications | Authenticated users can access notifications in their navigation bar by clicking the toggle menu with the bell icon | Users will see the number of notifications displayed in the toggle menu, when clicked, a dropdown will display an icon to signify which type of notification they have and the name of the user who sent it. |
 
 <details><summary>See evidence</summary>
@@ -899,8 +902,8 @@ USER STORY TESTING
 </details>
 <br/>
 
-| Feature                     | Action                                                                                                                            | Expected Result                                                                                                                                                                                                        | Actual Result     |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Notifications/mark all read | Users can click on an individual notification to mark as read or clear list by clicking 'Mark all read' at the bottom of the menu | Clicking on the individual notification will redirect the user to the associated profile or post and the notification will be cleared from the list. Clicking 'Mark all read' will clear all notifications immediately | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -913,8 +916,8 @@ USER STORY TESTING
 
 27. As a user, I can see a list of the most popular locations and posts to get inspiration of places to travel to.
 
-| Feature           | Action                                       | Expected Result                                                                                                                                                                                                                                                                           | Actual Result     |
-| ----------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Popular Locations | Users can view a list of the top 5 locations | In desktop view on the right hand side of post pages, is a display of the top 5 locations which is determined by number of posts and the likes and comments count. If a user clicks on a location image or name, then it will direct them to a list of posts associated with the location | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -924,8 +927,8 @@ USER STORY TESTING
 </details>
 <br/>
 
-| Feature       | Action                                   | Expected Result                                                                                                                                                                                                                                                                        | Actual Result     |
-| ------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Feature | Action | Expected Result | Actual Result |
+| --- | ---- | ---- | --- |
 | Popular Posts | Users can view a list of the top 5 posts | In desktop view on the right hand side of post pages, is a display of the top 5 posts which is determined by the likes and comments count. If a user clicks on a post image or title, then it will direct them to the post detail page, where they can see all the associated comments | Works as expected |
 
 <details><summary>See evidence</summary>
@@ -934,3 +937,104 @@ USER STORY TESTING
 
 </details>
 <br/>
+
+<h2 id=compatability>Compatability Testing</h2>
+
+**Hardware**:
+
+The website was manually tested and worked as expected across all of the following devices:
+- MacBook Pro
+- Chromebook
+- Samsung Galaxy Book 3
+- Samsung S24
+
+All core features and interactions were functional, with consistent layout and performance across screen sizes and device types.
+
+**Software**:
+
+The website was tested across multiple browsers and functioned correctly on **Chrome, Microsoft Edge** and **Firefox**. However, **Safari** did not allow access to the site due to its handling of third-party cookies, which are required for authentication in this application.
+
+After investigating and consulting with Tutor Support, it was confirmed that this issue stems from Safari’s strict cookie policies rather than any fault in the application’s code. This is a known limitation related to how Safari handles cross-site cookies and may affect similar applications using token-based authentication.
+
+<h2 id=issues>Issues Found</h2>
+
+### Solved Bugs
+
+#### Local Development Configuration Issue
+While setting up local development for the front-end, I initially encountered issues connecting to the deployed back-end API. Although the deployed site worked correctly, local requests from the front-end returned a 502 Bad Gateway error.
+
+After reaching out to Tutor Support, I discovered the issue stemmed from misconfigured environment variables and an incomplete understanding of how the front-end communicates with the back-end.
+
+Specifically, I needed to:
+- Add the correct local development URL (e.g., http://localhost:3000) as CLIENT_ORIGIN_DEV in the Heroku config vars of the API project.
+- Update CORS_ALLOWED_ORIGINS in the API’s settings to include both the deployed front-end and the local development front-end.
+- Ensure the Axios baseURL in the front-end project correctly pointed to the back-end URL depending on the environment (local or deployed).
+
+With this guidance, I learned how the front-end and back-end are linked through CORS settings, environment variables, and Axios configuration. Once these were correctly set, the connection was established successfully.
+
+#### Authentication Issue and Resolution
+During development, I encountered a persistent 403 Forbidden error when attempting to log in or register users through the front-end application. Although the back-end API responded with a 200 OK status for valid credentials, the application was blocked shortly afterward, preventing authentication from completing.
+
+After troubleshooting and a session with Tutor Support, the issue was traced to a misconfiguration involving environment variables. Specifically, the env.py file had been accidentally committed to version control, causing Heroku to prioritize local variables over the ones set via Config Vars. This led to the front-end and back-end becoming misaligned, especially regarding authentication and CORS settings.
+
+To resolve this, I removed env.py from the project and added it to .gitignore to prevent future exposure. I then regenerated the sensitive environment variables — including the SECRET_KEY and Cloudinary credentials — and configured them securely in Heroku's Config Vars. I chose to retain the original PostgreSQL DATABASE_URL to avoid data loss, and ensured the correct CLIENT_ORIGIN and CLIENT_ORIGIN_DEV values were present.
+
+Following these changes and a redeployment of the API, authentication began working correctly across both local development and the deployed application. This process deepened my understanding of environment management and highlighted the importance of keeping secrets out of version control.
+
+### Unsolved Bugs
+
+#### Safari Compatibility Issue (Authentication)
+During testing, I discovered that the site functioned correctly in Chrome and Firefox, but not in Safari. Specifically, the login appeared to succeed—returning valid access and refresh tokens and triggering the success toast notification—but was followed by a 401 Unauthorized error when attempting to fetch user notifications. This prevented users from remaining logged in on Safari.
+
+After a tutoring session with Code Institute, it was confirmed that this issue is caused by Safari's strict handling of third-party cookies, which affects token-based authentication when the front-end and back-end are hosted on different domains (as is the case with Heroku). Since the browser blocks cross-origin cookies, the refresh token cannot be stored or used correctly, leading to the login failure.
+
+This issue is not caused by an error in the application’s code, and the functionality works as expected in modern browsers that do not block third-party cookies. Users are advised to access the site via Chrome or Firefox for full functionality.
+
+<h2 id=performance>Performance Testing</h2>
+
+### WAVE
+
+### Lighthouse
+
+<h2 id=validation>Validation</h2>
+
+### JavaScript
+
+All JavaScript files were validated using ESLint JavaScript validator. All files passed however there were some rules that needed to be set in the eslintrc.js file as described below:
+
+    rules: {
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "react/no-children-prop": "off",
+      "react/no-unescaped-entities": "off"
+    },
+
+`"react/react-in-jsx-scope": "off"` - used to supress errors about not importing React when using JSX.
+
+`"react/prop-types": "off"` - Used to supress warnings when components don’t define `PropTypes` for type checking props.
+
+`"react/no-children-prop": "off"` - Used to supress warnings when children are passed as a prop instead of being placed between component tags.
+
+`"react/no-unescaped-entities": "off"` - Used to supress warnings about unescaped characters in JSX, like ', ", <, or > in strings.
+
+### CSS
+The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website. All CSS modules pass the validation with no errors.
+
+### HTML
+The W3C Markup Validation Service was used to validate the HTML of the website. No errors were identified.
+
+[Back to Contents](#contents)
+
+<h1 id=deployment>Deployment</h1>
+
+[Back to Contents](#contents)
+
+<h1 id=credits>Credits</h1>
+
+### Code
+
+### Media
+
+### Acknowledgments
+
+[Back to Contents](#contents)
