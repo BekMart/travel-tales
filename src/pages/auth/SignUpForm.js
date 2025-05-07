@@ -69,7 +69,7 @@ const SignUpForm = () => {
             <Form onSubmit={handleSubmit}>
               {/* Username field */}
               <Form.Group controlId="username">
-                <Form.Label htmlFor="username" className="visually-hidden">
+                <Form.Label htmlFor="username" className={styles.Hidden}>
                   Username
                 </Form.Label>
                 <Form.Control
@@ -90,7 +90,7 @@ const SignUpForm = () => {
 
               {/* Password field */}
               <Form.Group controlId="password1">
-                <Form.Label htmlFor="password1" className="visually-hidden">
+                <Form.Label htmlFor="password1" className={styles.Hidden}>
                   Password
                 </Form.Label>
                 <Form.Control
@@ -111,7 +111,7 @@ const SignUpForm = () => {
 
               {/* Confirm password field */}
               <Form.Group controlId="password2">
-                <Form.Label htmlFor="password2" className="visually-hidden">
+                <Form.Label htmlFor="password2" className={styles.Hidden}>
                   Confirm Password
                 </Form.Label>
                 <Form.Control

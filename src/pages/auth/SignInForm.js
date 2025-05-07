@@ -72,7 +72,7 @@ function SignInForm() {
             <Form onSubmit={handleSubmit}>
               {/* Username field */}
               <Form.Group controlId="username">
-                <Form.Label htmlFor="username" className="visually-hidden">
+                <Form.Label htmlFor="username" className={styles.Hidden}>
                   Username
                 </Form.Label>
                 <Form.Control
@@ -93,7 +93,7 @@ function SignInForm() {
 
               {/* Password field */}
               <Form.Group controlId="password">
-                <Form.Label htmlFor="password" className="visually-hidden">
+                <Form.Label htmlFor="password" className={styles.Hidden}>
                   Password
                 </Form.Label>
                 <Form.Control
