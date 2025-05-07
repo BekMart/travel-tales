@@ -23,11 +23,6 @@
   color: teal;
 }
 
-/* Hide form labels */
-.Hidden {
-  display: none;
-}
-
 /* Form input fields */
 .Input {
   background: #ffffff;

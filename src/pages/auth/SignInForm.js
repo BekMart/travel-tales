@@ -72,7 +72,19 @@ function SignInForm() {
             <Form onSubmit={handleSubmit}>
               {/* Username field */}
               <Form.Group controlId="username">
-                <Form.Label htmlFor="username" className={styles.Hidden}>
+                <Form.Label
+                  htmlFor="username"
+                  style={{
+                    position: "absolute",
+                    width: "1px",
+                    height: "1px",
+                    padding: 0,
+                    overflow: "hidden",
+                    clip: "rect(0, 0, 0, 0)",
+                    whiteSpace: "nowrap",
+                    border: 0,
+                  }}
+                >
                   Username
                 </Form.Label>
                 <Form.Control
@@ -93,7 +105,19 @@ function SignInForm() {
 
               {/* Password field */}
               <Form.Group controlId="password">
-                <Form.Label htmlFor="password" className={styles.Hidden}>
+                <Form.Label
+                  htmlFor="password"
+                  style={{
+                    position: "absolute",
+                    width: "1px",
+                    height: "1px",
+                    padding: 0,
+                    overflow: "hidden",
+                    clip: "rect(0, 0, 0, 0)",
+                    whiteSpace: "nowrap",
+                    border: 0,
+                  }}
+                >
                   Password
                 </Form.Label>
                 <Form.Control
