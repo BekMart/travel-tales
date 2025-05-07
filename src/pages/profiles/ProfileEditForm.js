@@ -152,7 +152,19 @@ const ProfileEditForm = () => {
           >
             <Form.Group>
               {/* Visually hidden label for screen readers */}
-              <Form.Label htmlFor="image-upload" className="visually-hidden">
+              <Form.Label
+                htmlFor="image-upload"
+                style={{
+                  position: "absolute",
+                  width: "1px",
+                  height: "1px",
+                  padding: 0,
+                  overflow: "hidden",
+                  clip: "rect(0, 0, 0, 0)",
+                  whiteSpace: "nowrap",
+                  border: 0,
+                }}
+              >
                 Upload new profile image
               </Form.Label>
 
