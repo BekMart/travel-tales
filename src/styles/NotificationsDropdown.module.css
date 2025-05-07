@@ -37,10 +37,10 @@
   position: absolute;
   top: -6px;
   right: -6px;
-  background-color: rgb(255, 11, 206);
-  color: antiquewhite;
+  background-color: #de0392;
+  color: white;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 14px;
   padding: 2px 6px;
   line-height: 1;
 }
@@ -70,7 +70,7 @@
 
 /* Notification type icons in menu */
 .NotificationIcon {
-  color: rgb(255, 11, 206);
+  color: #de0392;
 }
 
 /* Change position of toggle in horizontal menu format */

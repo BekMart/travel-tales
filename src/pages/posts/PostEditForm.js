@@ -114,7 +114,7 @@ function PostEditForm() {
     <div className="text-center">
       {/* Post Title */}
       <Form.Group>
-        <Form.Label htmlFor="title" className={styles.Label}>
+        <Form.Label htmlFor="title">
           Title
         </Form.Label>
         <Form.Control
@@ -135,7 +135,7 @@ function PostEditForm() {
 
       {/* Post Location */}
       <Form.Group>
-        <Form.Label htmlFor="location" className={styles.Label}>
+        <Form.Label htmlFor="location">
           Location
         </Form.Label>
         <Form.Control
@@ -156,7 +156,7 @@ function PostEditForm() {
 
       {/* Post Content */}
       <Form.Group>
-        <Form.Label htmlFor="content" className={styles.Label}>
+        <Form.Label htmlFor="content">
           Content
         </Form.Label>
         <Form.Control
