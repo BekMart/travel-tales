@@ -1027,14 +1027,52 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 
 <h1 id=deployment>Deployment</h1>
 
+This project was deployed to Heroku in the projects early stages to allow continual responsive testing.
+
+The website was deployed via Heroku by following these steps:
+
+1. I initially deployed my Travel API by following the [deployment instructions for the Travel API]().
+
+2. I cloned my GitHub repository but running `git clone https://github.com/BekMart/travel-tales.git` in the terinal of VS Code.
+
+3. After navigating to the repository directory, I edited the `src/api/axios.js` file to change the
+`baseURL` to use an environment variable: `process.env.REACT_APP_API_URL`. I then created an `.env` file in the root of the front-end project with the following line: `REACT_APP_API_URL=https://travel-api-ca880bcd8809.herokuapp.com`. This URL was taken from the deployed API by copying it from the browser’s address bar.
+
+4. I created a new app in Heroku by clicking `New` > `Create new app` in the dashboard. I named the app, selected Europe as my region and then clicked `Create app`.
+
+5. In the app’s Settings tab, I clicked `Reveal Cnfig Vars` and dded the following key-value pair:
+    - `KEY: REACT_APP_API_URL`
+    - `VALUE: https://travel-api-ca880bcd8809.herokuapp.com`
+
+6. In the Deploy tab, I selected the option to connect the app to GitHub, searched for my repository, and connected it.
+
+7. I then scrolled to the Manual Deploy section at the bottom of the page. After ensuring the branch was set to `main`, I clicked `Deploy Branch`. 
+
+8. Once deployment completed successfully, I clicked View to open the deployed site.
+
 [Back to Contents](#contents)
 
 <h1 id=credits>Credits</h1>
 
-### Code
+### Acknowledgments
+
+This project was heavily based on the [Moments walkthrough project](https://github.com/mr-fibonacci/moments) provided by Code Institute as part of the course curriculum. The core structure and logic were adapted from that example, and the original features were implemented using the skills and knowledge developed throughout the course materials.
+
+While the general layout follows the Moments template, I adapted the visual design to suit my travel theme, implementing custom CSS and styling choices to reflect the aesthetic of a travel-based content sharing platform.
+
+In addition to the original features, I introduced new functionality such as locations and notifications, both of which involved creating and linking Django models to ensure smooth integration with existing components.
+
+Throughout development, I relied on the following resources for support and troubleshooting:
+- [React documentation](https://react.dev/)
+- [Bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [React Bootstrap documentation](https://react-bootstrap.github.io/docs/getting-started/introduction/)
+- [ChatGPT](https://chatgpt.com/) – for guidance on debugging and implementation strategies
+- Code Institute Tutor support
 
 ### Media
 
-### Acknowledgments
+- Most of the travel images used across the site were sourced from [Pexels](https://www.pexels.com/) or [Google Images](https://images.google.co.uk/) and are used for educational purposes only.
+- The logo and various other image assets were generated using ChatGPT's image capabilities.
+- Several of the profile images featured in the application are my own original photos. 
 
 [Back to Contents](#contents)
