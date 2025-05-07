@@ -151,6 +151,11 @@ const ProfileEditForm = () => {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group>
+              {/* Visually hidden label for screen readers */}
+              <Form.Label htmlFor="image-upload" className="visually-hidden">
+                Upload new profile image
+              </Form.Label>
+
               {/* Display current profile image if available */}
               {image && (
                 <figure>
@@ -170,17 +175,18 @@ const ProfileEditForm = () => {
               ))}
               <div>
                 {/* Change profile image button */}
-                <Form.Label
+                <label
                   className={`${btnStyles.Button} ${btnStyles.Update} btn my-auto`}
                   htmlFor="image-upload"
+                  role="button"
                 >
                   Change profile image
-                </Form.Label>
+                </label>
               </div>
-
               {/* Image input */}
-              <Form.File
+              <Form.Control
                 id="image-upload"
+                type="file"
                 ref={imageFile}
                 accept="image/*"
                 onChange={(e) => {
@@ -191,6 +197,7 @@ const ProfileEditForm = () => {
                     });
                   }
                 }}
+                style={{ display: "none" }}
               />
             </Form.Group>
 
