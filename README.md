@@ -39,9 +39,6 @@ The application allows users to sign up, create and share travel-related posts, 
   - [Existing features](#existing)
   - [Future Features](#future)
 - [Technologies Used](#technologies)
-  - [Frameworks and Languages](frameworks-languages)
-  - [Additional Packages](#additional-packages)
-  - [Other Software](#other-software)
 - [Testing](#testing)
   - [Functionality Testing](#functionality)
   - [Compatability Testing](#compatability)
@@ -463,7 +460,52 @@ Users are notified when someone likes their post, comments on it, or follows the
 - Add a map view to show posts based on geographic data.
 - Introduce tags or hashtags for better content discovery.
 
+[Back to Contents](#contents)
 
+<h1 id=technologies>Technologies Used</h1>
+
+### Frameworks and Languages
+- **JavaScript**: Core language used to build the front-end logic.
+- **React**: JavaScript library used to create the front-end application.
+- **JSX**: HTML-like syntax used in React to structure UI within JavaScript.
+- **HTML5 & CSS3**: For page structure and custom styling.
+
+### Styling & UI
+- **Bootstrap 4.6**: Responsive design framework for layout and components.
+- **React Bootstrap**: Integration of Bootstrap components in React.
+- **Google Fonts**: Custom fonts used to enhance typography and readability.
+- **Font Awesome**: Icon library used throughout the interface.
+- **Custom CSS**: For additional layout and visual customizations.
+
+### Routing, Forms & Interaction
+- **React Router Dom**: Client-side routing between pages and views.
+- **Axios**: Handles API requests to the Django REST API.
+- **React Hook Form**: Simplifies form handling and validation.
+- **React Toastify**: Provides toast notifications for user feedback.
+- **JWT Decode**: Decodes JWTs client-side to manage user sessions.
+- **React Infinite Scroll Component**: Implements infinite scrolling for post feeds.
+
+### Hosting & Deployment
+- **GitHub**: Hosts the project repository and supports collaboration.
+- **Heroku**: Platform used to deploy and host the full-stack application.
+- **Cloudinary**: Used for image uploading, hosting, and optimization.
+
+### Developer Tools & Testing
+- **VS Code**: Primary code editor used to develop the application.
+- **Git**: Version control system used to track changes, manage branches, and commit code.
+- **GitHub Projects**: Used for Agile project management and task tracking.
+- **Chrome DevTools**: For inspecting and debugging during development.
+- **Wave**: Accessibility evaluation tool to ensure inclusive design.
+- **Lighthouse**: Tool for generating performance and best practice reports.
+- **ESLint + React Plugin**: Ensures clean, consistent, and error-free code.
+- **Concurrently**: Runs both front-end and back-end servers during development.
+- **MSW (Mock Service Worker)**: Used to mock API responses during testing.
+
+### Planning & Design
+- **Figma**: Used to create initial UI mockups and process flow diagrams.
+- **Lucidchart**: Used to design the database Entity Relationship Diagram (ERD).
+
+[Back to Contents](#contents)
 
 USER STORY TESTING
 
