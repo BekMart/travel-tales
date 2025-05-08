@@ -114,9 +114,7 @@ function PostEditForm() {
     <div className="text-center">
       {/* Post Title */}
       <Form.Group>
-        <Form.Label htmlFor="title">
-          Title
-        </Form.Label>
+        <Form.Label htmlFor="title">Title</Form.Label>
         <Form.Control
           id="title"
           className={styles.Input}
@@ -135,9 +133,7 @@ function PostEditForm() {
 
       {/* Post Location */}
       <Form.Group>
-        <Form.Label htmlFor="location">
-          Location
-        </Form.Label>
+        <Form.Label htmlFor="location">Location</Form.Label>
         <Form.Control
           id="location"
           className={styles.Input}
@@ -156,9 +152,7 @@ function PostEditForm() {
 
       {/* Post Content */}
       <Form.Group>
-        <Form.Label htmlFor="content">
-          Content
-        </Form.Label>
+        <Form.Label htmlFor="content">Content</Form.Label>
         <Form.Control
           id="content"
           className={styles.Input}
@@ -231,14 +225,11 @@ function PostEditForm() {
                 ref={imageInput}
               />
             </Form.Group>
-
-            {/* Text fields below image on smaller screens */}
-            <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
 
         {/* Sidebar form on medium+ screens */}
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+        <Col xs={12} md={5} lg={4} className="p-0 p-md-2">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>

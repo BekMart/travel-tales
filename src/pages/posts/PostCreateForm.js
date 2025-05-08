@@ -93,7 +93,9 @@ function PostCreateForm() {
     <div className="text-center">
       {/* Post Title */}
       <Form.Group>
-        <Form.Label htmlFor="title">Title</Form.Label>
+        <Form.Label htmlFor="title" className={styles.Label}>
+          Title
+        </Form.Label>
         <Form.Control
           id="title"
           className={styles.Input}
@@ -112,7 +114,9 @@ function PostCreateForm() {
 
       {/* Post Location */}
       <Form.Group>
-        <Form.Label htmlFor="location_input">Location</Form.Label>
+        <Form.Label htmlFor="location_input" className={styles.Label}>
+          Location
+        </Form.Label>
         <Form.Control
           id="location_input"
           className={styles.Input}
@@ -131,7 +135,9 @@ function PostCreateForm() {
 
       {/* Post Content */}
       <Form.Group>
-        <Form.Label htmlFor="content">Content</Form.Label>
+        <Form.Label htmlFor="content" className={styles.Label}>
+          Content
+        </Form.Label>
         <Form.Control
           id="content"
           className={styles.Input}
@@ -223,14 +229,11 @@ function PostCreateForm() {
                   ref={imageInput}
                 />
               </Form.Group>
-
-              {/* Show text fields below image on smaller screens */}
-              <div className="d-md-none">{textFields}</div>
             </Container>
           </Col>
 
           {/* Sidebar with text fields on medium+ screens */}
-          <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+          <Col xs={12} md={5} lg={4} className="p-0 p-md-2">
             <Container className={appStyles.Content}>{textFields}</Container>
           </Col>
         </Row>
