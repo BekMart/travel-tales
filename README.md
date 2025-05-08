@@ -4,13 +4,13 @@
 
 #### Developer: BekMart
 
-TravelTales is a full-stack content-sharing web application built as part of the Advanced Front-End Portfolio Project. The goal of this project is to demonstrate proficiency in advanced front-end development practices using React, combined with a RESTful Django REST Framework API on the back-end.
+TravelTales is a full-stack content-sharing web application built as part of the Advanced Front-End Portfolio Project. The goal of this project is to demonstrate proficiency in advanced front-end development practices using React, combined with a RESTful Django REST Framework API on the back-end, named [Travel API](https://travel-api-ca880bcd8809.herokuapp.com/). Please find the README documentation for the API [here](https://github.com/BekMart/travel-api).
 
 The application allows users to sign up, create and share travel-related posts, interact with others through likes and comments, and follow fellow travelers. Posts can be filtered by title and location, creating a curated and accessible experience for users interested in specific destinations or types of travel.
 
 ![Image of website on several different devices, using am i responsive app](https://res.cloudinary.com/dvgobcuck/image/upload/v1746546774/responsive_yunazb.png)
 
-[View live website](https://travel-tales-5c522e360995.herokuapp.com/)
+### [View live Travel Tales website here](https://travel-tales-5c522e360995.herokuapp.com/)
 
 ### Key Features:
 
@@ -994,6 +994,141 @@ This issue is not caused by an error in the application’s code, and the functi
 
 ### WAVE
 
+[WAVE](https://wave.webaim.org/) was used to test the accessability of each of the pages within this website. See reports for each page below:
+
+- Home (logged out)
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694525/home-logged-out_cg0zhr.png)
+</details>
+<br/>
+
+- Search results page
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694524/search-results_cbtkna.png)
+</details>
+<br/>
+
+- Sign up page
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694525/signup_il1q0j.png)
+</details>
+<br/>
+
+- Login page
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694525/login_j7xpjd.png)
+</details>
+<br/>
+
+- Home (authenticated)
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694525/home-authenticated_whzf30.png)
+</details>
+<br/>
+
+- Feed
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694524/feed_tlpias.png)
+</details>
+<br/>
+
+- Liked
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694524/liked_mb73x2.png)
+</details>
+<br/>
+
+- Locations list
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694524/location_cwwauy.png)
+</details>
+<br/>
+
+- Locations post list
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694523/location_slug_bm3wxt.png)
+</details>
+<br/>
+
+- Create post form
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694525/add-post_ixuhhk.png)
+</details>
+<br/>
+
+- Post detail
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694524/post-detail_vsknf4.png)
+</details>
+<br/>
+
+- Edit post form
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694523/post-edit_dpvsgg.png)
+</details>
+<br/>
+
+- Edit comment 
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694523/comment-edit_wtxrkv.png)
+</details>
+<br/>
+
+- Profile
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694525/profile_g5wtn3.png)
+</details>
+<br/>
+
+- Edit profile form
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694524/profile-edit_xakgre.png)
+</details>
+<br/>
+
+- Edit username form
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694523/username_kb0m8z.png)
+</details>
+<br/>
+
+- Edit password form
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694523/password_nwuxw3.png)
+</details>
+<br/>
+
+- Notifications 
+<details><summary>See report</summary>
+
+![Image shows report with only one contrast error](https://res.cloudinary.com/dvgobcuck/image/upload/v1746694523/notifications_jmtway.png)
+</details>
+<br/>
+
+I was getting some errors relating to their being both missing and multiple label errors but these were rectified on each of the pages which host any type of form element.
+
+The only remaining error is a contrast error which is present across all pages. I was unable to determine where this error was coming from, from the WAVE report, so it has remained and is the only accessability error present within the site. 
+
+![Image of contrast error detail](https://res.cloudinary.com/dvgobcuck/image/upload/v1746695403/contrast_error_exovme.png)
+
+
 ### Lighthouse
 
 <h2 id=validation>Validation</h2>
@@ -1018,22 +1153,22 @@ All JavaScript files were validated using ESLint JavaScript validator. All files
 `"react/no-unescaped-entities": "off"` - Used to supress warnings about unescaped characters in JSX, like ', ", <, or > in strings.
 
 ### CSS
-The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website. All CSS modules pass the validation with no errors.
+The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) was used to validate the CSS of the website. All CSS modules pass the validation with no errors.
 
 ### HTML
-The W3C Markup Validation Service was used to validate the HTML of the website. No errors were identified.
+The [W3C Markup Validation Service](https://validator.w3.org/nu/) was used to validate the HTML of the website. No errors were identified.
 
 [Back to Contents](#contents)
 
 <h1 id=deployment>Deployment</h1>
 
-This project was deployed to Heroku in the projects early stages to allow continual responsive testing.
+This project was deployed to [Heroku](https://www.heroku.com/) in the projects early stages to allow continual responsive testing.
 
 The website was deployed via Heroku by following these steps:
 
 1. I initially deployed my Travel API by following the [deployment instructions for the Travel API]().
 
-2. I cloned my GitHub repository but running `git clone https://github.com/BekMart/travel-tales.git` in the terinal of VS Code.
+2. I cloned my GitHub repository by running `git clone https://github.com/BekMart/travel-tales.git` in the terinal of VS Code.
 
 3. After navigating to the repository directory, I edited the `src/api/axios.js` file to change the
 `baseURL` to use an environment variable: `process.env.REACT_APP_API_URL`. I then created an `.env` file in the root of the front-end project with the following line: `REACT_APP_API_URL=https://travel-api-ca880bcd8809.herokuapp.com`. This URL was taken from the deployed API by copying it from the browser’s address bar.
@@ -1074,5 +1209,7 @@ Throughout development, I relied on the following resources for support and trou
 - Most of the travel images used across the site were sourced from [Pexels](https://www.pexels.com/) or [Google Images](https://images.google.co.uk/) and are used for educational purposes only.
 - The logo and various other image assets were generated using ChatGPT's image capabilities.
 - Several of the profile images featured in the application are my own original photos. 
+- [Google Fonts](https://fonts.google.com/) was used to source the font for this website.
+- [Font Awesome](https://fontawesome.com/) was used to source the icons for the website.
 
 [Back to Contents](#contents)
