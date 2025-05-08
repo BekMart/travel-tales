@@ -49,9 +49,26 @@ function CommentEditForm(props) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group className="pr-1">
-        {/* Comment area where user can edit comment text */}
+      {/* Comment area where user can edit comment text */}
+      <Form.Group className="pr-1" controlId="edit-comment">
+        <Form.Label
+          htmlFor="edit-comment"
+          style={{
+            position: "absolute",
+            width: "1px",
+            height: "1px",
+            padding: 0,
+            overflow: "hidden",
+            clip: "rect(0, 0, 0, 0)",
+            whiteSpace: "nowrap",
+            border: 0,
+          }}
+        >
+          Edit your comment
+        </Form.Label>
+
         <Form.Control
+          id="edit-comment"
           className={styles.Form}
           as="textarea"
           value={formContent}

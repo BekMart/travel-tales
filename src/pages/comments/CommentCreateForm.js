@@ -53,7 +53,23 @@ function CommentCreateForm(props) {
 
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
-      <Form.Group>
+      <Form.Group controlId="comment-input">
+        <Form.Label
+          htmlFor="comment-input"
+          style={{
+            position: "absolute",
+            width: "1px",
+            height: "1px",
+            padding: 0,
+            overflow: "hidden",
+            clip: "rect(0, 0, 0, 0)",
+            whiteSpace: "nowrap",
+            border: 0,
+          }}
+        >
+          Edit your comment
+        </Form.Label>
+
         <InputGroup>
           {/* Link avatar to the user's profile */}
           <Link to={`/profiles/${profile_id}`}>
@@ -65,6 +81,7 @@ function CommentCreateForm(props) {
 
           {/* Comment input field */}
           <Form.Control
+            id="comment-input"
             className={styles.Form}
             placeholder="Write a comment..."
             as="textarea"
