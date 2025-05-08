@@ -1125,11 +1125,59 @@ This issue is not caused by an error in the application’s code, and the functi
 I was getting some errors relating to their being both missing and multiple label errors but these were rectified on each of the pages which host any type of form element.
 
 The only remaining error is a contrast error which is present across all pages. I was unable to determine where this error was coming from, from the WAVE report, so it has remained and is the only accessability error present within the site. 
+<details><summary>See report</summary>
 
 ![Image of contrast error detail](https://res.cloudinary.com/dvgobcuck/image/upload/v1746695403/contrast_error_exovme.png)
-
+</details>
+<br/>
 
 ### Lighthouse
+
+Due to time constraints and the approaching project deadline, I was unable to fully address the performance and best practice recommendations outlined in the Lighthouse reports. However, all pages achieved a score of 100 for Accessibility and SEO. A selection of Lighthouse report overviews is included below as supporting evidence.
+
+Home page
+<details><summary>See desktop report</summary>
+
+![Lighthouse report for Home page on desktop](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698138/desktop-homme_ew6tp0.png)
+</details>
+<details><summary>See mobile report</summary>
+
+![Lighthouse report for Home page on mobile](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698139/mobile-home_bsdvd5.png)
+</details>
+<br/>
+
+Profile Page
+<details><summary>See desktop report</summary>
+
+![Lighthouse report for Profile page on desktop](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698134/desktop-profile_qzmyo2.png)
+</details>
+<details><summary>See mobile report</summary>
+
+![Lighthouse report for Profile page on mobile](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698138/mobile-profile_byynvf.png)
+</details>
+<br/>
+
+Add Post Page
+<details><summary>See desktop report</summary>
+
+![Lighthouse report for Add Post page on desktop](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698135/add-post-desktop_vmoqvt.png)
+</details>
+<details><summary>See mobile report</summary>
+
+![Lighthouse report for Add Post page on mobile](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698134/add-post-mobile_yscvwo.png)
+</details>
+<br/>
+
+Post Detail Page
+<details><summary>See desktop report</summary>
+
+![Lighthouse report for Post Detail page on desktop](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698134/post-detail-desktop_ck397m.png)
+</details>
+<details><summary>See desktop report</summary>
+
+![Lighthouse report for Post Detail page on mobile](https://res.cloudinary.com/dvgobcuck/image/upload/v1746698133/post-detail-mobile_npigj0.png)
+</details>
+<br/>
 
 <h2 id=validation>Validation</h2>
 
@@ -1151,6 +1199,15 @@ All JavaScript files were validated using ESLint JavaScript validator. All files
 `"react/no-children-prop": "off"` - Used to supress warnings when children are passed as a prop instead of being placed between component tags.
 
 `"react/no-unescaped-entities": "off"` - Used to supress warnings about unescaped characters in JSX, like ', ", <, or > in strings.
+
+To ensure ESLint focused only on relevant source files, I created a `.eslintignore` file and added the `build/` directory to exclude it from linting. This prevented irrelevant errors from being reported due to compiled code.
+
+To validate the JavaScript, I ran `npx eslint src --fix` in the terminal. After addressing all flagged issues, the command completed without returning any errors, confirming that the source code meets the defined linting standards.
+<details><summary>See report</summary>
+
+![Image of eslint report shoowing no errors as well as the .eslintrc.js and .eslintignore files](https://res.cloudinary.com/dvgobcuck/image/upload/v1746697017/eslint_e4ibcv.png)
+</details>
+<br/>
 
 ### CSS
 The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) was used to validate the CSS of the website. All CSS modules pass the validation with no errors.
