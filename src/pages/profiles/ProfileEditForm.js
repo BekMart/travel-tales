@@ -103,16 +103,16 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       {/* Bio textarea */}
-      <Form.Group controlId="content">
+      <Form.Group>
         <Form.Label htmlFor="content" className={styles.Label}>
           Bio
         </Form.Label>
         <Form.Control
+          id="content"
           as="textarea"
           value={content}
           onChange={handleChange}
           name="content"
-          id="content"
           rows={8}
           className={`${styles.Input} "form-control"`}
           placeholder="Tell us about yourself"
@@ -151,23 +151,6 @@ const ProfileEditForm = () => {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group>
-              {/* Visually hidden label for screen readers */}
-              <Form.Label
-                htmlFor="image-upload"
-                style={{
-                  position: "absolute",
-                  width: "1px",
-                  height: "1px",
-                  padding: 0,
-                  overflow: "hidden",
-                  clip: "rect(0, 0, 0, 0)",
-                  whiteSpace: "nowrap",
-                  border: 0,
-                }}
-              >
-                Upload new profile image
-              </Form.Label>
-
               {/* Display current profile image if available */}
               {image && (
                 <figure>
@@ -192,6 +175,20 @@ const ProfileEditForm = () => {
                   htmlFor="image-upload"
                   role="button"
                 >
+                  <span
+                    style={{
+                      position: "absolute",
+                      width: "1px",
+                      height: "1px",
+                      padding: 0,
+                      overflow: "hidden",
+                      clip: "rect(0, 0, 0, 0)",
+                      whiteSpace: "nowrap",
+                      border: 0,
+                    }}
+                  >
+                    Upload new profile image
+                  </span>
                   Change profile image
                 </label>
               </div>
@@ -212,14 +209,11 @@ const ProfileEditForm = () => {
                 style={{ display: "none" }}
               />
             </Form.Group>
-
-            {/* Text fields shown below image on small screens */}
-            <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
 
         {/* Text fields sidebar (shown on larger screens) */}
-        <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
+        <Col xs={12} md={5} lg={5} className="p-0 p-md-2">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>
